@@ -2,88 +2,89 @@ Return-Path: <b43-dev-bounces+lists+b43-dev=lfdr.de@lists.infradead.org>
 X-Original-To: lists+b43-dev@lfdr.de
 Delivered-To: lists+b43-dev@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8F4A713866
-	for <lists+b43-dev@lfdr.de>; Sat,  4 May 2019 11:10:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8E6771461F
+	for <lists+b43-dev@lfdr.de>; Mon,  6 May 2019 10:23:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=EeBX4MjkZBlPBKyKSh3ch6VGULpVj+PtSEv555IvzUk=; b=VyZ
-	cWsuiXHgCA6uZvsQ100gKndJqKv+9WICtt8wjrrp6tMTd82TMFBcUaRsmTLdUfi0AzPYWNJuk6cwm
-	UMEd8d260aQkxFjoalEA9HTdLsJC48jA+XTuY7AI52ZTrIF8oygpgiAuoLvWNYubf92r9uyWsgC07
-	OzUYlJCArpxKx8VvTvxhpgot8FXBkTyN9/zhISBc5sBExWzSPg6DLYD1WipM1s7btr7PRpZG7jikx
-	sLKHxCORLXf8JHdU0ciexaJcYaWzJEU/KHmhV4PYEVPDTt6X1tniRa1xB7ThfpQkzZcu9w/VFtRtI
-	btsbvJrfunHm/1olbdLwUA4+x/jLp8A==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
+	Date:References:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=tZ59wH7EKfH+PMUMazqeWEPykEO9rEc3WbNU1G76Weg=; b=djAPzCi3p6KgX/
+	CfjKk9CHv+Oai/njQn3JD7M2dfeq45o5aPqL7ehzRzmVrH1R4VqMMlE3OUJZH9PaeRV7SxTd8XL7n
+	ywI0D9ag2oPGzPgvG9j2kprPcAcc5yIErBFlYPxvATWUmkLFwIUK5zjZsGc9MONyErPzzgH+tfhYi
+	4pY8U8z03MY4m1xi2C6X8oNNsbwNaL/GM9l4buMSXWIwecjBoMoMTmhs5LbS7K6YavYTXjMgvdMcS
+	Q5BKfYOVfeYKDBQYt7tDJqTGMK7g35wj2+Kf9lmHZfzkoNOqSIao+4guITa3Ro2lwjIsNJr1vCtA4
+	DPihCwXVjoaM8ANzrQqg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.90_1 #2 (Red Hat Linux))
-	id 1hMqgX-0002jL-Tw; Sat, 04 May 2019 09:10:21 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1hNYt2-0005aV-PW; Mon, 06 May 2019 08:22:13 +0000
+Received: from smtp.codeaurora.org ([198.145.29.96])
  by bombadil.infradead.org with esmtps (Exim 4.90_1 #2 (Red Hat Linux))
- id 1hMqgP-0002iv-Re
- for b43-dev@lists.infradead.org; Sat, 04 May 2019 09:10:15 +0000
-Received: by mail-pf1-x441.google.com with SMTP id z26so4126978pfg.6
- for <b43-dev@lists.infradead.org>; Sat, 04 May 2019 02:10:13 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=weyn+CHVWujXbQhxQpPXY+MmlPD3OaJ4CkltxPjfrS4=;
- b=GX1wUbavt4/yeinpEnt7G2fmTCdYJ9kThtfe5FiGkRtqRpYj0PH5HJUNhAxuG+G0PO
- Lgn+96yNkQ8xZNxbYtEElcrlGz49Ze6NAzDamdrDNFjxCIYe9wnMZDW9JUiFzLRXU6Zg
- RLdi6HBpjD0EcKxEf6Hr2pA5yOeoHR3uPcOBbq5L0mUE28iwCq8din3Wyn+IhRFEcFUY
- 4Zex3MuxV0laRfO7Xz7VWlI3cyI8m4LedyLp+iHhmXzW4ay4CLzGfj4gVZWsn2KPRn8c
- o2GNGL/sUpN2sjq0E893V2hmsWcnwnfvKQI+2ypviuDGHRcqChtOT+2iuOZORaJcfLZV
- UB6A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=weyn+CHVWujXbQhxQpPXY+MmlPD3OaJ4CkltxPjfrS4=;
- b=q/oHqhGbVvvHR+yTbqih2gJQq5cQ8JW+rwNMNDYgudHhw0K+BQV+Ho5l4vgeOfCSWA
- 1abenxYSzjkalG8FHICmbeARVTiTcBB8oOSZ+OzJt5r3Z/JoVM8kU5h/PzR7STxYz1qQ
- vQu9Pe5J5FVICclxWyqTnfC+lPrIbhmKlWrbNct3KIBfloG3SGFgR/+YdrTv5OXBD1Nt
- VbgnM7mTE8R5X8i6QuMEWXCEwqouoPh1WsUDC9+oYzGQj0LOgOY0IXq5BrJjLSn30OLx
- X2Z8zqz0MGZHFYSRurf0YH4U1PPk9Jt2QoiqB1EldS8gKXb81JsWBncFs963gItaJJZM
- AfPQ==
-X-Gm-Message-State: APjAAAWHJWZdP5X+z05vBqbYrv3osZI/B8NivT62tMXnc6KTrTOWkzqd
- caxkVjeMidRS2f6zjiYatQk=
-X-Google-Smtp-Source: APXvYqzQaP3Vs7X9Cum2Z7PgW42q0Cahgu53Yir7dPOIiaVQSVyphkycH/dr0MPdOVXn3iWNrPWxig==
-X-Received: by 2002:aa7:8252:: with SMTP id e18mr17944696pfn.105.1556961012702; 
- Sat, 04 May 2019 02:10:12 -0700 (PDT)
-Received: from oslab.tsinghua.edu.cn ([2402:f000:4:72:808::3ca])
- by smtp.gmail.com with ESMTPSA id 19sm9225490pfs.104.2019.05.04.02.10.09
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Sat, 04 May 2019 02:10:11 -0700 (PDT)
-From: Jia-Ju Bai <baijiaju1990@gmail.com>
-To: kvalo@codeaurora.org, davem@davemloft.net, colin.king@canonical.com,
- yuehaibing@huawei.com
-Subject: [PATCH] net: wireless: b43: Avoid possible double calls to
+ id 1hNYss-0005ZO-Uh
+ for b43-dev@lists.infradead.org; Mon, 06 May 2019 08:22:04 +0000
+Received: by smtp.codeaurora.org (Postfix, from userid 1000)
+ id 0042561156; Mon,  6 May 2019 08:22:01 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
+ s=default; t=1557130922;
+ bh=ZZzz+rr8wUgFTo9VKrB62hBLxoIXWzDCDWK5CKHD47c=;
+ h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
+ b=k/T2Hi+1dEH3Xxok1BklWNGne0nrL4zinqpA3uZWOlVWcljkFZ2lVbaEgq7+fCTxQ
+ xSck5yXQCghMqbdYiw1TUDihjBl0KUDwUQCNKRY+ifFc0OC1vcSLbjjBxIyLrBhmWO
+ kGJu/dfw/m3g3PeiZya16i9eQhUkBoJ3raFtSf94=
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ pdx-caf-mail.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-2.7 required=2.0 tests=ALL_TRUSTED,BAYES_00,
+ DKIM_INVALID,DKIM_SIGNED autolearn=no autolearn_force=no version=3.4.0
+Received: from x230.qca.qualcomm.com (37-136-65-53.rev.dnainternet.fi
+ [37.136.65.53])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ (Authenticated sender: kvalo@smtp.codeaurora.org)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id A7E8F60770;
+ Mon,  6 May 2019 08:21:58 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
+ s=default; t=1557130921;
+ bh=ZZzz+rr8wUgFTo9VKrB62hBLxoIXWzDCDWK5CKHD47c=;
+ h=From:To:Cc:Subject:References:Date:In-Reply-To:From;
+ b=lSRn3hu5N/n0P+oGt6NqE4QpryoJ5SmalOwAxzaiMOn7s415F4X0ULqCUeiEucDQB
+ ZP9RRennoLrtyU4NEqSfQyNGan1k7eXt9YkyBybcfHEkKRCzBmSEX3HYykvhpaO8M0
+ L6WwHtMe3NiIGJCdB9OslHXkv7bTkdg0agGfiBzA=
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org A7E8F60770
+Authentication-Results: pdx-caf-mail.web.codeaurora.org;
+ dmarc=none (p=none dis=none) header.from=codeaurora.org
+Authentication-Results: pdx-caf-mail.web.codeaurora.org;
+ spf=none smtp.mailfrom=kvalo@codeaurora.org
+From: Kalle Valo <kvalo@codeaurora.org>
+To: Jia-Ju Bai <baijiaju1990@gmail.com>
+Subject: Re: [PATCH] net: wireless: b43: Avoid possible double calls to
  b43_one_core_detach()
-Date: Sat,  4 May 2019 17:10:00 +0800
-Message-Id: <20190504091000.18665-1-baijiaju1990@gmail.com>
-X-Mailer: git-send-email 2.17.0
+References: <20190504091000.18665-1-baijiaju1990@gmail.com>
+Date: Mon, 06 May 2019 11:21:55 +0300
+In-Reply-To: <20190504091000.18665-1-baijiaju1990@gmail.com> (Jia-Ju Bai's
+ message of "Sat, 4 May 2019 17:10:00 +0800")
+Message-ID: <874l68vvq4.fsf@codeaurora.org>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/24.5 (gnu/linux)
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190504_021013_927165_EC98A20B 
-X-CRM114-Status: GOOD (  10.09  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20190506_012203_008470_E605B461 
+X-CRM114-Status: GOOD (  15.29  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (baijiaju1990[at]gmail.com)
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.145.29.96 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (baijiaju1990[at]gmail.com)
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: b43-dev@lists.infradead.org
 X-Mailman-Version: 2.1.21
 Precedence: list
@@ -95,58 +96,40 @@ List-Post: <mailto:b43-dev@lists.infradead.org>
 List-Help: <mailto:b43-dev-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/b43-dev>,
  <mailto:b43-dev-request@lists.infradead.org?subject=subscribe>
-Cc: netdev@vger.kernel.org, Jia-Ju Bai <baijiaju1990@gmail.com>,
- linux-wireless@vger.kernel.org, b43-dev@lists.infradead.org,
- linux-kernel@vger.kernel.org
-MIME-Version: 1.0
+Cc: yuehaibing@huawei.com, netdev@vger.kernel.org,
+ linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org,
+ b43-dev@lists.infradead.org, colin.king@canonical.com, davem@davemloft.net
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "b43-dev" <b43-dev-bounces@lists.infradead.org>
 Errors-To: b43-dev-bounces+lists+b43-dev=lfdr.de@lists.infradead.org
 
-In b43_request_firmware(), when ieee80211_register_hw() fails,
-b43_one_core_detach() is called. In b43_bcma_remove() and
-b43_ssb_remove(), b43_one_core_detach() is called again. In this case, 
-null-pointer dereferences and double-free problems can occur when 
-the driver is removed.
+Jia-Ju Bai <baijiaju1990@gmail.com> writes:
 
-To fix this bug, the call to b43_one_core_detach() in
-b43_request_firmware() is deleted.
+> In b43_request_firmware(), when ieee80211_register_hw() fails,
+> b43_one_core_detach() is called. In b43_bcma_remove() and
+> b43_ssb_remove(), b43_one_core_detach() is called again. In this case, 
+> null-pointer dereferences and double-free problems can occur when 
+> the driver is removed.
+>
+> To fix this bug, the call to b43_one_core_detach() in
+> b43_request_firmware() is deleted.
+>
+> This bug is found by a runtime fuzzing tool named FIZZER written by us.
+>
+> Signed-off-by: Jia-Ju Bai <baijiaju1990@gmail.com>
+> ---
+>  drivers/net/wireless/broadcom/b43/main.c | 7 +------
+>  1 file changed, 1 insertion(+), 6 deletions(-)
 
-This bug is found by a runtime fuzzing tool named FIZZER written by us.
+You can use just "b43:" as prefix, no need to have "net:" nor
+"wireless:" in the title. I'll fix it this time, but please use correct
+style in the future.
 
-Signed-off-by: Jia-Ju Bai <baijiaju1990@gmail.com>
----
- drivers/net/wireless/broadcom/b43/main.c | 7 +------
- 1 file changed, 1 insertion(+), 6 deletions(-)
+https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches#commit_title_is_wrong
 
-diff --git a/drivers/net/wireless/broadcom/b43/main.c b/drivers/net/wireless/broadcom/b43/main.c
-index 74be3c809225..e666a472a0da 100644
---- a/drivers/net/wireless/broadcom/b43/main.c
-+++ b/drivers/net/wireless/broadcom/b43/main.c
-@@ -2610,18 +2610,13 @@ static void b43_request_firmware(struct work_struct *work)
- 
- 	err = ieee80211_register_hw(wl->hw);
- 	if (err)
--		goto err_one_core_detach;
-+		goto out;
- 	wl->hw_registered = true;
- 	b43_leds_register(wl->current_dev);
- 
- 	/* Register HW RNG driver */
- 	b43_rng_init(wl);
- 
--	goto out;
--
--err_one_core_detach:
--	b43_one_core_detach(dev->dev);
--
- out:
- 	kfree(ctx);
- }
 -- 
-2.17.0
-
+Kalle Valo
 
 _______________________________________________
 b43-dev mailing list
