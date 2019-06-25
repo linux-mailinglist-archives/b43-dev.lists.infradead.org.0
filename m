@@ -2,35 +2,97 @@ Return-Path: <b43-dev-bounces+lists+b43-dev=lfdr.de@lists.infradead.org>
 X-Original-To: lists+b43-dev@lfdr.de
 Delivered-To: lists+b43-dev@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C8F9B52991
-	for <lists+b43-dev@lfdr.de>; Tue, 25 Jun 2019 12:30:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 488EC55A2B
+	for <lists+b43-dev@lfdr.de>; Tue, 25 Jun 2019 23:46:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=g/ULI0YJDaqRGimxZiRZaGzrU2wm9lVl1eXalR1NzFw=; b=KWNDC+lYID7z4J
-	zloFqvvAiHfy/6es/axwAukSx3HDQGUjZXd/nYduXMCxqA/ruVe/z8O50Me+T2HAkOM366/dzIPgG
-	/6j5kUXQ8wOues06wkAvTbEmjC0D7AyBJuW4J7QXQffO8QB3PIrC4IOi80hSlQDK0+m2muvN41k2F
-	Ps1/tqAZ6WqDkmHECs/L6JpvlRyB2lQ/dQHuQ313pcAjulToilZGnkvJtLdsHaa5d3ut9aZ+f6cIc
-	5r2C3m64UswFxKlVnHb+fBIBd1cImBG20IMB2H06YDvPUsFigSKSVFKtiN2ojMeQV33eOLKPJ6CkA
-	TCsAQyGLXI7IUfZ2Hm7w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=1INNPrI9BTNK7C42+janYFYH5AKJ+e810DLePZBO0hc=; b=W/O6l+4LdPrCLkFW5oR0SoIce
+	2zHViHW2gA7+zwKmN1+KdBQbn+OCG//x1uoCs704LkBRj+bjWUh0b+oKcqDoQpswZD06UE2vPKDWb
+	W3CMBw7g3tibyqjjQT2eseCrYKgZn1/TlEwb3K6P6Ment/XVPsN8I7pn+cv2gJxJm8Q6TkMAMXsY4
+	OkWC9l6K/2bRXYRrN6wC/hp+G8yJjslVt4U0LUl9q0twww71GuzzqVAMn+pWLU30VgorZf/F22h5a
+	UfDG03xBCJXobWrL/p9hMAkbCAfTg1Xt8ru/LSYhjsdjXqU/UHGgp4hzxSnV+/9iZN/aijrLctmiA
+	85XjyYMaA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfiiJ-0005qh-Es; Tue, 25 Jun 2019 10:30:11 +0000
-Received: from clnet-p19-102.ikbnet.co.at ([83.175.77.102] helo=localhost)
- by bombadil.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
- id 1hfihs-0005Xp-VP; Tue, 25 Jun 2019 10:29:45 +0000
-From: Christoph Hellwig <hch@lst.de>
-To: Larry Finger <Larry.Finger@lwfinger.net>, Kalle Valo <kvalo@codeaurora.org>
-Subject: [PATCH 4/4] b43: simplify engine type / DMA mask selection
-Date: Tue, 25 Jun 2019 12:29:32 +0200
-Message-Id: <20190625102932.32257-5-hch@lst.de>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190625102932.32257-1-hch@lst.de>
+	id 1hftGL-0007KL-Ns; Tue, 25 Jun 2019 21:46:01 +0000
+Received: from mail-oi1-x241.google.com ([2607:f8b0:4864:20::241])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1hftGE-0007Ja-8N
+ for b43-dev@lists.infradead.org; Tue, 25 Jun 2019 21:45:55 +0000
+Received: by mail-oi1-x241.google.com with SMTP id w79so292632oif.10
+ for <b43-dev@lists.infradead.org>; Tue, 25 Jun 2019 14:45:53 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=sender:subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=JjiTBZ0hm0NbqUS5/4bd1p2NmNnTTnu1Dvo2Kh058WY=;
+ b=Fygl8X6neXLKligulReeilyoG0dSjibvXxzB5K3QiSEGWUHn53omMxJXVy6dtXuree
+ kapPpf24Ab1SCrm8PcyefWC/Whia9xV1+TwqVpAQZ7sZAUkrSZNwMphtaXACYNcTJHJi
+ rSbPkODKXdqJ9kDKvCdN+77fOhnStuSZ0bF2Xqy2yzt3JWH+DpJoMrRKy2Uq4anb3f6Q
+ uGwTxo4t3VZXMKgs26OTPKLVpHtn2kXEeFXsnjj/byWFUM0K29RXkjfBg2MCKGWF5yM3
+ NTS0mPV+wehGpSuUUPtDptFBNn49ZtpRemI0eP+XnGCfBt18sdjjIrYnBETTN3fEfdUQ
+ gs3w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:sender:subject:to:cc:references:from:message-id
+ :date:user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=JjiTBZ0hm0NbqUS5/4bd1p2NmNnTTnu1Dvo2Kh058WY=;
+ b=JOFsOuPO4Fdm2UQbn+LrPsuGOqCC0b3bKqaE3+QzC8o9P3xiT7fw+Z1oN2PYyWYnAc
+ fqnkFicJd6IFkM8qm7ypMv/qAkzCvi/KynqgQ3ZDjbckI7uKOwtTWVBFq6Os/4rZfO3/
+ TCKbI2RY4XqswpkrunqjVj5pirFZzKj/eHNcTIwR1kXTffhoy6BYByr7fYv6WFeAEss8
+ F4uxU9C9wRI6P6KnW4ZhhAXgqy67Ylw2iCFFGO/d5qYmNJ2jT197g8Vb/tCpbnRmECax
+ gmv65TMUAwElJR+SYG0jQFmiDTCBSlV1TuHK0m9SoAX68V0352U9aHa4raA4+oynBi05
+ 2TmA==
+X-Gm-Message-State: APjAAAX2gIfgwH0CCk+rOEBH/H0V9D6TcpsUy8UiAtgcmJiGGd9mxk8j
+ u8igTJx0H38LmWhIb618DdQ=
+X-Google-Smtp-Source: APXvYqyvvvk+AYvxBruu9uR3BNyKTd9Flkw47/n6y+yQBiIPTNOFBXO56QK9Z9AECIulsn+YmQwmlA==
+X-Received: by 2002:aca:3a55:: with SMTP id h82mr2257138oia.49.1561499152775; 
+ Tue, 25 Jun 2019 14:45:52 -0700 (PDT)
+Received: from [192.168.1.112] (cpe-24-31-245-230.kc.res.rr.com.
+ [24.31.245.230])
+ by smtp.gmail.com with ESMTPSA id l145sm5772594oib.6.2019.06.25.14.45.51
+ (version=TLS1_3 cipher=AEAD-AES128-GCM-SHA256 bits=128/128);
+ Tue, 25 Jun 2019 14:45:52 -0700 (PDT)
+Subject: Re: [PATCH 1/4] b43legacy: remove b43legacy_dma_set_mask
+To: Christoph Hellwig <hch@lst.de>, Kalle Valo <kvalo@codeaurora.org>
 References: <20190625102932.32257-1-hch@lst.de>
+ <20190625102932.32257-2-hch@lst.de>
+From: Larry Finger <Larry.Finger@lwfinger.net>
+Message-ID: <55cf8864-3fa8-a0ed-0887-39ea21085492@lwfinger.net>
+Date: Tue, 25 Jun 2019 16:45:51 -0500
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.1
 MIME-Version: 1.0
+In-Reply-To: <20190625102932.32257-2-hch@lst.de>
+Content-Language: en-US
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190625_144554_327551_2439373F 
+X-CRM114-Status: GOOD (  20.20  )
+X-Spam-Score: 0.4 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (0.4 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:241 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (larry.finger[at]gmail.com)
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: b43-dev@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -44,97 +106,88 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/b43-dev>,
  <mailto:b43-dev-request@lists.infradead.org?subject=subscribe>
 Cc: netdev@vger.kernel.org, linux-wireless@vger.kernel.org,
  b43-dev@lists.infradead.org, linux-kernel@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "b43-dev" <b43-dev-bounces@lists.infradead.org>
 Errors-To: b43-dev-bounces+lists+b43-dev=lfdr.de@lists.infradead.org
 
-Return the engine type from the function looking at the registers, and
-just derive the DMA mask from that in the one place we care.
+On 6/25/19 5:29 AM, Christoph Hellwig wrote:
+> These days drivers are not required to fallback to smaller DMA masks,
+> but can just set the largest mask they support, removing the need for
+> this trial and error logic.
+> 
+> Signed-off-by: Christoph Hellwig <hch@lst.de>
+> ---
+>   drivers/net/wireless/broadcom/b43legacy/dma.c | 39 +------------------
+>   1 file changed, 1 insertion(+), 38 deletions(-)
 
-Signed-off-by: Christoph Hellwig <hch@lst.de>
----
- drivers/net/wireless/broadcom/b43/dma.c | 28 ++++++-------------------
- 1 file changed, 6 insertions(+), 22 deletions(-)
+The patches work for PPC32 for both b43legacy and b43.
 
-diff --git a/drivers/net/wireless/broadcom/b43/dma.c b/drivers/net/wireless/broadcom/b43/dma.c
-index 1d5ace4d3372..e8958edb9094 100644
---- a/drivers/net/wireless/broadcom/b43/dma.c
-+++ b/drivers/net/wireless/broadcom/b43/dma.c
-@@ -810,7 +810,7 @@ static void free_all_descbuffers(struct b43_dmaring *ring)
- 	}
- }
- 
--static u64 supported_dma_mask(struct b43_wldev *dev)
-+static enum b43_dmatype b43_engine_type(struct b43_wldev *dev)
- {
- 	u32 tmp;
- 	u16 mmio_base;
-@@ -820,14 +820,14 @@ static u64 supported_dma_mask(struct b43_wldev *dev)
- 	case B43_BUS_BCMA:
- 		tmp = bcma_aread32(dev->dev->bdev, BCMA_IOST);
- 		if (tmp & BCMA_IOST_DMA64)
--			return DMA_BIT_MASK(64);
-+			return B43_DMA_64BIT;
- 		break;
- #endif
- #ifdef CONFIG_B43_SSB
- 	case B43_BUS_SSB:
- 		tmp = ssb_read32(dev->dev->sdev, SSB_TMSHIGH);
- 		if (tmp & SSB_TMSHIGH_DMA64)
--			return DMA_BIT_MASK(64);
-+			return B43_DMA_64BIT;
- 		break;
- #endif
- 	}
-@@ -836,20 +836,7 @@ static u64 supported_dma_mask(struct b43_wldev *dev)
- 	b43_write32(dev, mmio_base + B43_DMA32_TXCTL, B43_DMA32_TXADDREXT_MASK);
- 	tmp = b43_read32(dev, mmio_base + B43_DMA32_TXCTL);
- 	if (tmp & B43_DMA32_TXADDREXT_MASK)
--		return DMA_BIT_MASK(32);
--
--	return DMA_BIT_MASK(30);
--}
--
--static enum b43_dmatype dma_mask_to_engine_type(u64 dmamask)
--{
--	if (dmamask == DMA_BIT_MASK(30))
--		return B43_DMA_30BIT;
--	if (dmamask == DMA_BIT_MASK(32))
- 		return B43_DMA_32BIT;
--	if (dmamask == DMA_BIT_MASK(64))
--		return B43_DMA_64BIT;
--	B43_WARN_ON(1);
- 	return B43_DMA_30BIT;
- }
- 
-@@ -1078,13 +1065,10 @@ static bool b43_dma_translation_in_low_word(struct b43_wldev *dev,
- int b43_dma_init(struct b43_wldev *dev)
- {
- 	struct b43_dma *dma = &dev->dma;
-+	enum b43_dmatype type = b43_engine_type(dev);
- 	int err;
--	u64 dmamask;
--	enum b43_dmatype type;
- 
--	dmamask = supported_dma_mask(dev);
--	type = dma_mask_to_engine_type(dmamask);
--	err = dma_set_mask_and_coherent(dev->dev->dma_dev, dmamask);
-+	err = dma_set_mask_and_coherent(dev->dev->dma_dev, DMA_BIT_MASK(type));
- 	if (err) {
- 		b43err(dev->wl, "The machine/kernel does not support "
- 		       "the required %u-bit DMA mask\n", type);
-@@ -1793,7 +1777,7 @@ void b43_dma_direct_fifo_rx(struct b43_wldev *dev,
- 	enum b43_dmatype type;
- 	u16 mmio_base;
- 
--	type = dma_mask_to_engine_type(supported_dma_mask(dev));
-+	type = b43_engine_type(dev);
- 
- 	mmio_base = b43_dmacontroller_base(type, engine_index);
- 	direct_fifo_rx(dev, type, mmio_base, enable);
--- 
-2.20.1
+Tested-by: Larry Finger <Larry.Finger@lwfinger.net>
+
+Thanks,
+
+Larry
+
+> 
+> diff --git a/drivers/net/wireless/broadcom/b43legacy/dma.c b/drivers/net/wireless/broadcom/b43legacy/dma.c
+> index 2ce1537d983c..0c2de20622e3 100644
+> --- a/drivers/net/wireless/broadcom/b43legacy/dma.c
+> +++ b/drivers/net/wireless/broadcom/b43legacy/dma.c
+> @@ -797,43 +797,6 @@ void b43legacy_dma_free(struct b43legacy_wldev *dev)
+>   	dma->tx_ring0 = NULL;
+>   }
+>   
+> -static int b43legacy_dma_set_mask(struct b43legacy_wldev *dev, u64 mask)
+> -{
+> -	u64 orig_mask = mask;
+> -	bool fallback = false;
+> -	int err;
+> -
+> -	/* Try to set the DMA mask. If it fails, try falling back to a
+> -	 * lower mask, as we can always also support a lower one. */
+> -	while (1) {
+> -		err = dma_set_mask_and_coherent(dev->dev->dma_dev, mask);
+> -		if (!err)
+> -			break;
+> -		if (mask == DMA_BIT_MASK(64)) {
+> -			mask = DMA_BIT_MASK(32);
+> -			fallback = true;
+> -			continue;
+> -		}
+> -		if (mask == DMA_BIT_MASK(32)) {
+> -			mask = DMA_BIT_MASK(30);
+> -			fallback = true;
+> -			continue;
+> -		}
+> -		b43legacyerr(dev->wl, "The machine/kernel does not support "
+> -		       "the required %u-bit DMA mask\n",
+> -		       (unsigned int)dma_mask_to_engine_type(orig_mask));
+> -		return -EOPNOTSUPP;
+> -	}
+> -	if (fallback) {
+> -		b43legacyinfo(dev->wl, "DMA mask fallback from %u-bit to %u-"
+> -			"bit\n",
+> -			(unsigned int)dma_mask_to_engine_type(orig_mask),
+> -			(unsigned int)dma_mask_to_engine_type(mask));
+> -	}
+> -
+> -	return 0;
+> -}
+> -
+>   int b43legacy_dma_init(struct b43legacy_wldev *dev)
+>   {
+>   	struct b43legacy_dma *dma = &dev->dma;
+> @@ -844,7 +807,7 @@ int b43legacy_dma_init(struct b43legacy_wldev *dev)
+>   
+>   	dmamask = supported_dma_mask(dev);
+>   	type = dma_mask_to_engine_type(dmamask);
+> -	err = b43legacy_dma_set_mask(dev, dmamask);
+> +	err = dma_set_mask_and_coherent(dev->dev->dma_dev, dmamask);
+>   	if (err) {
+>   #ifdef CONFIG_B43LEGACY_PIO
+>   		b43legacywarn(dev->wl, "DMA for this device not supported. "
+> 
 
 
 _______________________________________________
