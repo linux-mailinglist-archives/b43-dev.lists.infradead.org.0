@@ -2,31 +2,31 @@ Return-Path: <b43-dev-bounces+lists+b43-dev=lfdr.de@lists.infradead.org>
 X-Original-To: lists+b43-dev@lfdr.de
 Delivered-To: lists+b43-dev@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1379D5297D
-	for <lists+b43-dev@lfdr.de>; Tue, 25 Jun 2019 12:29:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D3BE652982
+	for <lists+b43-dev@lfdr.de>; Tue, 25 Jun 2019 12:30:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TDLVqJOWb42BbHFPMTu5WXQqxQIJBOxy6sYHEJVGOlU=; b=VM81nEi5J69ls1
-	VhrXZOJ/iMYpNB8WU1ct7wcR+y5bNIRLF4O2T/CM5IwRjH3UCgHQkhx9jii3xLjdpyFqUBz/9c4Ga
-	gJC9X3BN8hG/Dl03IRj8Znz7bwPo3/nmxfjVSiOgzaOL6HxZ6wc5TExMt9EE12iiyZ+qSwRRNlZcq
-	rLWepkhHp9s2x0+xaejGH/hZnTvFCxpT2k6RFbuCbtN9r0v9R72/4SCru9lwEj1WiZ8mHz4VBTSA5
-	kNGXQNqjKd+XDPuUTEeQn0/p1CuCnM1IO+zoDvyT6cvYTr317cRZf9ovOaesTXJRCx2cK2Js4/iHs
-	81QlxzET2QnTsSWjMGHQ==;
+	List-Owner; bh=nX58mTRMQC9dIrneTJeLFL1pE6ph8YE3ZfOzuk1Ok7o=; b=XtdttnMCzaXHqL
+	ml8cn7R9uIvQ8IOiMFSz6HIAR6EDGM3IlrpnPHAsaSCth1XAaegQ41ZSSG17tlH+GNQwK9ivrRiJD
+	3xMV+FwO0GD4jEtW9jBbQfLkrDtl1nQVb3oUgJQpzhglzbdQ28FIIBXhOgkG/FdhhewvmttGZ2U3u
+	4Aa457KRSkfzTPEwOLJ13TL7Ixs8oe2b8epHqb+Ty1CpwfRDmnNoUcDBp0zUxxv5BkdOnkf2GqTML
+	lhF5haWQ7jKo3VjR8izsf/4sB9qKwlS+gfTxEZsRfuIFqVSZRP7ktHd3jIaHlBIpHU1sEJB8L7nbg
+	yA1il5U9se4idHgW5OrQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1hfihv-0005V5-2T; Tue, 25 Jun 2019 10:29:47 +0000
+	id 1hfihz-0005c3-W6; Tue, 25 Jun 2019 10:29:52 +0000
 Received: from clnet-p19-102.ikbnet.co.at ([83.175.77.102] helo=localhost)
  by bombadil.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
- id 1hfihl-0005Su-UF; Tue, 25 Jun 2019 10:29:38 +0000
+ id 1hfiho-0005TL-5H; Tue, 25 Jun 2019 10:29:40 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: Larry Finger <Larry.Finger@lwfinger.net>, Kalle Valo <kvalo@codeaurora.org>
-Subject: [PATCH 1/4] b43legacy: remove b43legacy_dma_set_mask
-Date: Tue, 25 Jun 2019 12:29:29 +0200
-Message-Id: <20190625102932.32257-2-hch@lst.de>
+Subject: [PATCH 2/4] b43legacy: simplify engine type / DMA mask selection
+Date: Tue, 25 Jun 2019 12:29:30 +0200
+Message-Id: <20190625102932.32257-3-hch@lst.de>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190625102932.32257-1-hch@lst.de>
 References: <20190625102932.32257-1-hch@lst.de>
@@ -49,69 +49,59 @@ Content-Transfer-Encoding: 7bit
 Sender: "b43-dev" <b43-dev-bounces@lists.infradead.org>
 Errors-To: b43-dev-bounces+lists+b43-dev=lfdr.de@lists.infradead.org
 
-These days drivers are not required to fallback to smaller DMA masks,
-but can just set the largest mask they support, removing the need for
-this trial and error logic.
+Return the engine type from the function looking at the registers, and
+just derive the DMA mask from that in the one place we care.
 
 Signed-off-by: Christoph Hellwig <hch@lst.de>
 ---
- drivers/net/wireless/broadcom/b43legacy/dma.c | 39 +------------------
- 1 file changed, 1 insertion(+), 38 deletions(-)
+ drivers/net/wireless/broadcom/b43legacy/dma.c | 20 +++----------------
+ 1 file changed, 3 insertions(+), 17 deletions(-)
 
 diff --git a/drivers/net/wireless/broadcom/b43legacy/dma.c b/drivers/net/wireless/broadcom/b43legacy/dma.c
-index 2ce1537d983c..0c2de20622e3 100644
+index 0c2de20622e3..e66d05ae2466 100644
 --- a/drivers/net/wireless/broadcom/b43legacy/dma.c
 +++ b/drivers/net/wireless/broadcom/b43legacy/dma.c
-@@ -797,43 +797,6 @@ void b43legacy_dma_free(struct b43legacy_wldev *dev)
- 	dma->tx_ring0 = NULL;
+@@ -616,7 +616,7 @@ static void free_all_descbuffers(struct b43legacy_dmaring *ring)
+ 	}
  }
  
--static int b43legacy_dma_set_mask(struct b43legacy_wldev *dev, u64 mask)
--{
--	u64 orig_mask = mask;
--	bool fallback = false;
--	int err;
+-static u64 supported_dma_mask(struct b43legacy_wldev *dev)
++static enum b43legacy_dmatype b43legacy_engine_type(struct b43legacy_wldev *dev)
+ {
+ 	u32 tmp;
+ 	u16 mmio_base;
+@@ -628,18 +628,7 @@ static u64 supported_dma_mask(struct b43legacy_wldev *dev)
+ 	tmp = b43legacy_read32(dev, mmio_base +
+ 			       B43legacy_DMA32_TXCTL);
+ 	if (tmp & B43legacy_DMA32_TXADDREXT_MASK)
+-		return DMA_BIT_MASK(32);
 -
--	/* Try to set the DMA mask. If it fails, try falling back to a
--	 * lower mask, as we can always also support a lower one. */
--	while (1) {
--		err = dma_set_mask_and_coherent(dev->dev->dma_dev, mask);
--		if (!err)
--			break;
--		if (mask == DMA_BIT_MASK(64)) {
--			mask = DMA_BIT_MASK(32);
--			fallback = true;
--			continue;
--		}
--		if (mask == DMA_BIT_MASK(32)) {
--			mask = DMA_BIT_MASK(30);
--			fallback = true;
--			continue;
--		}
--		b43legacyerr(dev->wl, "The machine/kernel does not support "
--		       "the required %u-bit DMA mask\n",
--		       (unsigned int)dma_mask_to_engine_type(orig_mask));
--		return -EOPNOTSUPP;
--	}
--	if (fallback) {
--		b43legacyinfo(dev->wl, "DMA mask fallback from %u-bit to %u-"
--			"bit\n",
--			(unsigned int)dma_mask_to_engine_type(orig_mask),
--			(unsigned int)dma_mask_to_engine_type(mask));
--	}
--
--	return 0;
+-	return DMA_BIT_MASK(30);
 -}
 -
- int b43legacy_dma_init(struct b43legacy_wldev *dev)
+-static enum b43legacy_dmatype dma_mask_to_engine_type(u64 dmamask)
+-{
+-	if (dmamask == DMA_BIT_MASK(30))
+-		return B43legacy_DMA_30BIT;
+-	if (dmamask == DMA_BIT_MASK(32))
+ 		return B43legacy_DMA_32BIT;
+-	B43legacy_WARN_ON(1);
+ 	return B43legacy_DMA_30BIT;
+ }
+ 
+@@ -801,13 +790,10 @@ int b43legacy_dma_init(struct b43legacy_wldev *dev)
  {
  	struct b43legacy_dma *dma = &dev->dma;
-@@ -844,7 +807,7 @@ int b43legacy_dma_init(struct b43legacy_wldev *dev)
+ 	struct b43legacy_dmaring *ring;
++	enum b43legacy_dmatype type = b43legacy_engine_type(dev);
+ 	int err;
+-	u64 dmamask;
+-	enum b43legacy_dmatype type;
  
- 	dmamask = supported_dma_mask(dev);
- 	type = dma_mask_to_engine_type(dmamask);
--	err = b43legacy_dma_set_mask(dev, dmamask);
-+	err = dma_set_mask_and_coherent(dev->dev->dma_dev, dmamask);
+-	dmamask = supported_dma_mask(dev);
+-	type = dma_mask_to_engine_type(dmamask);
+-	err = dma_set_mask_and_coherent(dev->dev->dma_dev, dmamask);
++	err = dma_set_mask_and_coherent(dev->dev->dma_dev, DMA_BIT_MASK(type));
  	if (err) {
  #ifdef CONFIG_B43LEGACY_PIO
  		b43legacywarn(dev->wl, "DMA for this device not supported. "
