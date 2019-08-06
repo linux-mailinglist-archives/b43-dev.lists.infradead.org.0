@@ -2,52 +2,90 @@ Return-Path: <b43-dev-bounces+lists+b43-dev=lfdr.de@lists.infradead.org>
 X-Original-To: lists+b43-dev@lfdr.de
 Delivered-To: lists+b43-dev@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BE4C57F649
-	for <lists+b43-dev@lfdr.de>; Fri,  2 Aug 2019 13:59:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8E48D831AB
+	for <lists+b43-dev@lfdr.de>; Tue,  6 Aug 2019 14:44:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=ebahLpVGuzbZWdX/1obPPKBXvw1d1LuVk6NgQcaF6O8=; b=LC+HqeZ4RC6JJ1
-	cvdU7obIjLvLgkivbKr3EpbrWz6IHnLMQIlFl7+ticPedH2Dgyz9XZtg8B5gF9qiKTOszSddNC8YH
-	D6Vp1tb5qtokHW/YB35Ew6kLtFVpEiixH4Mq5kp/qGOIPXfFj+zRafsKiLzl4RX4bqkTzXesua0sf
-	CQ4b8miOvGpHR5TOOVg6rSLxB+2IuNLpOIUQO9iVeodvdZNhc3BOXueu4HKEZKdheDpD8zmp1tsmw
-	Lo74MvTYSRPK2eZbbW5Xy/8kI4wtTTM2R42txwJe0F0d2VdIQfr+6eo426s9sZWUbggonYu/Q7coq
-	KFeWEZ/ioK87E6eIG8pA==;
+	List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:To:References:
+	In-Reply-To:From:Subject:MIME-Version:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=iKb3Na/9QzqOy7QswmfA9RgDzUnc27g1tiJbywEbVmo=; b=FOxcDzsLbd6rFb
+	9ctAUSGqPg0JDVNEKXha3PztztdL4UfqS/rP521V/WVyZlnh+60ZGIjeql+Zu8FV0sP0LZ55N22cV
+	6rOfrPVqOXxaMGVgw8qU3sJrGSEyTGwqEbbMco8desysVtCyBC61n8GnTG4ToNxIvwYYD/e0V5jZu
+	hKuQNozWJ0HnRX9C4/FdQjspOjGfXQ+QGop0AmFwf17RfI0r1Ecu4hsaY+Ms7q3SR53wNi6LefB5X
+	IyZRozkE2kF2U7puCMWt4mlD/C71ZhPQX+gu6iew1+68fl0iqW54/ErYzdQ9Afr2aqLOrM5kNIWvU
+	SD/20Mj8zr/QdrnTZP5Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1htWD3-0005mJ-Bq; Fri, 02 Aug 2019 11:58:57 +0000
-Received: from galois.linutronix.de ([2a0a:51c0:0:12e:550::1])
+	id 1huyp8-000692-Ol; Tue, 06 Aug 2019 12:44:19 +0000
+Received: from smtp.codeaurora.org ([198.145.29.96])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1htWCy-0005lC-Fn
- for b43-dev@lists.infradead.org; Fri, 02 Aug 2019 11:58:54 +0000
-Received: from [5.158.153.52] (helo=nanos.tec.linutronix.de)
- by Galois.linutronix.de with esmtpsa (TLS1.2:DHE_RSA_AES_256_CBC_SHA256:256)
- (Exim 4.80) (envelope-from <tglx@linutronix.de>)
- id 1htWCm-0005a2-Oa; Fri, 02 Aug 2019 13:58:40 +0200
-Date: Fri, 2 Aug 2019 13:58:40 +0200 (CEST)
-From: Thomas Gleixner <tglx@linutronix.de>
-To: linux-wireless@vger.kernel.org
-Subject: [PATCH V2] b43legacy: Remove pointless cond_resched() wrapper
-Message-ID: <alpine.DEB.2.21.1908021353190.3924@nanos.tec.linutronix.de>
-User-Agent: Alpine 2.21 (DEB 202 2017-01-01)
+ id 1huyoz-00066I-2x
+ for b43-dev@lists.infradead.org; Tue, 06 Aug 2019 12:44:10 +0000
+Received: by smtp.codeaurora.org (Postfix, from userid 1000)
+ id B793C609CD; Tue,  6 Aug 2019 12:44:08 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
+ s=default; t=1565095448;
+ bh=HAu7TsW0Iie3+5DrXvxcWN8iTVu6QAEL2sslX8UhT5k=;
+ h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
+ b=lo8RqwlQE5Xi0nIj0VPa0UZ39EZ7qOVHWA4qL+17ZIPV1oi0tasFEzwjKhAVr9W7P
+ AG9dsCg3IgIHL6rHGAwfXvdeb5zl01aSrEQIT0FP/jh0M3UGMn4efvjXoqdAfpAYQt
+ JCUurAAd7ArIuFYWypYT2GzIaNQ6d73JrmziUF1c=
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ pdx-caf-mail.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-0.8 required=2.0 tests=ALL_TRUSTED,BAYES_00,
+ DKIM_INVALID,DKIM_SIGNED,MISSING_DATE,MISSING_MID,SPF_NONE autolearn=no
+ autolearn_force=no version=3.4.0
+Received: from potku.adurom.net (88-114-240-156.elisa-laajakaista.fi
+ [88.114.240.156])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ (Authenticated sender: kvalo@smtp.codeaurora.org)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id 3EDB960867;
+ Tue,  6 Aug 2019 12:44:07 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
+ s=default; t=1565095448;
+ bh=HAu7TsW0Iie3+5DrXvxcWN8iTVu6QAEL2sslX8UhT5k=;
+ h=Subject:From:In-Reply-To:References:To:Cc:From;
+ b=RGc2qDdndYOY+tJhAqFvfznPJbOUNFNJLTIZtdJTACWHYqLt5heBo8w2IDXYmogtZ
+ ibyCZrRLFye6jgs4SmRc+JJANJa3UFjI9WHDYJSvrSydrjfrXc5nEqubhN3V0Z4dZB
+ XP1L/YwCUcHLqvAzcfurviqNbZP4JdTD1rZ9eHFs=
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 3EDB960867
+Authentication-Results: pdx-caf-mail.web.codeaurora.org;
+ dmarc=none (p=none dis=none) header.from=codeaurora.org
+Authentication-Results: pdx-caf-mail.web.codeaurora.org;
+ spf=none smtp.mailfrom=kvalo@codeaurora.org
 MIME-Version: 1.0
+Subject: Re: [PATCH V2] b43legacy: Remove pointless cond_resched() wrapper
+From: Kalle Valo <kvalo@codeaurora.org>
+In-Reply-To: <alpine.DEB.2.21.1908021353190.3924@nanos.tec.linutronix.de>
+References: <alpine.DEB.2.21.1908021353190.3924@nanos.tec.linutronix.de>
+To: Thomas Gleixner <tglx@linutronix.de>
+User-Agent: pwcli/0.0.0-git (https://github.com/kvalo/pwcli/) Python/2.7.12
+Message-Id: <20190806124408.B793C609CD@smtp.codeaurora.org>
+Date: Tue,  6 Aug 2019 12:44:08 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190802_045852_849013_E8A3110C 
-X-CRM114-Status: UNSURE (   8.66  )
+X-CRM114-CacheID: sfid-20190806_054409_226548_6B16D850 
+X-CRM114-Status: UNSURE (   8.39  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2a0a:51c0:0:12e:550:0:0:1 listed in]
- [list.dnswl.org]
+ medium trust [198.145.29.96 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: b43-dev@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,95 +97,36 @@ List-Post: <mailto:b43-dev@lists.infradead.org>
 List-Help: <mailto:b43-dev-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/b43-dev>,
  <mailto:b43-dev-request@lists.infradead.org?subject=subscribe>
-Cc: b43-dev@lists.infradead.org, Kalle Valo <kvalo@codeaurora.org>,
+Cc: linux-wireless@vger.kernel.org, b43-dev@lists.infradead.org,
  Larry Finger <Larry.Finger@lwfinger.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "b43-dev" <b43-dev-bounces@lists.infradead.org>
 Errors-To: b43-dev-bounces+lists+b43-dev=lfdr.de@lists.infradead.org
 
-cond_resched() can be used unconditionally. If CONFIG_PREEMPT is set, it
-becomes a NOP scheduler wise.
+Thomas Gleixner <tglx@linutronix.de> wrote:
 
-Also the B43_BUG_ON() in that wrapper is a homebrewn variant of
-__might_sleep() which is part of cond_resched() already.
+> cond_resched() can be used unconditionally. If CONFIG_PREEMPT is set, it
+> becomes a NOP scheduler wise.
+> 
+> Also the B43_BUG_ON() in that wrapper is a homebrewn variant of
+> __might_sleep() which is part of cond_resched() already.
+> 
+> Remove the cruft and invoke cond_resched() directly.
+> 
+> Signed-off-by: Thomas Gleixner <tglx@linutronix.de>
+> Reviewed-by: Larry Finger <Larry.Finger@lwfinger.net>
+> Tested-by: Larry Finger <Larry.Finger@lwfinger.net>
 
-Remove the cruft and invoke cond_resched() directly.
+Patch applied to wireless-drivers-next.git, thanks.
 
-Signed-off-by: Thomas Gleixner <tglx@linutronix.de>
-Reviewed-by: Larry Finger <Larry.Finger@lwfinger.net>
-Tested-by: Larry Finger <Larry.Finger@lwfinger.net>
----
-V2: Resend to wireless. Picked up Larry's tags
----
- drivers/net/wireless/broadcom/b43legacy/phy.c |   21 +++++----------------
- 1 file changed, 5 insertions(+), 16 deletions(-)
+6004cf298a41 b43legacy: Remove pointless cond_resched() wrapper
 
---- a/drivers/net/wireless/broadcom/b43legacy/phy.c
-+++ b/drivers/net/wireless/broadcom/b43legacy/phy.c
-@@ -69,17 +69,6 @@ static const s8 b43legacy_tssi2dbm_g_tab
- 
- static void b43legacy_phy_initg(struct b43legacy_wldev *dev);
- 
--
--static inline
--void b43legacy_voluntary_preempt(void)
--{
--	B43legacy_BUG_ON(!(!in_atomic() && !in_irq() &&
--			  !in_interrupt() && !irqs_disabled()));
--#ifndef CONFIG_PREEMPT
--	cond_resched();
--#endif /* CONFIG_PREEMPT */
--}
--
- /* Lock the PHY registers against concurrent access from the microcode.
-  * This lock is nonrecursive. */
- void b43legacy_phy_lock(struct b43legacy_wldev *dev)
-@@ -1124,7 +1113,7 @@ static u16 b43legacy_phy_lo_b_r15_loop(s
- 		ret += b43legacy_phy_read(dev, 0x002C);
- 	}
- 	local_irq_restore(flags);
--	b43legacy_voluntary_preempt();
-+	cond_resched();
- 
- 	return ret;
- }
-@@ -1253,7 +1242,7 @@ u16 b43legacy_phy_lo_g_deviation_subval(
- 	}
- 	ret = b43legacy_phy_read(dev, 0x002D);
- 	local_irq_restore(flags);
--	b43legacy_voluntary_preempt();
-+	cond_resched();
- 
- 	return ret;
- }
-@@ -1591,7 +1580,7 @@ void b43legacy_phy_lo_g_measure(struct b
- 			b43legacy_radio_write16(dev, 0x43, i);
- 			b43legacy_radio_write16(dev, 0x52, phy->txctl2);
- 			udelay(10);
--			b43legacy_voluntary_preempt();
-+			cond_resched();
- 
- 			b43legacy_phy_set_baseband_attenuation(dev, j * 2);
- 
-@@ -1642,7 +1631,7 @@ void b43legacy_phy_lo_g_measure(struct b
- 					      phy->txctl2
- 					      | (3/*txctl1*/ << 4));
- 			udelay(10);
--			b43legacy_voluntary_preempt();
-+			cond_resched();
- 
- 			b43legacy_phy_set_baseband_attenuation(dev, j * 2);
- 
-@@ -1665,7 +1654,7 @@ void b43legacy_phy_lo_g_measure(struct b
- 		b43legacy_phy_write(dev, 0x0812, (r27 << 8) | 0xA2);
- 		udelay(2);
- 		b43legacy_phy_write(dev, 0x0812, (r27 << 8) | 0xA3);
--		b43legacy_voluntary_preempt();
-+		cond_resched();
- 	} else
- 		b43legacy_phy_write(dev, 0x0015, r27 | 0xEFA0);
- 	b43legacy_phy_lo_adjust(dev, is_initializing);
+-- 
+https://patchwork.kernel.org/patch/11073225/
+
+https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
+
 
 _______________________________________________
 b43-dev mailing list
