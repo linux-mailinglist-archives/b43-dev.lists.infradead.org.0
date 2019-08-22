@@ -2,90 +2,59 @@ Return-Path: <b43-dev-bounces+lists+b43-dev=lfdr.de@lists.infradead.org>
 X-Original-To: lists+b43-dev@lfdr.de
 Delivered-To: lists+b43-dev@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8E48D831AB
-	for <lists+b43-dev@lfdr.de>; Tue,  6 Aug 2019 14:44:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B80F198CA2
+	for <lists+b43-dev@lfdr.de>; Thu, 22 Aug 2019 09:51:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:To:References:
-	In-Reply-To:From:Subject:MIME-Version:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iKb3Na/9QzqOy7QswmfA9RgDzUnc27g1tiJbywEbVmo=; b=FOxcDzsLbd6rFb
-	9ctAUSGqPg0JDVNEKXha3PztztdL4UfqS/rP521V/WVyZlnh+60ZGIjeql+Zu8FV0sP0LZ55N22cV
-	6rOfrPVqOXxaMGVgw8qU3sJrGSEyTGwqEbbMco8desysVtCyBC61n8GnTG4ToNxIvwYYD/e0V5jZu
-	hKuQNozWJ0HnRX9C4/FdQjspOjGfXQ+QGop0AmFwf17RfI0r1Ecu4hsaY+Ms7q3SR53wNi6LefB5X
-	IyZRozkE2kF2U7puCMWt4mlD/C71ZhPQX+gu6iew1+68fl0iqW54/ErYzdQ9Afr2aqLOrM5kNIWvU
-	SD/20Mj8zr/QdrnTZP5Q==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Subject:To:From:Date:
+	Message-ID:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From
+	:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=uBfJHtnCY8mJKlcknVgoLXdUqV4iw+I1A20hwZQEAOA=; b=Wb/N7bM9Ob63Kx
+	riP7GLcw/s/vdiA4Xa46gE6vqdTkTrZmTyEBEyIsvlpQdyrkYBunCbkTad7DrvquFnKdcYNmnpYu0
+	bIi8n50QoLA1chPjHLKLVsu+EhTGXdbU351LuEy8EnD1X5ON15gu6SVr8BK5kcupJHWtJHCn9BEBZ
+	r8tATSrrftIqmuvIoDGcJVkG49TVuTTLnYAnSpLvKChv7pzCjd/k+RACtPPpAOemyf4Hes7rVVAr+
+	po1wFFe7/asHuZQCB/BGJYrGrtbt3SH0gw2Hk9NQvVTAjgLptz1rWEY9vRwmvJaRLfx+bqjfeLgtb
+	9k2kLmMmQhjQXq5iwwww==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1huyp8-000692-Ol; Tue, 06 Aug 2019 12:44:19 +0000
-Received: from smtp.codeaurora.org ([198.145.29.96])
+	id 1i0hsb-0006ID-Qr; Thu, 22 Aug 2019 07:51:33 +0000
+Received: from mail.automatics-control.eu ([80.211.144.215])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1huyoz-00066I-2x
- for b43-dev@lists.infradead.org; Tue, 06 Aug 2019 12:44:10 +0000
-Received: by smtp.codeaurora.org (Postfix, from userid 1000)
- id B793C609CD; Tue,  6 Aug 2019 12:44:08 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
- s=default; t=1565095448;
- bh=HAu7TsW0Iie3+5DrXvxcWN8iTVu6QAEL2sslX8UhT5k=;
- h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
- b=lo8RqwlQE5Xi0nIj0VPa0UZ39EZ7qOVHWA4qL+17ZIPV1oi0tasFEzwjKhAVr9W7P
- AG9dsCg3IgIHL6rHGAwfXvdeb5zl01aSrEQIT0FP/jh0M3UGMn4efvjXoqdAfpAYQt
- JCUurAAd7ArIuFYWypYT2GzIaNQ6d73JrmziUF1c=
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- pdx-caf-mail.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-0.8 required=2.0 tests=ALL_TRUSTED,BAYES_00,
- DKIM_INVALID,DKIM_SIGNED,MISSING_DATE,MISSING_MID,SPF_NONE autolearn=no
- autolearn_force=no version=3.4.0
-Received: from potku.adurom.net (88-114-240-156.elisa-laajakaista.fi
- [88.114.240.156])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- (Authenticated sender: kvalo@smtp.codeaurora.org)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id 3EDB960867;
- Tue,  6 Aug 2019 12:44:07 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
- s=default; t=1565095448;
- bh=HAu7TsW0Iie3+5DrXvxcWN8iTVu6QAEL2sslX8UhT5k=;
- h=Subject:From:In-Reply-To:References:To:Cc:From;
- b=RGc2qDdndYOY+tJhAqFvfznPJbOUNFNJLTIZtdJTACWHYqLt5heBo8w2IDXYmogtZ
- ibyCZrRLFye6jgs4SmRc+JJANJa3UFjI9WHDYJSvrSydrjfrXc5nEqubhN3V0Z4dZB
- XP1L/YwCUcHLqvAzcfurviqNbZP4JdTD1rZ9eHFs=
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 3EDB960867
-Authentication-Results: pdx-caf-mail.web.codeaurora.org;
- dmarc=none (p=none dis=none) header.from=codeaurora.org
-Authentication-Results: pdx-caf-mail.web.codeaurora.org;
- spf=none smtp.mailfrom=kvalo@codeaurora.org
+ id 1i0hsR-0006Gy-By
+ for b43-dev@lists.infradead.org; Thu, 22 Aug 2019 07:51:24 +0000
+Received: by mail.automatics-control.eu (Postfix, from userid 1001)
+ id D338BA160C; Thu, 22 Aug 2019 09:51:08 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple;
+ d=automatics-control.eu; s=mail; t=1566460276;
+ bh=NjLcrs3cCMbbo+n0H6fjGJqdIYCaDUtkMzaQjEdJoS8=;
+ h=Date:From:To:Subject:From;
+ b=Fpb55DEL1wKJbN8wDjm/DSKLG+C8/MFqCip8RSx1y6sZr7sgA8aoQF/Y972kEMl0U
+ TIFa2eU6tgtLzoIA8/0Fz3k0KQJiNxwdmNZFgJuchaSeRL09G/R7AtfSFQkz+mBSpi
+ ayLiqN4vpC4S70uOaySgfk5jTA6Zs15pZbqqfZwY=
+Received: by mail.automatics-control.eu for <b43-dev@lists.infradead.org>;
+ Thu, 22 Aug 2019 07:51:05 GMT
+Message-ID: <20190822084500-0.1.o.2lbx.0.ddcg91dqcq@automatics-control.eu>
+Date: Thu, 22 Aug 2019 07:51:05 GMT
+From: "Kamil Adamec" <kamil.adamec@automatics-control.eu>
+To: <b43-dev@lists.infradead.org>
+Subject: =?UTF-8?Q?Dodate=C4=8Dn=C3=A9_zdroje?=
+X-Mailer: mail.automatics-control.eu
 MIME-Version: 1.0
-Subject: Re: [PATCH V2] b43legacy: Remove pointless cond_resched() wrapper
-From: Kalle Valo <kvalo@codeaurora.org>
-In-Reply-To: <alpine.DEB.2.21.1908021353190.3924@nanos.tec.linutronix.de>
-References: <alpine.DEB.2.21.1908021353190.3924@nanos.tec.linutronix.de>
-To: Thomas Gleixner <tglx@linutronix.de>
-User-Agent: pwcli/0.0.0-git (https://github.com/kvalo/pwcli/) Python/2.7.12
-Message-Id: <20190806124408.B793C609CD@smtp.codeaurora.org>
-Date: Tue,  6 Aug 2019 12:44:08 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190806_054409_226548_6B16D850 
-X-CRM114-Status: UNSURE (   8.39  )
+X-CRM114-CacheID: sfid-20190822_005123_607156_8B5803C9 
+X-CRM114-Status: UNSURE (   1.22  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.5 (--)
+X-Spam-Score: 1.1 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (1.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.145.29.96 listed in list.dnswl.org]
+ 0.9 SPF_HELO_SOFTFAIL      SPF: HELO does not match SPF record (softfail)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.1 DKIM_INVALID           DKIM or DK signature exists, but is not valid
 X-BeenThere: b43-dev@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,38 +66,24 @@ List-Post: <mailto:b43-dev@lists.infradead.org>
 List-Help: <mailto:b43-dev-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/b43-dev>,
  <mailto:b43-dev-request@lists.infradead.org?subject=subscribe>
-Cc: linux-wireless@vger.kernel.org, b43-dev@lists.infradead.org,
- Larry Finger <Larry.Finger@lwfinger.net>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "b43-dev" <b43-dev-bounces@lists.infradead.org>
 Errors-To: b43-dev-bounces+lists+b43-dev=lfdr.de@lists.infradead.org
 
-Thomas Gleixner <tglx@linutronix.de> wrote:
-
-> cond_resched() can be used unconditionally. If CONFIG_PREEMPT is set, it
-> becomes a NOP scheduler wise.
-> 
-> Also the B43_BUG_ON() in that wrapper is a homebrewn variant of
-> __might_sleep() which is part of cond_resched() already.
-> 
-> Remove the cruft and invoke cond_resched() directly.
-> 
-> Signed-off-by: Thomas Gleixner <tglx@linutronix.de>
-> Reviewed-by: Larry Finger <Larry.Finger@lwfinger.net>
-> Tested-by: Larry Finger <Larry.Finger@lwfinger.net>
-
-Patch applied to wireless-drivers-next.git, thanks.
-
-6004cf298a41 b43legacy: Remove pointless cond_resched() wrapper
-
--- 
-https://patchwork.kernel.org/patch/11073225/
-
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
-
-
-_______________________________________________
-b43-dev mailing list
-b43-dev@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/b43-dev
+RG9icsO9IGRlbiEKCsW9aXZub3N0bsOta8WvbSDEjWFzdG8gc3RvasOtIHYgY2VzdMSbIGsgZG9z
+YcW+ZW7DrSDDunNwxJtjaHUgbsOtemvDoSDDunJvdmXFiCBwcm92b3puw61jaCB6ZHJvasWvIG5h
+IG7DoWt1cCBtYXRlcmnDoWx1LCB6Ym/FvsOtIG5lYm8gc3Vyb3ZpbiB6IGTFr3ZvZHUgbmFwxZku
+IG5lemFwbGFjZW7DrSBmYWt0dXIgKG5lemFwbGFjZW7DrSBvZCBkb2RhdmF0ZWzFrywgcHJvZGxv
+dcW+ZW7DoSBzcGxhdG5vc3QgYXBvZC4pLiBWIHTDqXRvIG9ibGFzdGkganNtZSBqacW+IHBvbW9o
+bGkgxZlhZMSbIGZpcmVtLCBrdGVyw6kgbW9obHkgZMOta3kgesOtc2vDoW7DrSBuw6F2cmF0bsOp
+aG8gZmluYW5jb3bDoW7DrSByZWFsaXpvdmF0IHN2w6kga2zDrcSNb3bDqSBwbMOhbnkuCgpKc2Vt
+IHBhcnRuZXJlbSBtbm9oYSBzcG9sZcSNbm9zdMOtLCBqZWppY2jFviDEjWlubm9zdCBqZSBzcm92
+bmF0ZWxuw6EgcyB0b3UgVmHFocOtIGEgemEga29vcGVyYWNpIHMgbsOhbWkgesOtc2vDoXRlIGJv
+bnVzIC0gcnljaGzDqSBzcGxhY2Vuw60gdmUgdsO9xaFpIGHFviA0IHNwbMOhdGVrLgoKRG92b2x0
+ZSwgYWJ5Y2hvbSBWw6FzIGtvbnRha3RvdmFsaSB6YSDDusSNZWxlbSBwcm92ZWRlbsOtIGFuYWzD
+vXp5IG1vxb5ub3N0w60gcG9tb2NpIGZpbmFuY292w6Fuw60uIEtkeSBieWNoIG1vaGwgemF2b2xh
+dD8KCgpTIHBvemRyYXZlbQpLYW1pbCBBZGFtZWMKQWNjb3VudCBNYW5hZ2VyCnd3dy5hdXRvbWF0
+aWNzLWNvbnRyb2wuZXUKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fCmI0My1kZXYgbWFpbGluZyBsaXN0CmI0My1kZXZAbGlzdHMuaW5mcmFkZWFkLm9yZwpo
+dHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2I0My1kZXYK
