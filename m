@@ -2,93 +2,87 @@ Return-Path: <b43-dev-bounces+lists+b43-dev=lfdr.de@lists.infradead.org>
 X-Original-To: lists+b43-dev@lfdr.de
 Delivered-To: lists+b43-dev@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 77B1BE790B
-	for <lists+b43-dev@lfdr.de>; Mon, 28 Oct 2019 20:13:26 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 15D6BE832D
+	for <lists+b43-dev@lfdr.de>; Tue, 29 Oct 2019 09:25:04 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=yS/ecOebN2hjJ0zJChLw/m/4GKaYCiK6/LJTuOZdIuc=; b=bvYh0a67mM6ZDf
-	eXPQcqkD+9rm0z1Z1uXoHlalSMakPY/c/BK80ecjoEBEgBdc10Z21szmYGeT2M47bQM8Rwft8xP8H
-	9WN2GLoTB7OmIB+Qve3wbe9snOznyT+D4d3Plpq8Omad2v7Hj8N9oZziH3LGQaGwgmfcb+AzsPtDd
-	fZ5l2qFCmXnn3o0Ocp8u/wX17cZ9qLKdj899UVQIhDh4At9AD2o+fNP4J5h3JKqtI6ex0JCeN327+
-	iT5Wm++d2PT/TnBksFd13JW+fZuUig8IM7fnbdSfeT5rfN3/9J4X36YXrUq7IrmcsuuyMljMNpw3a
-	K8Vxxc6LRaZ/mBv76h7Q==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=AQeMp6w7rxD/MR+zlaGr49BFVh2U8VxNIRuqxlsQW/I=; b=kkBRz1ouXQYeW6
+	zWuCMUElzlbEsE6XkziwNHwAmVmuI1qMUYdhzbS5vbstZznjrpdKnhLS43MoUcz4V+HSIrM0ygWW1
+	5CRpqc6oaTinvhMDNGRmyiemVsCVDwdQCN8hDHgLBUgjT8OYz/bbesoLQdbkX5WfM2LmNlQ3yOLd9
+	xFJvNgDAlodBE7JCgRAPvaLUb4jmBI+EGaSBSWdqw+C5B+xTbg1treahjCENtTy24kE9jkDVkTbVt
+	hHirkn+dZq2Lcp7MQK39N3bYsgWpTctvrIo8sqFWSGfdbaZc8pNxgh9byskk5BtD4CBsPtgTteysV
+	xgsD706tw7eOe2AuPfUg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iPAS0-00044U-Oy; Mon, 28 Oct 2019 19:13:12 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1iPMnr-0002Mf-Ee; Tue, 29 Oct 2019 08:24:35 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iPARw-000447-QJ
- for b43-dev@lists.infradead.org; Mon, 28 Oct 2019 19:13:10 +0000
-Received: by mail-pg1-x544.google.com with SMTP id u23so7567807pgo.0
- for <b43-dev@lists.infradead.org>; Mon, 28 Oct 2019 12:13:08 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:mime-version:content-disposition
- :user-agent; bh=CgcQlM5VLCXCNyfNxz6Q2XQFojiEUKbWR1CtYMYCie4=;
- b=lyIFkDoJnC8Z2LPIiCcX8Bm2LQhPW6iHZwPkIMIw2QreWTRQEJl6ElcuwvsbfIt2Pl
- Z7f0YvEoJRXe/VPB8s6EQqeBGIWdGfkld2NHRHJ35uk/F8OaAAW47Ps/Av5eazEjD+An
- 6PH96HiDTsF0HlU5rF8xcDcHbdTpTFB+3m65AL5Lh5RAd0K8QevBCFdbqIQnXT9WgPw0
- x7LJmC1ypRWJME7QYAb2+PaasAqEki0J9ymj50ePWkgzRlNg7YLE3e0lH8BJUCXYXWTI
- Lqt5JC/Jj0sSrPSIpG3Di+2FMNRyiBj+G8i9TTQfQUIZwfm0sNgkULJKQD7+8Pq8Yzew
- mmmQ==
+ id 1iPMno-0002Ly-3r
+ for b43-dev@lists.infradead.org; Tue, 29 Oct 2019 08:24:33 +0000
+Received: by mail-wm1-x344.google.com with SMTP id n7so1506794wmc.3
+ for <b43-dev@lists.infradead.org>; Tue, 29 Oct 2019 01:24:30 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=netronome-com.20150623.gappssmtp.com; s=20150623;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=mlvWUHz6b/I7z2o6G925iPKfRblwtc3ymYLiU24jl8Y=;
+ b=znJoO/4IcDqIxbCVMPW+19bVBXc9sqwbd7aZWWqNPGo3LmGX2CLxOoCeZeP0nLObqa
+ u06zZhdIVgYt/u9fE7Pkq+FDbWGt50hkMi2TDCNCORd3PbP65XA91VNNkPbGOj0ikZsn
+ GNN37Kh92uMv8OLqpIBnEvbYuwP2nwQWx2bRbZqAJ/0vvxY7Yjq6JgcqOjOkJJJVcwwp
+ JJS8wD97kwyOzxa0glC5AMUiRsyfFOYUkA3o5QzEhp/rWxlv7P+uOFP2Lnxe+7oCcv9p
+ I6q9un3AtibUNcLt/LGVA/DCuybUP6j1NJQnJ9t51hMRUcgU/MIFCYiEDgpMHgslO9Ul
+ /HNQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:mime-version
- :content-disposition:user-agent;
- bh=CgcQlM5VLCXCNyfNxz6Q2XQFojiEUKbWR1CtYMYCie4=;
- b=VCre0rjiIoxoEjQLf9A8CUd0pOrwaWDHy8Kp1ckiT9xXwrlZnhsAahqU5AZh0dlU0f
- CR216G/iEr1rSUMnUWA+eikWbgiq5YkP4eAM1TBdYZmWNVTOgpujFNX8j7KvbGbh9OGj
- pn3zP68XGXZKK6P9QUr2RoFAyK9WA/HZUX8K6p1DajMIz+kq4eDZOYqKyuqLAB43Fpn+
- ni1kuggr/Zwrg8Gp+ss/lPPbsboISj3tk3CczRkSiXO7xxx89SAcVBUU73lqam02N24T
- rUH+DmQo8V/WIW/8oSsYSYcfNbLD20lykR1iadCOJTAHTtvhfqYIbqbdpqzTV9NIajtH
- YZbA==
-X-Gm-Message-State: APjAAAXhJkHPyAG6YPHd9QktdqMnMgVP7w14XeAJJmNs//jm2qFmvQmd
- ZNk/mIpkop+oMRAcO2kK0ko=
-X-Google-Smtp-Source: APXvYqzgrcUnqmrda+MVYp4HuNS7YIINeAgPJFZJDnRCLKbsdypzwML326SsLcgem4CrN/TaVHcT+g==
-X-Received: by 2002:a17:90a:749:: with SMTP id
- s9mr1032746pje.135.1572289988287; 
- Mon, 28 Oct 2019 12:13:08 -0700 (PDT)
-Received: from saurav ([27.62.167.137])
- by smtp.gmail.com with ESMTPSA id t9sm275740pjq.21.2019.10.28.12.13.03
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=mlvWUHz6b/I7z2o6G925iPKfRblwtc3ymYLiU24jl8Y=;
+ b=N/Kse8hwGyrtgTpV6jvRQ26/lYFDdhQ5QemLkmPuduFKm1xWAVidLUvSRmS2rVmKSx
+ szzSyn88+zVODu3HZuj0T3nsiSJFVhVXhArACXAS62AhRkby03mLK5vmejUhxg5SshEJ
+ 29xYA5ysUlE9Fc0tylVybhu9WWX00oQsL8yX5N7qS4LhsCGax7dEszSmyantOn5CW2R7
+ 07qsMtFu2VvrCgcy8Rz2ZTNep6ELsI4rh20sVJis/RUTSsTIDXpb5u7/0oKKz4IT2K/b
+ O+EYNBB01XXLG6g0dlFT0PgpZ5Gl6EhNdKQ/ttVMETK4Sd/C7ha/D5IY+nOLsVLj/6bM
+ 4SiQ==
+X-Gm-Message-State: APjAAAUXuyTMUpLwSeqTH9G5stSynYxRQmrxzHJlKY4zASu8iaRzcG66
+ ees66XvrTLuhxyWCfy0CVC4gAQ==
+X-Google-Smtp-Source: APXvYqyaUuIZzfuyser7xEw58tuvIXgnZdKtOozf/OE2exXkKYqPqXT6Z0Ey71mdOmuLPrwcvaQymA==
+X-Received: by 2002:a7b:caa9:: with SMTP id r9mr2699781wml.47.1572337469034;
+ Tue, 29 Oct 2019 01:24:29 -0700 (PDT)
+Received: from netronome.com (fred-musen.rivierenbuurt.horms.nl.
+ [2001:470:7eb3:404:a2a4:c5ff:fe4c:9ce9])
+ by smtp.gmail.com with ESMTPSA id y5sm2001272wmi.10.2019.10.29.01.24.28
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 28 Oct 2019 12:13:07 -0700 (PDT)
-Date: Tue, 29 Oct 2019 00:42:59 +0530
-From: Saurav Girepunje <saurav.girepunje@gmail.com>
-To: kvalo@codeaurora.org, davem@davemloft.net, tglx@linutronix.de,
- saurav.girepunje@gmail.com, allison@lohutok.net, swinslow@gmail.com,
- mcgrof@kernel.org, linux-wireless@vger.kernel.org,
- b43-dev@lists.infradead.org, netdev@vger.kernel.org,
- linux-kernel@vger.kernel.org
-Subject: [PATCH] b43: Fix use true/false for bool type variable.
-Message-ID: <20191028191259.GA27369@saurav>
+ Tue, 29 Oct 2019 01:24:28 -0700 (PDT)
+Date: Tue, 29 Oct 2019 09:24:27 +0100
+From: Simon Horman <simon.horman@netronome.com>
+To: Saurav Girepunje <saurav.girepunje@gmail.com>
+Subject: Re: [PATCH] b43: Fix use true/false for bool type
+Message-ID: <20191029082427.GB23615@netronome.com>
+References: <20191028190204.GA27248@saurav>
 MIME-Version: 1.0
 Content-Disposition: inline
+In-Reply-To: <20191028190204.GA27248@saurav>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191028_121308_875088_270668DE 
-X-CRM114-Status: GOOD (  10.79  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20191029_012432_157532_6D65B531 
+X-CRM114-Status: GOOD (  16.65  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (saurav.girepunje[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: b43-dev@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,44 +94,69 @@ List-Post: <mailto:b43-dev@lists.infradead.org>
 List-Help: <mailto:b43-dev-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/b43-dev>,
  <mailto:b43-dev-request@lists.infradead.org?subject=subscribe>
-Cc: saurav.girepunje@hotmail.com
+Cc: netdev@vger.kernel.org, linux-wireless@vger.kernel.org,
+ linux-kernel@vger.kernel.org, baijiaju1990@gmail.com,
+ saurav.girepunje@hotmail.com, swinslow@gmail.com, opensource@jilayne.com,
+ tglx@linutronix.de, will@kernel.org, davem@davemloft.net, kvalo@codeaurora.org,
+ b43-dev@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "b43-dev" <b43-dev-bounces@lists.infradead.org>
 Errors-To: b43-dev-bounces+lists+b43-dev=lfdr.de@lists.infradead.org
 
-use true/false for bool type variables assignment.
+Hi Saurav,
 
-Signed-off-by: Saurav Girepunje <saurav.girepunje@gmail.com>
----
- drivers/net/wireless/broadcom/b43/dma.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+thanks for your patch.
 
-diff --git a/drivers/net/wireless/broadcom/b43/dma.c b/drivers/net/wireless/broadcom/b43/dma.c
-index 31bf71a80c26..9733c64bf978 100644
---- a/drivers/net/wireless/broadcom/b43/dma.c
-+++ b/drivers/net/wireless/broadcom/b43/dma.c
-@@ -1400,7 +1400,7 @@ int b43_dma_tx(struct b43_wldev *dev, struct sk_buff *skb)
- 		/* This TX ring is full. */
- 		unsigned int skb_mapping = skb_get_queue_mapping(skb);
- 		ieee80211_stop_queue(dev->wl->hw, skb_mapping);
--		dev->wl->tx_queue_stopped[skb_mapping] = 1;
-+		dev->wl->tx_queue_stopped[skb_mapping] = true;
- 		ring->stopped = true;
- 		if (b43_debug(dev, B43_DBG_DMAVERBOSE)) {
- 			b43dbg(dev->wl, "Stopped TX ring %d\n", ring->index);
-@@ -1566,7 +1566,7 @@ void b43_dma_handle_txstatus(struct b43_wldev *dev,
- 	}
- 
- 	if (dev->wl->tx_queue_stopped[ring->queue_prio]) {
--		dev->wl->tx_queue_stopped[ring->queue_prio] = 0;
-+		dev->wl->tx_queue_stopped[ring->queue_prio] = false;
- 	} else {
- 		/* If the driver queue is running wake the corresponding
- 		 * mac80211 queue. */
--- 
-2.20.1
+On Tue, Oct 29, 2019 at 12:32:04AM +0530, Saurav Girepunje wrote:
+> use true/false on bool type variable assignment.
+> 
+> Signed-off-by: Saurav Girepunje <saurav.girepunje@gmail.com>
 
+This does not seem to cover the case in dma.c,
+which seems to want fixing for the sake of consistency.
+
+Also, I wonder why bools rather than a bitmask was chosen
+for this field, it seems rather space intensive in its current form.
+
+> ---
+>  drivers/net/wireless/broadcom/b43/main.c | 6 +++---
+>  1 file changed, 3 insertions(+), 3 deletions(-)
+> 
+> diff --git a/drivers/net/wireless/broadcom/b43/main.c b/drivers/net/wireless/broadcom/b43/main.c
+> index b85603e91c7a..39da1a4c30ac 100644
+> --- a/drivers/net/wireless/broadcom/b43/main.c
+> +++ b/drivers/net/wireless/broadcom/b43/main.c
+> @@ -3600,7 +3600,7 @@ static void b43_tx_work(struct work_struct *work)
+>  			else
+>  				err = b43_dma_tx(dev, skb);
+>  			if (err == -ENOSPC) {
+> -				wl->tx_queue_stopped[queue_num] = 1;
+> +				wl->tx_queue_stopped[queue_num] = true;
+>  				ieee80211_stop_queue(wl->hw, queue_num);
+>  				skb_queue_head(&wl->tx_queue[queue_num], skb);
+>  				break;
+> @@ -3611,7 +3611,7 @@ static void b43_tx_work(struct work_struct *work)
+>  		}
+>  
+>  		if (!err)
+> -			wl->tx_queue_stopped[queue_num] = 0;
+> +			wl->tx_queue_stopped[queue_num] = false;
+>  	}
+>  
+>  #if B43_DEBUG
+> @@ -5603,7 +5603,7 @@ static struct b43_wl *b43_wireless_init(struct b43_bus_dev *dev)
+>  	/* Initialize queues and flags. */
+>  	for (queue_num = 0; queue_num < B43_QOS_QUEUE_NUM; queue_num++) {
+>  		skb_queue_head_init(&wl->tx_queue[queue_num]);
+> -		wl->tx_queue_stopped[queue_num] = 0;
+> +		wl->tx_queue_stopped[queue_num] = false;
+>  	}
+>  
+>  	snprintf(chip_name, ARRAY_SIZE(chip_name),
+> -- 
+> 2.20.1
+> 
 
 _______________________________________________
 b43-dev mailing list
