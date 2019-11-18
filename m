@@ -2,90 +2,71 @@ Return-Path: <b43-dev-bounces+lists+b43-dev=lfdr.de@lists.infradead.org>
 X-Original-To: lists+b43-dev@lfdr.de
 Delivered-To: lists+b43-dev@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DA82FEAB58
-	for <lists+b43-dev@lfdr.de>; Thu, 31 Oct 2019 09:08:47 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 02D36100F8A
+	for <lists+b43-dev@lfdr.de>; Tue, 19 Nov 2019 00:52:27 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:To:References:
-	In-Reply-To:From:Subject:MIME-Version:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iIUEe4gro7kInEmrMZuG/0AqxBCTwA5vCrc5p66bfNk=; b=Vdwz8sAfw9+xhI
-	wfvOL4wkpNSTTAJdTZbbZFrGc8bTsuKLLOUxtB6cK5c004fhjXrYfRedTVSjoZp0VP1zMvXMsCw7E
-	tzIplWXf4/FQcPVxY9nPJ7W+UwF/iIJW3cZky4lSeV9eVfn5UVPWZMHiPBiP5RzL1CN56ZSgNhCWh
-	ATlpm5t98ns+xgUJmi1NZjLQvwYMEvwfuHagwEgJMwd8GbzkpTdibIhajZIsDaugcUm9sUZRlqI75
-	nyX1FOr3UWeJUhQkNp1Ju4J6M2DqpoPzYr3clb9uKSrasvBXtSedR0u7O4or1oav2ICyVjaGY6loU
-	Zl46EkeMzuDgQbSGpqyQ==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	MIME-Version:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=0U1Hgy7ylG0hvmg28ggl904jjjD55wKhQCLK6m1X/5w=; b=pdb
+	q0OM69CF1WGVOt8T1VDoaB34562rs+2hIVdEILaWg+7xLD/o2sw8LgcVVulT/EcuGnkPGYTtdNM0S
+	8KsrGNKUJ3tf9rmOMDAlTXGzy+4/Ewo12JO8yAJMc81CwpHr2JCGRnwry7KYT90xmjRgcPYRu/reN
+	3vUIqA5CwHIkmaoMdAPmNdfYlcMF3uNINbNeAYxr50o3qNWJHBYRQe9U5dQ0un8w6EhB2LDgoOLMm
+	erlGD7Gra2HSz++FxSADT6JQERJUk9WVVHDEmTAg2P8F9eb6vIW5dwBTMHpvEF7Y3MLlX6vCrefNZ
+	yb341Q7FJsPHEA/Aw0INXT2S/hPgH3A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iQ5VY-0005h6-V2; Thu, 31 Oct 2019 08:08:40 +0000
-Received: from smtp.codeaurora.org ([198.145.29.96])
+	id 1iWqoU-00006h-Ha; Mon, 18 Nov 2019 23:52:10 +0000
+Received: from mail-il1-f175.google.com ([209.85.166.175])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iQ5VV-0005gR-2N
- for b43-dev@lists.infradead.org; Thu, 31 Oct 2019 08:08:38 +0000
-Received: by smtp.codeaurora.org (Postfix, from userid 1000)
- id B0EE660A23; Thu, 31 Oct 2019 08:08:36 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
- s=default; t=1572509316;
- bh=MDrT9v0ThT/J4lxmhoR8Yct7jp86wfCet8Yba/5pTNU=;
- h=Subject:From:In-Reply-To:References:To:Cc:Date:From;
- b=Sw1TFbmu1+9dI8oq2DvllKhbdQIOBAbZ4rTJ/Cw2HKbTvMviCNBPOGQGrG+jpySzy
- gp+UrH0aBLg830amk4zPn8FVFlDIbGXdavfjCWufmsTPN0yvIlCy2ZzD6oXN5Y0G8D
- ff85bq61SpNtSucAEo4rYirlFbuMfzILlTdzfvmw=
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- pdx-caf-mail.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-0.8 required=2.0 tests=ALL_TRUSTED,BAYES_00,
- DKIM_INVALID,DKIM_SIGNED,MISSING_DATE,MISSING_MID,SPF_NONE autolearn=no
- autolearn_force=no version=3.4.0
-Received: from potku.adurom.net (88-114-240-156.elisa-laajakaista.fi
- [88.114.240.156])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- (Authenticated sender: kvalo@smtp.codeaurora.org)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id 698D260540;
- Thu, 31 Oct 2019 08:08:33 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=codeaurora.org;
- s=default; t=1572509316;
- bh=MDrT9v0ThT/J4lxmhoR8Yct7jp86wfCet8Yba/5pTNU=;
- h=Subject:From:In-Reply-To:References:To:Cc:From;
- b=ospIRJ24M0damMZFiGDO/HkVNg8r5rCi8glrv06VuJBORoY2mDgxn2wdmEuzinH2M
- ZrlHAHUBPDLSS5oFydkD6RtI+FpCReiG6Z41G6rYe3grFKPMIdXCvSJm2l/mLTeKa+
- 1JRy5OLpVZCUwykRo6szRYonYvHlKlDcXCmm7/3Y=
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 698D260540
-Authentication-Results: pdx-caf-mail.web.codeaurora.org;
- dmarc=none (p=none dis=none) header.from=codeaurora.org
-Authentication-Results: pdx-caf-mail.web.codeaurora.org;
- spf=none smtp.mailfrom=kvalo@codeaurora.org
+ id 1iWqoN-00006H-HX
+ for b43-dev@lists.infradead.org; Mon, 18 Nov 2019 23:52:04 +0000
+Received: by mail-il1-f175.google.com with SMTP id z12so17816904ilp.2
+ for <b43-dev@lists.infradead.org>; Mon, 18 Nov 2019 15:51:59 -0800 (PST)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:from:date:message-id:subject:to;
+ bh=fhtVBpM4iOtrBySGZiBggi/O8BREf4kfDxO8yUi7MXE=;
+ b=Bjj/nsWHds5HmUq0f212SDZ0pSnlCoavsWj4moDdkD4hzo8+bKgmC9A4OjTQtpibLB
+ RFse8V5P6kM1LIYfAgpyv/phdXmtCIhD5EM6vvQT1CLwRK2upCY8pskWI3DEt2pfLSF1
+ E1+9G+aRWz/ktMuj/6J0hHqvoGx1t7pImp6qXi3/K50eiHj5Zn4pbP7SovViwLJ5lua1
+ Asl5Pe0GZP9b/YxF6k1Z+2h+cG0K+uzq/mim1BKVL6v1oWULMwOhM26vN2LE+U6jZJaT
+ fQk/dxtr+Mn9fsWyeiHGHkCDnJ4sCm6DmwVLZ+kkT4hkqfKB1KFPzSkHI/NIfhRcmASp
+ 8GoA==
+X-Gm-Message-State: APjAAAWldXgbMtDzA3BPuFxov7KLWWXzcqDli6s3zlc4Q/68sIsagmjb
+ gzq+SI6JcLacpDmmrkOFpvrKhxXbtcNC0AgmRMUu6b16
+X-Google-Smtp-Source: APXvYqy3xYcrHy7o2dvEPdoRIEPhZOAhLMNCiXiHbt0FyHfLmeugIf5NrxQRC/idhT0QXoG4v2HbXgHCLIxAEtyL7QU=
+X-Received: by 2002:a92:9a85:: with SMTP id c5mr17305258ill.99.1574121118880; 
+ Mon, 18 Nov 2019 15:51:58 -0800 (PST)
 MIME-Version: 1.0
-Subject: Re: [PATCH] b43: dma: Fix use true/false for bool type variable
-From: Kalle Valo <kvalo@codeaurora.org>
-In-Reply-To: <20191028191259.GA27369@saurav>
-References: <20191028191259.GA27369@saurav>
-To: Saurav Girepunje <saurav.girepunje@gmail.com>
-User-Agent: pwcli/0.0.0-git (https://github.com/kvalo/pwcli/) Python/2.7.12
-Message-Id: <20191031080836.B0EE660A23@smtp.codeaurora.org>
-Date: Thu, 31 Oct 2019 08:08:36 +0000 (UTC)
+From: Stephen Schmiechen <turtle@think-electric.com>
+Date: Mon, 18 Nov 2019 15:51:02 -0800
+Message-ID: <CA+-AwzDewm3donFWk-zO3SMpVadZ2KKgFiMBLoseGDmS2T22ww@mail.gmail.com>
+Subject: BCM4352 [14e4:43b1]
+To: b43-dev@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20191031_010837_137697_7ECC8890 
-X-CRM114-Status: UNSURE (   5.98  )
+X-CRM114-CacheID: sfid-20191118_155203_581904_45A9B1E3 
+X-CRM114-Status: UNSURE (   3.46  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.5 (--)
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.145.29.96 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.166.175 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (turtle.schmiechen[at]gmail.com)
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.166.175 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: b43-dev@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,30 +78,17 @@ List-Post: <mailto:b43-dev@lists.infradead.org>
 List-Help: <mailto:b43-dev-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/b43-dev>,
  <mailto:b43-dev-request@lists.infradead.org?subject=subscribe>
-Cc: netdev@vger.kernel.org, linux-wireless@vger.kernel.org,
- linux-kernel@vger.kernel.org, saurav.girepunje@gmail.com, mcgrof@kernel.org,
- saurav.girepunje@hotmail.com, swinslow@gmail.com, tglx@linutronix.de,
- davem@davemloft.net, allison@lohutok.net, b43-dev@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "b43-dev" <b43-dev-bounces@lists.infradead.org>
 Errors-To: b43-dev-bounces+lists+b43-dev=lfdr.de@lists.infradead.org
 
-Saurav Girepunje <saurav.girepunje@gmail.com> wrote:
-
-> use true/false for bool type variables assignment.
-> 
-> Signed-off-by: Saurav Girepunje <saurav.girepunje@gmail.com>
-
-Patch applied to wireless-drivers-next.git, thanks.
-
-a9160bb35ad9 b43: dma: Fix use true/false for bool type variable
-
--- 
-https://patchwork.kernel.org/patch/11216307/
-
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
-
+Greetings all I have a BCM4352 [14e4:43b1] and am interested in
+getting it to work while learning more about Linux kernel drivers.
+I have been reading thru the code to familiarize my self.
+Does anyone have any thoughts on how to proceed?
+Thanks
+--Turtle
 
 _______________________________________________
 b43-dev mailing list
