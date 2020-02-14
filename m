@@ -2,72 +2,87 @@ Return-Path: <b43-dev-bounces+lists+b43-dev=lfdr.de@lists.infradead.org>
 X-Original-To: lists+b43-dev@lfdr.de
 Delivered-To: lists+b43-dev@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E7BBD15E771
-	for <lists+b43-dev@lfdr.de>; Fri, 14 Feb 2020 17:54:42 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D714315E888
+	for <lists+b43-dev@lfdr.de>; Fri, 14 Feb 2020 18:01:15 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LKV1nsfrwUiakk6YBq0mmsZsaDRTaJ7r0YJV2s6EpVA=; b=ccQd7zv+3PisdV
-	fARPHn1HgDrven6u9Fb0y8z+mR5fg4poIWxRUxRKtLE4j+aLVxr8kX0vrvfSZC+yEKqSm+zUaGAAk
-	6QHEPMGECBLGdbF1RKkPQ1CbZjaqj13qmjTKbdzm98qUe21LoTgDSFy/GLa12sEE7/O/j3qtgkad/
-	S2ZCcfd8vJp0auaoP3Y0K+SQK9zUc/OWBIt0GUJCJG3U6Lo7RpfW+jIxPq0AZGtvgpp/YkkCqrPoo
-	xLflcrzhPc9l9dehNLS+WhF21Jc/FXwz73NIniAXqIqQRmtCuU2zMrJBq8kgU6zjlDpQIwadSnZDU
-	ORauQWFQNSU0sBpTkYew==;
+	List-Owner; bh=RFBu34xfXimC1k/CwdLw6fQcPKVO6IpKRzKn+8VBESg=; b=ZIU7+GrnN9u8pg
+	1rxMtll6I9sSW9lAziY6pRnsJw8+7yeox7YN58hQVuD08HLriUJWQioh5qW97nHDYGkoniO/hwyeg
+	G4/LwkzZ3cOarcL9t0iHWL353MD4b3FBT5hpIeiDTc4Oii2BHudQdJyvOm3uGwoDBYbuCrv4/1RWZ
+	kU3aD9PEwCHSvE5k+f2LJiwpmJH012GvIo4Buh4VW+Kqdhn7A5cLxCVcotZQfCva7XiYsKupfUlz7
+	pjbfHZqVpB7LRlI1Rv/htQ1yEBl208eW0RmttCMr4pG34IybotUo8Agbn5nvkEQ+XuCzg9eYJ2fvZ
+	BkHnmX3lU/jcXR+DKzaA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2eEi-0002Mk-55; Fri, 14 Feb 2020 16:54:40 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1j2eL1-0002X3-M0; Fri, 14 Feb 2020 17:01:11 +0000
+Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2djl-0006Qi-1G
- for b43-dev@lists.infradead.org; Fri, 14 Feb 2020 16:22:52 +0000
+ id 1j2dwO-00058a-Jm
+ for b43-dev@bombadil.infradead.org; Fri, 14 Feb 2020 16:35:44 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:MIME-Version:
+ References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
+ Content-Type:Content-ID:Content-Description;
+ bh=8uJ8vuS4htgQQCvv6dAiWk3VnRNWtH8coGFuc5fUb8E=; b=ChRigkHOWcp2qm6elCNPtoFFC7
+ Vbapvkm7Bzw4srDYts/B/g4orz3L4JFy0pmjR597QjOojNUvpSA30A8EEs9LJwSaMtbATLrmEGg2N
+ /isZt/8fxOj/FyuQtHRWNY6Nh2G5CSV7N35DwAqJZE6Ts7OQYzTDBwU/p+m6QY8WMdSiY0QNdcBmO
+ T6qWh4NvCLWB3OHjpmE/wIv9qlmha8log0cXD4BPOT2QNVrbDSAnqIAmIfQ2vvBy4J9N7FhE66eP+
+ HnZ/XJUYrQ/c6yEBtV+iiT1n79tHRUfA1mlfq+Q1VpZUP7PaNJjxMv2b/cA6hZc9S/EU7eTIhrrsV
+ NwM3Cd6A==;
+Received: from mail.kernel.org ([198.145.29.99])
+ by casper.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
+ id 1j2dbP-0002Nh-I1
+ for b43-dev@lists.infradead.org; Fri, 14 Feb 2020 16:14:12 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 4AA7B246D5;
- Fri, 14 Feb 2020 16:22:39 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id AB0C9246C9;
+ Fri, 14 Feb 2020 16:13:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581697360;
- bh=l/C7OCinPk6gm4nEstZBsEnXerf/V/s4R+jJfg056I8=;
+ s=default; t=1581696839;
+ bh=EuFzhoLZW1Xqcn9uKBwQn2yQLYSQNUgB5uOubWxz5C8=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=zNRWiRaeKSlVoFfLmMl32DEu42nsr1PdjNZf71veGTdQe7vx7LJoKl1KdSNlcTEWJ
- d99Yb3ZOzPJBU6W60mOeikulvYxE2eiryGThuN1PjAodGjfVrPJ4jwhpIfiVzrPr7n
- nzVkwrQlJYNtkD7AlTSR6Ndg992Ko50g+T7/96f4=
+ b=sEz+fpUzRJ7egktsScWQyqLoyfUaE/KxiSHC6ypkAXuVyd9b//Y8fnq7lT5T9+0Rn
+ OmYUW+/GSWEgA0AUf0A+66ttUk4MC2cieaxPLDZ6TiFQ+dQrCLFM4ICXa8JxHDBYvE
+ H7j2pfAkrq129lkQpAES4rBER+5ktByaf9cL3UCU=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.9 061/141] b43legacy: Fix -Wcast-function-type
-Date: Fri, 14 Feb 2020 11:20:01 -0500
-Message-Id: <20200214162122.19794-61-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.19 103/252] b43legacy: Fix -Wcast-function-type
+Date: Fri, 14 Feb 2020 11:09:18 -0500
+Message-Id: <20200214161147.15842-103-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200214162122.19794-1-sashal@kernel.org>
-References: <20200214162122.19794-1-sashal@kernel.org>
+In-Reply-To: <20200214161147.15842-1-sashal@kernel.org>
+References: <20200214161147.15842-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200214_082241_142859_4BDCB789 
-X-CRM114-Status: UNSURE (   9.90  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
-X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+X-CRM114-CacheID: sfid-20200214_161403_856722_79E69EFC 
+X-CRM114-Status: GOOD (  11.98  )
+X-Spam-Score: -7.1 (-------)
+X-Spam-Report: SpamAssassin version 3.4.3 on casper.infradead.org summary:
+ Content analysis details:   (-7.1 points, 5.0 required)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
  high trust [198.145.29.99 listed in list.dnswl.org]
+ -1.9 BAYES_00               BODY: Bayes spam probability is 0 to 1%
+ [score: 0.0000]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: b43-dev@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -106,7 +121,7 @@ Signed-off-by: Sasha Levin <sashal@kernel.org>
  1 file changed, 3 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/net/wireless/broadcom/b43legacy/main.c b/drivers/net/wireless/broadcom/b43legacy/main.c
-index 83770d2ea0578..9da8bd7927022 100644
+index 55f411925960e..770cc218ca4bd 100644
 --- a/drivers/net/wireless/broadcom/b43legacy/main.c
 +++ b/drivers/net/wireless/broadcom/b43legacy/main.c
 @@ -1304,8 +1304,9 @@ static void handle_irq_ucode_debug(struct b43legacy_wldev *dev)
