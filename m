@@ -2,85 +2,73 @@ Return-Path: <b43-dev-bounces+lists+b43-dev=lfdr.de@lists.infradead.org>
 X-Original-To: lists+b43-dev@lfdr.de
 Delivered-To: lists+b43-dev@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 52D00144B09
-	for <lists+b43-dev@lfdr.de>; Wed, 22 Jan 2020 06:13:21 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id D038515DDAF
+	for <lists+b43-dev@lfdr.de>; Fri, 14 Feb 2020 17:01:03 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:Message-ID:
-	Subject:To:From:Date:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Cn0dxh4Baqq03k82LZD6uJVrktIS5uitOKwFF7tV3HQ=; b=hCy9e7uqsf7cLq+VzpzZp5jRZ
-	/MrU3t8XVRYEPpggbw8smXhprR2m/wfgbHPXUe28j1F30E72iEbnJA77YCGFXuG3Vker4UezaZIaf
-	CHyW01wrGic4DqgbNN1lNwURQ7uowZPKut+szw/oKMOHikZhR9V9aSMu2iBoZi7yhJExc9C81f5MQ
-	npC3Vtg+m/pviGtaISNSYIq8TG/ToF4wXavPCABkPvZeOhjqkpcQh0TNfJDBO7BSns4Li+Pbh8sFb
-	czM4f0Ls/qY+5Di/5KUVywyCftd4QCy2ccKKO2lEgJnFGwN0FS5NOfN4QUFy17yoLm3Rq3kaoP4Oa
-	tSPpvPBXg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=bl5D0mTB9sYdeViAWJjHJ4mXiG2ip7GLbEbPtZFJtHs=; b=edY6zHWA5bickq
+	T26Wn0mfD2a9uDEqgdUksj9lINOIsV9Z23/5QEfjKYN3RXYYpG91AeYv9CJ3MJrkrl/FBl+zQ7KD5
+	cv/wg9KnbhEBiOHbtOSso6oTzrm9ozSgchvXS2nttpzEPm4uLtlLWyXCJqGVJDkWbZeWDQOWVWdGd
+	WQKerxZXIEQHrbhmSz7qL82uEW0fNjL0RqM191LKjcpSn3mCL2IihMnO3GophWApz/ChIKLZmrLp9
+	MpsASGrrF5+ygu5V4VSZpY1m8J/zry9BFD+6QFScPxAepYFg/vjNeGEOnx8SvoVyA9VsMhkYJqx0W
+	aYhHra9UB+jydAVE43bw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1iu8K7-0001WX-4F; Wed, 22 Jan 2020 05:13:03 +0000
-Received: from mail-qt1-f174.google.com ([209.85.160.174])
+	id 1j2dOc-0006zA-QN; Fri, 14 Feb 2020 16:00:50 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1iu8K2-0001WB-LD
- for b43-dev@lists.infradead.org; Wed, 22 Jan 2020 05:13:00 +0000
-Received: by mail-qt1-f174.google.com with SMTP id i13so4712520qtr.3
- for <b43-dev@lists.infradead.org>; Tue, 21 Jan 2020 21:12:55 -0800 (PST)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:subject:message-id:mail-followup-to
- :references:mime-version:content-disposition:in-reply-to:user-agent;
- bh=c2PQKpwPpbN7BugsbWQQCHshCAyCP0blkTn27XwX0ao=;
- b=jzsP67D9nNoIspXAEaLHpQ+gI5WkucoFgma3j4LrGyRWcJErcbyYfkWaKOd3yJC6HG
- /Hw3navzyNFyBOsLdEP7hyQmiQOHrv1RLy5eiZ1VPAu4F32qhh4VfyCwlkK0WzGKlD4T
- xqIlbg+kkV7xCWNidc7Gz7slAdFQraZToedImP98WMMQMb+yOhdYrvVNyYodpjXNlAdo
- OkbuxWEDXBg7zqU5J4cV9LWTKU7cNlMpXCRe654BICzMOe2z7B7Do8C1eRUnlMX4sfcl
- oz53kca7xVvP4i5EBrcHysT+L6tF2drQZH3Fjo31KzfZa9iNPEr6fMyAHb/a8gfOArD5
- jftw==
-X-Gm-Message-State: APjAAAWt3MddUYHjC/ken8yFz4JPnYRa82/b+IqRpsR5/ZKPLuQaHuiM
- +Sh2QY/k4wUVPdv4d3tK89z6m0TJnVs=
-X-Google-Smtp-Source: APXvYqzTjrOXquOm9h+q7XbhdW/g7LIwxKzxsTLSDwb+cDaadzd4DS50ZdLGsMgcG/pwzGceC0flBg==
-X-Received: by 2002:ac8:4306:: with SMTP id z6mr8362311qtm.178.1579669974595; 
- Tue, 21 Jan 2020 21:12:54 -0800 (PST)
-Received: from gmail.com ([2601:196:8502:c700:e480:33e1:2dca:1d5b])
- by smtp.gmail.com with ESMTPSA id w21sm20998628qth.17.2020.01.21.21.12.53
- for <b43-dev@lists.infradead.org>
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Tue, 21 Jan 2020 21:12:53 -0800 (PST)
-Date: Wed, 22 Jan 2020 00:12:52 -0500
-From: Bazz <bazz@bazz1.com>
-To: b43-dev@lists.infradead.org
-Subject: Re: B43 BCM43217
-Message-ID: <20200122050110.rxcjtb453fvhrvak@gmail.com>
-Mail-Followup-To: b43-dev@lists.infradead.org
-References: <c746e24b-f678-9f24-1c46-c2a7623d7af4@alum.us.es>
+ id 1j2dHp-0006o8-2I
+ for b43-dev@lists.infradead.org; Fri, 14 Feb 2020 15:53:50 +0000
+Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
+ [73.47.72.35])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 482DF24682;
+ Fri, 14 Feb 2020 15:53:47 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1581695628;
+ bh=JjKT3jkmYWo+VH1cMi7pE58cT6ZhUpPjOMoPMHW4uHA=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=FhuiIjco4N+5ZuPxRhGmx8o6gilIjYrSxkKZF/SqikkkN99viJ9O/YBGFh+HfTu3B
+ V2btztxG6euX+L/I2O3IdYowgXWsIMHdpjUqY5j+luW7bs3mRAoS0OCc8rWg128x02
+ F2zU816KADIDPfnYchavOKLcMqKUo1VUqjo5ssIs=
+From: Sasha Levin <sashal@kernel.org>
+To: linux-kernel@vger.kernel.org,
+	stable@vger.kernel.org
+Subject: [PATCH AUTOSEL 5.5 226/542] b43legacy: Fix -Wcast-function-type
+Date: Fri, 14 Feb 2020 10:43:38 -0500
+Message-Id: <20200214154854.6746-226-sashal@kernel.org>
+X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20200214154854.6746-1-sashal@kernel.org>
+References: <20200214154854.6746-1-sashal@kernel.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <c746e24b-f678-9f24-1c46-c2a7623d7af4@alum.us.es>
-User-Agent: BazzyWazzy/13.37 (TempleOS/x86_64)
+X-stable: review
+X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200121_211258_694449_C3DBF5F4 
-X-CRM114-Status: UNSURE (   6.66  )
+X-CRM114-CacheID: sfid-20200214_075349_184341_59813F8B 
+X-CRM114-Status: UNSURE (   9.79  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 2.8 (++)
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (2.8 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 1.8 FSL_HELO_FAKE          No description available.
- 0.5 SUBJ_ALL_CAPS          Subject is all capitals
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.160.174 listed in wl.mailspike.net]
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.160.174 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [mbazzinotti[at]gmail.com]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: b43-dev@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,27 +80,58 @@ List-Post: <mailto:b43-dev@lists.infradead.org>
 List-Help: <mailto:b43-dev-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/b43-dev>,
  <mailto:b43-dev-request@lists.infradead.org?subject=subscribe>
+Cc: Sasha Levin <sashal@kernel.org>, Kees Cook <keescook@chromium.org>,
+ Phong Tran <tranmanphong@gmail.com>, netdev@vger.kernel.org,
+ linux-wireless@vger.kernel.org, b43-dev@lists.infradead.org,
+ Kalle Valo <kvalo@codeaurora.org>, Larry Finger <Larry.Finger@lwfinger.net>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "b43-dev" <b43-dev-bounces@lists.infradead.org>
 Errors-To: b43-dev-bounces+lists+b43-dev=lfdr.de@lists.infradead.org
 
-You might notice improvement on different versions of the firmware.
-For instance, users with certain b43 devices have gotten terrible
-speed quality from wl firmware 784.2 (6.30.163.46).
-https://bugs.gentoo.org/541080
+From: Phong Tran <tranmanphong@gmail.com>
 
-In my case, I get best results on my N-phy BCM4322 with 784.2. YMMV.
-Most people seem to be on 666.2 (5.100.138).
+[ Upstream commit 475eec112e4267232d10f4afe2f939a241692b6c ]
 
-You can download the other firmware versions from your Linux distro.
-Alternatively, here are direct firmware downloads that will require
-b43-fwcutter: http://www.lwfinger.com/b43-firmware/
-(thank you Larry, for hosting!)
+correct usage prototype of callback in tasklet_init().
+Report by https://github.com/KSPP/linux/issues/20
 
-Good luck
+Tested-by: Larry Finger <Larry.Finger@lwfinger.net>
+Signed-off-by: Phong Tran <tranmanphong@gmail.com>
+Reviewed-by: Kees Cook <keescook@chromium.org>
+Signed-off-by: Kalle Valo <kvalo@codeaurora.org>
+Signed-off-by: Sasha Levin <sashal@kernel.org>
+---
+ drivers/net/wireless/broadcom/b43legacy/main.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
 
--Bazz
+diff --git a/drivers/net/wireless/broadcom/b43legacy/main.c b/drivers/net/wireless/broadcom/b43legacy/main.c
+index 4325e91736eb3..8b6b657c4b85b 100644
+--- a/drivers/net/wireless/broadcom/b43legacy/main.c
++++ b/drivers/net/wireless/broadcom/b43legacy/main.c
+@@ -1275,8 +1275,9 @@ static void handle_irq_ucode_debug(struct b43legacy_wldev *dev)
+ }
+ 
+ /* Interrupt handler bottom-half */
+-static void b43legacy_interrupt_tasklet(struct b43legacy_wldev *dev)
++static void b43legacy_interrupt_tasklet(unsigned long data)
+ {
++	struct b43legacy_wldev *dev = (struct b43legacy_wldev *)data;
+ 	u32 reason;
+ 	u32 dma_reason[ARRAY_SIZE(dev->dma_reason)];
+ 	u32 merged_dma_reason = 0;
+@@ -3741,7 +3742,7 @@ static int b43legacy_one_core_attach(struct ssb_device *dev,
+ 	b43legacy_set_status(wldev, B43legacy_STAT_UNINIT);
+ 	wldev->bad_frames_preempt = modparam_bad_frames_preempt;
+ 	tasklet_init(&wldev->isr_tasklet,
+-		     (void (*)(unsigned long))b43legacy_interrupt_tasklet,
++		     b43legacy_interrupt_tasklet,
+ 		     (unsigned long)wldev);
+ 	if (modparam_pio)
+ 		wldev->__using_pio = true;
+-- 
+2.20.1
+
 
 _______________________________________________
 b43-dev mailing list
