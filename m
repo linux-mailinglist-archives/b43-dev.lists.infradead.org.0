@@ -2,54 +2,54 @@ Return-Path: <b43-dev-bounces+lists+b43-dev=lfdr.de@lists.infradead.org>
 X-Original-To: lists+b43-dev@lfdr.de
 Delivered-To: lists+b43-dev@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7658D15E6A4
-	for <lists+b43-dev@lfdr.de>; Fri, 14 Feb 2020 17:49:44 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id E7BBD15E771
+	for <lists+b43-dev@lfdr.de>; Fri, 14 Feb 2020 17:54:42 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FWxKVTaKC5x5gxD26f7nX8uNNC3I0rVvDibpH2utqDI=; b=GHwdtHwhOFxK6B
-	IDZSUNBpcGKOxrnStdy0+rDjl/9Hs0sLo7t7UnB9tUsPoomM4me0rc4ZlOExs8Qm+ebT97+PIC9pO
-	GlDqF9Ea/Tl9VSPBuqi99LMna+SZrSalVrfvJ+lVh1z1Hsew0G/iJxWBJ4FTMgDRYvNv5ae0BQZAn
-	HuZgrQq4Oasg5AdMNaRRhLNQNtNSZMg6Q3ufvzxTA9OGyrsHSSEsoyNEbWaT6Oe5ly4evJ8hHIbXe
-	tnYI76S17Lw7DKfVntc3pznPaAGtsW8Qp/JdHdRdstkQ05dGiNJl6q0W+zlhY0yFmaMUgrWbEr+Hf
-	n0A0Zz1nZCdOPdVra1Pg==;
+	List-Owner; bh=LKV1nsfrwUiakk6YBq0mmsZsaDRTaJ7r0YJV2s6EpVA=; b=ccQd7zv+3PisdV
+	fARPHn1HgDrven6u9Fb0y8z+mR5fg4poIWxRUxRKtLE4j+aLVxr8kX0vrvfSZC+yEKqSm+zUaGAAk
+	6QHEPMGECBLGdbF1RKkPQ1CbZjaqj13qmjTKbdzm98qUe21LoTgDSFy/GLa12sEE7/O/j3qtgkad/
+	S2ZCcfd8vJp0auaoP3Y0K+SQK9zUc/OWBIt0GUJCJG3U6Lo7RpfW+jIxPq0AZGtvgpp/YkkCqrPoo
+	xLflcrzhPc9l9dehNLS+WhF21Jc/FXwz73NIniAXqIqQRmtCuU2zMrJBq8kgU6zjlDpQIwadSnZDU
+	ORauQWFQNSU0sBpTkYew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2e9s-0004EJ-9c; Fri, 14 Feb 2020 16:49:40 +0000
+	id 1j2eEi-0002Mk-55; Fri, 14 Feb 2020 16:54:40 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2dg9-00029U-Eo
- for b43-dev@lists.infradead.org; Fri, 14 Feb 2020 16:18:59 +0000
+ id 1j2djl-0006Qi-1G
+ for b43-dev@lists.infradead.org; Fri, 14 Feb 2020 16:22:52 +0000
 Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
  [73.47.72.35])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 7A43224713;
- Fri, 14 Feb 2020 16:18:55 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 4AA7B246D5;
+ Fri, 14 Feb 2020 16:22:39 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581697136;
- bh=9rk5LlT6HcBeMnDrKQcxHFU07pwxbjlNeog18QbJ04U=;
+ s=default; t=1581697360;
+ bh=l/C7OCinPk6gm4nEstZBsEnXerf/V/s4R+jJfg056I8=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=g6GZfWrnAsflvXIoYpHyVDWH94Hu4IRs4lcfKiI1ZvboSsGnhgULKZ8XsBV8fr+70
- abwoEDiRJh7fL6UZt6th3KEVcmh0/CCSjRl19folOML/UnjW70cMIGXuv9qCS/kC0O
- nbYP25ZvbPbwrcTWo+pP+d7bhWhnwCygtnzeAEvo=
+ b=zNRWiRaeKSlVoFfLmMl32DEu42nsr1PdjNZf71veGTdQe7vx7LJoKl1KdSNlcTEWJ
+ d99Yb3ZOzPJBU6W60mOeikulvYxE2eiryGThuN1PjAodGjfVrPJ4jwhpIfiVzrPr7n
+ nzVkwrQlJYNtkD7AlTSR6Ndg992Ko50g+T7/96f4=
 From: Sasha Levin <sashal@kernel.org>
 To: linux-kernel@vger.kernel.org,
 	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.14 078/186] b43legacy: Fix -Wcast-function-type
-Date: Fri, 14 Feb 2020 11:15:27 -0500
-Message-Id: <20200214161715.18113-78-sashal@kernel.org>
+Subject: [PATCH AUTOSEL 4.9 061/141] b43legacy: Fix -Wcast-function-type
+Date: Fri, 14 Feb 2020 11:20:01 -0500
+Message-Id: <20200214162122.19794-61-sashal@kernel.org>
 X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200214161715.18113-1-sashal@kernel.org>
-References: <20200214161715.18113-1-sashal@kernel.org>
+In-Reply-To: <20200214162122.19794-1-sashal@kernel.org>
+References: <20200214162122.19794-1-sashal@kernel.org>
 MIME-Version: 1.0
 X-stable: review
 X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200214_081857_569839_72D1F48E 
+X-CRM114-CacheID: sfid-20200214_082241_142859_4BDCB789 
 X-CRM114-Status: UNSURE (   9.90  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
@@ -106,7 +106,7 @@ Signed-off-by: Sasha Levin <sashal@kernel.org>
  1 file changed, 3 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/net/wireless/broadcom/b43legacy/main.c b/drivers/net/wireless/broadcom/b43legacy/main.c
-index f1e3dad576292..f435bd0f8b5b5 100644
+index 83770d2ea0578..9da8bd7927022 100644
 --- a/drivers/net/wireless/broadcom/b43legacy/main.c
 +++ b/drivers/net/wireless/broadcom/b43legacy/main.c
 @@ -1304,8 +1304,9 @@ static void handle_irq_ucode_debug(struct b43legacy_wldev *dev)
