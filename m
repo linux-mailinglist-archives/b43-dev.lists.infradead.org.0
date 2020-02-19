@@ -2,88 +2,90 @@ Return-Path: <b43-dev-bounces+lists+b43-dev=lfdr.de@lists.infradead.org>
 X-Original-To: lists+b43-dev@lfdr.de
 Delivered-To: lists+b43-dev@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D714315E888
-	for <lists+b43-dev@lfdr.de>; Fri, 14 Feb 2020 18:01:15 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4A3F7163BFA
+	for <lists+b43-dev@lfdr.de>; Wed, 19 Feb 2020 05:16:19 +0100 (CET)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RFBu34xfXimC1k/CwdLw6fQcPKVO6IpKRzKn+8VBESg=; b=ZIU7+GrnN9u8pg
-	1rxMtll6I9sSW9lAziY6pRnsJw8+7yeox7YN58hQVuD08HLriUJWQioh5qW97nHDYGkoniO/hwyeg
-	G4/LwkzZ3cOarcL9t0iHWL353MD4b3FBT5hpIeiDTc4Oii2BHudQdJyvOm3uGwoDBYbuCrv4/1RWZ
-	kU3aD9PEwCHSvE5k+f2LJiwpmJH012GvIo4Buh4VW+Kqdhn7A5cLxCVcotZQfCva7XiYsKupfUlz7
-	pjbfHZqVpB7LRlI1Rv/htQ1yEBl208eW0RmttCMr4pG34IybotUo8Agbn5nvkEQ+XuCzg9eYJ2fvZ
-	BkHnmX3lU/jcXR+DKzaA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=t2RIlmbEw3/wT8DGBH/z4iOLOvPJxqOuq8RvVdbqlJ0=; b=U7G
+	qxgTT4oWVCgOWyMOV0BAg/uToM2K+k/ZcLX+LOFXkwVcNfCc/zFpQQWxchBxDfR1Pu8aJ175La4xI
+	oCQW4kMoxUA9gUIjCwSvRbPGE4F0neWNEcWlZf1152KllwZWiaQbh9C6QSWMDho81iX/071UlLeoj
+	K50hQ1fRkrNZD3CgIFviZ1xxpr42S6wss5VRb2DfaVGytOm2pdgjKZWrTSCDqLQe80kwBF6QRw27K
+	Q4MytNudur0Ba7Gsp0Gy2OTGX/2vBtOwmktyi+ECaT+0we2RxNBepUjuwlnAKUiUFC/79bIb//9Hj
+	lMOO80qtGV6p5PePumoHDja6/wrHWhA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1j2eL1-0002X3-M0; Fri, 14 Feb 2020 17:01:11 +0000
-Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
+	id 1j4GmS-0003Qd-JZ; Wed, 19 Feb 2020 04:16:12 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2dwO-00058a-Jm
- for b43-dev@bombadil.infradead.org; Fri, 14 Feb 2020 16:35:44 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=casper.20170209; h=Content-Transfer-Encoding:MIME-Version:
- References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:
- Content-Type:Content-ID:Content-Description;
- bh=8uJ8vuS4htgQQCvv6dAiWk3VnRNWtH8coGFuc5fUb8E=; b=ChRigkHOWcp2qm6elCNPtoFFC7
- Vbapvkm7Bzw4srDYts/B/g4orz3L4JFy0pmjR597QjOojNUvpSA30A8EEs9LJwSaMtbATLrmEGg2N
- /isZt/8fxOj/FyuQtHRWNY6Nh2G5CSV7N35DwAqJZE6Ts7OQYzTDBwU/p+m6QY8WMdSiY0QNdcBmO
- T6qWh4NvCLWB3OHjpmE/wIv9qlmha8log0cXD4BPOT2QNVrbDSAnqIAmIfQ2vvBy4J9N7FhE66eP+
- HnZ/XJUYrQ/c6yEBtV+iiT1n79tHRUfA1mlfq+Q1VpZUP7PaNJjxMv2b/cA6hZc9S/EU7eTIhrrsV
- NwM3Cd6A==;
-Received: from mail.kernel.org ([198.145.29.99])
- by casper.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1j2dbP-0002Nh-I1
- for b43-dev@lists.infradead.org; Fri, 14 Feb 2020 16:14:12 +0000
-Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
- [73.47.72.35])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id AB0C9246C9;
- Fri, 14 Feb 2020 16:13:58 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1581696839;
- bh=EuFzhoLZW1Xqcn9uKBwQn2yQLYSQNUgB5uOubWxz5C8=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=sEz+fpUzRJ7egktsScWQyqLoyfUaE/KxiSHC6ypkAXuVyd9b//Y8fnq7lT5T9+0Rn
- OmYUW+/GSWEgA0AUf0A+66ttUk4MC2cieaxPLDZ6TiFQ+dQrCLFM4ICXa8JxHDBYvE
- H7j2pfAkrq129lkQpAES4rBER+5ktByaf9cL3UCU=
-From: Sasha Levin <sashal@kernel.org>
-To: linux-kernel@vger.kernel.org,
-	stable@vger.kernel.org
-Subject: [PATCH AUTOSEL 4.19 103/252] b43legacy: Fix -Wcast-function-type
-Date: Fri, 14 Feb 2020 11:09:18 -0500
-Message-Id: <20200214161147.15842-103-sashal@kernel.org>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20200214161147.15842-1-sashal@kernel.org>
-References: <20200214161147.15842-1-sashal@kernel.org>
-MIME-Version: 1.0
-X-stable: review
-X-Patchwork-Hint: Ignore
+ id 1j4GmL-0003Q7-V7
+ for b43-dev@lists.infradead.org; Wed, 19 Feb 2020 04:16:07 +0000
+Received: by mail-pl1-x642.google.com with SMTP id p11so8984209plq.10
+ for <b43-dev@lists.infradead.org>; Tue, 18 Feb 2020 20:16:05 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=H5s84nZe09LEygazx+9zYHkBioooKXZ48/ls3AZTwNo=;
+ b=sXaNni8hNvrlu2JabbxBr+U2UvIQCh/uJTUDTlriUSPs5hnN1ZiU3F+gNTn8rh8anX
+ U7MKjCjKjLxdYUUeivIa7H5T8OsyjinlUCKaCqo4eUSh3vOpO4iRsfwa0H9tzahAL5+R
+ pYIdtfahHGVvUm+g53tiLTgjAYY8Ws94wjGhRBMAOv5vLedb9Dgl8Fu8XjaOp/XM45b4
+ yVdLXEqexgtLIsejKJQy0ShG8n8Mfmsurh3eCEb7NcJj/w74ug31e0dbUHOP401Gwq9q
+ rcIocFOzMHzfF+K6GUOBJkb80YFfbcJ1dKYVHZx3CGYyq3jpuP6wGHyU8R92ye83WIvU
+ dlgQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=H5s84nZe09LEygazx+9zYHkBioooKXZ48/ls3AZTwNo=;
+ b=Hnqjxrk1HdQzP7CHlJ6lwS+ZmJl+MMuxNbLXL4z+GDISxjVbyPP4ds4Hp00f6MGJT9
+ t5OSwtLWuw9gPfIbszPLyNiYL1O8Wu6l83IYYEon8g3QAXwuRcEP1znXvz5huxosCdwo
+ C3mBw79pF4/UTy7hUolt25AqtZD4OuTA9hamPnIKYt6ccsVEBlJ1mWj/JQ1t4EBro5Ns
+ QNuKj/u9hIxoACaMkkfk99LfrcWKEn/ECM8uOQhAzNlgqfCFOTbg6+BIDsYe8/Netx3q
+ hqUEKgH3IBkkNSUto6QXM9mmt/0z4TmQlJcEcZ/XzEnpGaSLIC+uMjq9fIM7qhcoF+WT
+ BT+Q==
+X-Gm-Message-State: APjAAAVFipXYX3cAks/XdmETfVyRG55o40Y9DAIdExqRTWIavRRIS3Re
+ bQoRBB5t7/sGM3AfluKmkv4=
+X-Google-Smtp-Source: APXvYqyky4/vFL+WsbTkF+tGUtZqVgC52PrW/+DgGiIICaiq8pZbX5zw1WTPwenoUorf5FE9Kj8Qlg==
+X-Received: by 2002:a17:90a:804a:: with SMTP id
+ e10mr6853463pjw.41.1582085764323; 
+ Tue, 18 Feb 2020 20:16:04 -0800 (PST)
+Received: from localhost ([43.224.245.179])
+ by smtp.gmail.com with ESMTPSA id m12sm465947pjf.25.2020.02.18.20.16.03
+ (version=TLS1_2 cipher=AES128-SHA bits=128/128);
+ Tue, 18 Feb 2020 20:16:03 -0800 (PST)
+From: qiwuchen55@gmail.com
+To: Larry.Finger@lwfinger.net,
+	kvalo@codeaurora.org,
+	davem@davemloft.net
+Subject: [PATCH] b43legacy/sysfs.c: replace simple_strtol() with kstrtoint()
+Date: Wed, 19 Feb 2020 12:15:59 +0800
+Message-Id: <1582085759-17998-1-git-send-email-qiwuchen55@gmail.com>
+X-Mailer: git-send-email 1.9.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200214_161403_856722_79E69EFC 
-X-CRM114-Status: GOOD (  11.98  )
-X-Spam-Score: -7.1 (-------)
-X-Spam-Report: SpamAssassin version 3.4.3 on casper.infradead.org summary:
- Content analysis details:   (-7.1 points, 5.0 required)
+X-CRM114-CacheID: sfid-20200218_201606_028868_FFA1C8BF 
+X-CRM114-Status: GOOD (  11.02  )
+X-Spam-Score: 0.1 (/)
+X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- -1.9 BAYES_00               BODY: Bayes spam probability is 0 to 1%
- [score: 0.0000]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit [qiwuchen55[at]gmail.com]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [qiwuchen55[at]gmail.com]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ [list.dnswl.org]
 X-BeenThere: b43-dev@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,57 +97,48 @@ List-Post: <mailto:b43-dev@lists.infradead.org>
 List-Help: <mailto:b43-dev-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/b43-dev>,
  <mailto:b43-dev-request@lists.infradead.org?subject=subscribe>
-Cc: Sasha Levin <sashal@kernel.org>, Kees Cook <keescook@chromium.org>,
- Phong Tran <tranmanphong@gmail.com>, netdev@vger.kernel.org,
- linux-wireless@vger.kernel.org, b43-dev@lists.infradead.org,
- Kalle Valo <kvalo@codeaurora.org>, Larry Finger <Larry.Finger@lwfinger.net>
+Cc: chenqiwu <chenqiwu@xiaomi.com>, linux-wireless@vger.kernel.org,
+ b43-dev@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "b43-dev" <b43-dev-bounces@lists.infradead.org>
 Errors-To: b43-dev-bounces+lists+b43-dev=lfdr.de@lists.infradead.org
 
-From: Phong Tran <tranmanphong@gmail.com>
+From: chenqiwu <chenqiwu@xiaomi.com>
 
-[ Upstream commit 475eec112e4267232d10f4afe2f939a241692b6c ]
+The simple_strtol() function is deprecated since it does not
+check for the range overflow. Use kstrtoint() instead.
 
-correct usage prototype of callback in tasklet_init().
-Report by https://github.com/KSPP/linux/issues/20
-
-Tested-by: Larry Finger <Larry.Finger@lwfinger.net>
-Signed-off-by: Phong Tran <tranmanphong@gmail.com>
-Reviewed-by: Kees Cook <keescook@chromium.org>
-Signed-off-by: Kalle Valo <kvalo@codeaurora.org>
-Signed-off-by: Sasha Levin <sashal@kernel.org>
+Signed-off-by: chenqiwu <chenqiwu@xiaomi.com>
 ---
- drivers/net/wireless/broadcom/b43legacy/main.c | 5 +++--
- 1 file changed, 3 insertions(+), 2 deletions(-)
+ drivers/net/wireless/broadcom/b43legacy/sysfs.c | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/net/wireless/broadcom/b43legacy/main.c b/drivers/net/wireless/broadcom/b43legacy/main.c
-index 55f411925960e..770cc218ca4bd 100644
---- a/drivers/net/wireless/broadcom/b43legacy/main.c
-+++ b/drivers/net/wireless/broadcom/b43legacy/main.c
-@@ -1304,8 +1304,9 @@ static void handle_irq_ucode_debug(struct b43legacy_wldev *dev)
- }
- 
- /* Interrupt handler bottom-half */
--static void b43legacy_interrupt_tasklet(struct b43legacy_wldev *dev)
-+static void b43legacy_interrupt_tasklet(unsigned long data)
+diff --git a/drivers/net/wireless/broadcom/b43legacy/sysfs.c b/drivers/net/wireless/broadcom/b43legacy/sysfs.c
+index 9312c1d..eec087c 100644
+--- a/drivers/net/wireless/broadcom/b43legacy/sysfs.c
++++ b/drivers/net/wireless/broadcom/b43legacy/sysfs.c
+@@ -25,13 +25,15 @@
+ static int get_integer(const char *buf, size_t count)
  {
-+	struct b43legacy_wldev *dev = (struct b43legacy_wldev *)data;
- 	u32 reason;
- 	u32 dma_reason[ARRAY_SIZE(dev->dma_reason)];
- 	u32 merged_dma_reason = 0;
-@@ -3775,7 +3776,7 @@ static int b43legacy_one_core_attach(struct ssb_device *dev,
- 	b43legacy_set_status(wldev, B43legacy_STAT_UNINIT);
- 	wldev->bad_frames_preempt = modparam_bad_frames_preempt;
- 	tasklet_init(&wldev->isr_tasklet,
--		     (void (*)(unsigned long))b43legacy_interrupt_tasklet,
-+		     b43legacy_interrupt_tasklet,
- 		     (unsigned long)wldev);
- 	if (modparam_pio)
- 		wldev->__using_pio = true;
+ 	char tmp[10 + 1] = { 0 };
+-	int ret = -EINVAL;
++	int ret = -EINVAL, res;
+ 
+ 	if (count == 0)
+ 		goto out;
+ 	count = min_t(size_t, count, 10);
+ 	memcpy(tmp, buf, count);
+-	ret = simple_strtol(tmp, NULL, 10);
++	ret = kstrtoint(tmp, 10, &res);
++	if (!ret)
++		return res;
+ out:
+ 	return ret;
+ }
 -- 
-2.20.1
+1.9.1
 
 
 _______________________________________________
