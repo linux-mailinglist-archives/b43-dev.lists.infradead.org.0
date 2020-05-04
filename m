@@ -2,77 +2,57 @@ Return-Path: <b43-dev-bounces+lists+b43-dev=lfdr.de@lists.infradead.org>
 X-Original-To: lists+b43-dev@lfdr.de
 Delivered-To: lists+b43-dev@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 645B1189198
-	for <lists+b43-dev@lfdr.de>; Tue, 17 Mar 2020 23:48:33 +0100 (CET)
+	by mail.lfdr.de (Postfix) with ESMTPS id 72BC21C382E
+	for <lists+b43-dev@lfdr.de>; Mon,  4 May 2020 13:34:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	MIME-Version:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=X2o6jKGyR6hZ1XFKsnoh9I97qHsx6713jK3goh9K8sU=; b=R+a
-	1y7CGJUvusUpPMbdsW/IncMGsDEPJLm11UgSdlHI3puxudB+m8ihKL2KRSWhd1MS0jD28deIRmIcb
-	EBFl8PVDP5XypClYBtlym7a+kYxFC4ZQbox2BEnOh4rL5DH4oxCp9pTc3ZM8kVTaoDvqXpSuvCLRQ
-	h8O+tMbL3CEOy0SvL5fYbsbLOMYIHB7G1+CUy9D+T/PhdoF0HlY+xBBSzr8DR0l3Sr5l49xotKySz
-	pA9c4lYRK5R0cCbCIUAy95sTmN/hKurTZtZQuGwLGVp46d1btNp7WOdHzZ15TRdsdqAugk0FCt73G
-	vyI9fMElFqS0Z0mbEUO9Q4ppoXNQy1g==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=rDlF2r8n7SlIFbcfOAB2UNisG33QcGV6NvTufETnvIk=; b=OCBdWvq4njEULo
+	N/3G0LNULcIgeujuZFeXa4X8Bu/Hb/TUKBJd+NnDzNu7cKtfc/B5CIbotoLb3odC9dAQWNQKZm1sx
+	Zd66wq2Y/FhG+Lvan8mHLJRbv04J4fRhO+eQ+6s+MP/ZSF5NwAhOG8pBPvi9eV6a3dWLqZikKyKoH
+	RSe39OAawgIyEOdPRy5s7jX1v9UYRoZwiXnqiFLupMcJSftqZG0vcljHX7YRpNyquFmUiuMbubR/Y
+	72pOLdhsFPoD06h+YgsZBVQZYwIbT3fM5XeqcrU8FGeoIpaKbljcGoIRaZwq4vjHZ8rD5SqxFp31p
+	p5HlRcK6ToVjVEBZEC+g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jEL0R-0005MT-2Y; Tue, 17 Mar 2020 22:48:15 +0000
-Received: from mail-wr1-x433.google.com ([2a00:1450:4864:20::433])
+	id 1jVZMG-0002pt-9r; Mon, 04 May 2020 11:34:00 +0000
+Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jEL0J-0005Lt-6X
- for b43-dev@lists.infradead.org; Tue, 17 Mar 2020 22:48:08 +0000
-Received: by mail-wr1-x433.google.com with SMTP id f3so20914097wrw.7
- for <b43-dev@lists.infradead.org>; Tue, 17 Mar 2020 15:48:06 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=colorremedies-com.20150623.gappssmtp.com; s=20150623;
- h=mime-version:from:date:message-id:subject:to;
- bh=EcmjarLe3V0gcxBG9R0o3HTwg8eEc7QKKUR3kJoeK8o=;
- b=WmvTpUzlRnGDpmwICN/nzdwQ5moAoOkcXtZWv92PMB16g+lAH5n2bFoVGORrJknwk6
- Ilu2Pnx/ngXZ2k1TsD8wRhxryRdvfKAhzU4TcZ1aPNCpRe7MT5S75cl6gi3oGM9H+hgF
- QFUMqPK0LLcTdiiX0Xlo+rwRJto+dwTC1ojkXXQWrsULfUfPzWbCRVWShvdvXzoNfGKX
- FLL2Ns8SK16QaoBj56PFApqR1canQeo5YTk+GB8bfXm4bTPITLJ/59iXxPI4O8vhWkSU
- JeCCRF366z5k769F7QSlSlu/8RRtWwMlRtltL9f97qowFSNtNSqQtDw3O4vnNcheP+st
- tbFg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:from:date:message-id:subject:to;
- bh=EcmjarLe3V0gcxBG9R0o3HTwg8eEc7QKKUR3kJoeK8o=;
- b=W1BaTmufQLd83QL/C2+nkTIx+soUN/7TMJ1G2uVDrePboKYbdRzN6vV9SzCVS59ol4
- giPhyodMn3ct5ZRQkDYIQs1a+d3g6NP+8iFDcOFmm0vKHngKTSv5meYYcQafqUmjXQZ7
- RPxrXLyvD1dg3i2tHPvtJmo5uqLHv/mekpIbnaLjl0NthH2uo1FF63cUrOGXtNOrGs0S
- qsln/EMeKdyYPDwCT4VnPmH4O79XVW+NCUkbNl352EdaxhiH0xlqVNFsE0tvVjGzpokV
- pg3KMY/7NGK+0lQWeBAwzomO3ZDcBp8FlURif2gNlyMIwUXJzsA/go67fvwtqmn8yE6B
- rlwA==
-X-Gm-Message-State: ANhLgQ1IzxRpTd8k/SAzNQfff060nwgvq2kYSTs9A36Iu1BBtDDDmpGu
- nfTcNvjqiHMyi8Jur96PRjYFqlpA9mgPsGWrvSxgaSqeHBE=
-X-Google-Smtp-Source: ADFU+vteUeyxEWAga/cdWVsa+fTnpa4MhC325tDqm8SyWEGKTwhG25Tv6NKeldGGCRIBDEvwI9aiFsmV5BONnYPTh0E=
-X-Received: by 2002:a5d:654e:: with SMTP id z14mr1252868wrv.274.1584485284533; 
- Tue, 17 Mar 2020 15:48:04 -0700 (PDT)
+ id 1jVZM9-0002o8-HB
+ for b43-dev@lists.infradead.org; Mon, 04 May 2020 11:33:55 +0000
+Received: from DGGEMS408-HUB.china.huawei.com (unknown [172.30.72.59])
+ by Forcepoint Email with ESMTP id 9C7ADFC07102EA98B7C6;
+ Mon,  4 May 2020 19:33:46 +0800 (CST)
+Received: from huawei.com (10.175.124.28) by DGGEMS408-HUB.china.huawei.com
+ (10.3.19.208) with Microsoft SMTP Server id 14.3.487.0; Mon, 4 May 2020
+ 19:33:37 +0800
+From: Jason Yan <yanaijie@huawei.com>
+To: <kvalo@codeaurora.org>, <davem@davemloft.net>, <tglx@linutronix.de>,
+ <linux-wireless@vger.kernel.org>, <b43-dev@lists.infradead.org>,
+ <netdev@vger.kernel.org>, <linux-kernel@vger.kernel.org>
+Subject: [PATCH] b43: remove Comparison of 0/1 to bool variable in phy_n.c
+Date: Mon, 4 May 2020 19:33:00 +0800
+Message-ID: <20200504113300.40895-1-yanaijie@huawei.com>
+X-Mailer: git-send-email 2.21.1
 MIME-Version: 1.0
-From: Chris Murphy <lists@colorremedies.com>
-Date: Tue, 17 Mar 2020 16:47:48 -0600
-Message-ID: <CAJCQCtTZ5Fiid+O3SBDWEssEbBJkrMxKPotq0XnO1tVhAKghxA@mail.gmail.com>
-Subject: b43 firmware URL "Not found"
-To: b43-dev@lists.infradead.org
+X-Originating-IP: [10.175.124.28]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200317_154807_398877_1F3B8AE1 
-X-CRM114-Status: UNSURE (   5.75  )
+X-CRM114-CacheID: sfid-20200504_043353_738640_F84E7BB7 
+X-CRM114-Status: UNSURE (   9.65  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
-X-Spam-Report: SpamAssassin version 3.4.3 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+X-Spam-Score: -2.3 (--)
+X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:433 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.35 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: b43-dev@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,34 +64,38 @@ List-Post: <mailto:b43-dev@lists.infradead.org>
 List-Help: <mailto:b43-dev-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/b43-dev>,
  <mailto:b43-dev-request@lists.infradead.org?subject=subscribe>
+Cc: Jason Yan <yanaijie@huawei.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "b43-dev" <b43-dev-bounces@lists.infradead.org>
 Errors-To: b43-dev-bounces+lists+b43-dev=lfdr.de@lists.infradead.org
 
-Hi,
+Fix the following coccicheck warning:
 
-1.
-This bug is 3 months old and no one has responded
-https://bugzilla.kernel.org/show_bug.cgi?id=205819
+drivers/net/wireless/broadcom/b43/phy_n.c:5510:19-32: WARNING:
+Comparison of 0/1 to bool variable
 
-2.
-The URL reported by the kernel for downloading the firmware file has
-been wrong for a long time; doesn't redirect, it just 404's.
+Signed-off-by: Jason Yan <yanaijie@huawei.com>
+---
+ drivers/net/wireless/broadcom/b43/phy_n.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-3.
-And the URL in the MAINTAINERS file also 404s.
-
-4.
-And also in the MAINTAINERS file, B43 is listed as odd fixes, i.e. not
-maintained, but B43 LEGACY is maintained. That's unintuitive so given
-the above problems, I'm wondering if any of it's maintained?
-
-Thanks,
-
-
+diff --git a/drivers/net/wireless/broadcom/b43/phy_n.c b/drivers/net/wireless/broadcom/b43/phy_n.c
+index d3c001fa8eb4..c33b4235839d 100644
+--- a/drivers/net/wireless/broadcom/b43/phy_n.c
++++ b/drivers/net/wireless/broadcom/b43/phy_n.c
+@@ -5507,7 +5507,7 @@ static int b43_nphy_cal_tx_iq_lo(struct b43_wldev *dev,
+ 			core = (cmd & 0x3000) >> 12;
+ 			type = (cmd & 0x0F00) >> 8;
+ 
+-			if (phy6or5x && updated[core] == 0) {
++			if (phy6or5x && !updated[core]) {
+ 				b43_nphy_update_tx_cal_ladder(dev, core);
+ 				updated[core] = true;
+ 			}
 -- 
-Chris Murphy
+2.21.1
+
 
 _______________________________________________
 b43-dev mailing list
