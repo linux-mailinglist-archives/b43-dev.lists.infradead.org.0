@@ -2,87 +2,84 @@ Return-Path: <b43-dev-bounces+lists+b43-dev=lfdr.de@lists.infradead.org>
 X-Original-To: lists+b43-dev@lfdr.de
 Delivered-To: lists+b43-dev@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C94E21CEF8D
-	for <lists+b43-dev@lfdr.de>; Tue, 12 May 2020 10:54:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5FFC81D994D
+	for <lists+b43-dev@lfdr.de>; Tue, 19 May 2020 16:19:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:To:References:
-	In-Reply-To:From:Subject:MIME-Version:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kEaRtayKXyfR5OpoV2TS6/yUFKyUzbmwKYXUyaIppgA=; b=tqLs0IcVbePwJs
-	H37g8/GyJMbP2MuNqVfX7kiCmDIRg0dSk8PrQyQvNFkdKfifDyblvo6h39tN/v6wJOzNBe+SjXqxx
-	dLKq9Nf4V+hjVkDTWOlPcQOTBNPemvJ3T2r1Mro8X/xUa/Kd8aq5T+HUd+WA0/XU1bZboMgSoUzT9
-	qPU2LU4vqr6Bos3o+WLInHPEFnRGeoaFqI93QbBlAf6Rlev8WTEWfUK6RCh0F3nsYaRdi/KKwC5eb
-	+OJczN/4AmyIiZ1SRHYgucsGA+OPJBBL4TR1y9ZfM6dmCpDWKAxqg23ekVtfdiGvBadbSc2kTsvxM
-	RUQCfFR0t8sta9XLk0/w==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	MIME-Version:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=OIaFppLrS6NhExADHIlZtB+OiBK30LF8ow3xpukyiFA=; b=Vya
+	6g5sLUHRFkbfE5cnIGcZ6/R/KMQwK8lvLAoKIr2bTQP9vkTC0Uht3iKP9xfelDUKxF0chWg5qLXYX
+	QDigDWd5YeiGA0cQtY2J+pHCCIfGCjBEDXGOCEvQ/x7tTJGz5E7xPAHxgfx4mAcRaYPIopwmEgdGi
+	6Ubc9DGgfkqqsvBSUe54/IFzCRH7+Fiv1/+HSuo9SiP1+Bgr8cVuT+wtUqgUYMycqJYP0PMpYpRqn
+	RmXx6CQAc03wpmeKQM2TLZiP34ISnpaP7PP6pqJtw4p0c1jIOFM6cA1We/GQH6Lz9L3FqtCXnQAns
+	bhucKzRkM7RnUfhRszkv1q3lWa72PEQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jYQg6-0003Ou-MP; Tue, 12 May 2020 08:54:18 +0000
-Received: from mail27.static.mailgun.info ([104.130.122.27])
+	id 1jb35U-0002QO-5G; Tue, 19 May 2020 14:19:20 +0000
+Received: from mail-ua1-x930.google.com ([2607:f8b0:4864:20::930])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jYQfx-0003N9-Gc
- for b43-dev@lists.infradead.org; Tue, 12 May 2020 08:54:13 +0000
-DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
- q=dns/txt; 
- s=smtp; t=1589273651; h=Date: Message-Id: Cc: To: References:
- In-Reply-To: From: Subject: Content-Transfer-Encoding: MIME-Version:
- Content-Type: Sender; bh=4myBv0Eb7CjTFQWgbEm87difECtLoTIZZdLheI+zz60=;
- b=Pk4d8Tqp5+a0uR/pFQNVSU9aymlmPViCZfKaRDxhIequEPjDJrq7dy9uDQcwzlA0z4VcFa/c
- 5PlIbyF9jX1vG3dwzE+zXrtiVQJD85EZJWqy55+MmpL6rYNSb5lbvLd/4zOvt+E1JFGXpSP1
- nnu+v6LjnaW+8PKPGKRcYAINBKI=
-X-Mailgun-Sending-Ip: 104.130.122.27
-X-Mailgun-Sid: WyIxODVhOSIsICJiNDMtZGV2QGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
-Received: from smtp.codeaurora.org
- (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171])
- by mxa.mailgun.org with ESMTP id 5eba6429.7f0499301ab0-smtp-out-n01;
- Tue, 12 May 2020 08:54:01 -0000 (UTC)
-Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id 81AF7C43637; Tue, 12 May 2020 08:54:00 +0000 (UTC)
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- aws-us-west-2-caf-mail-1.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=0.5 required=2.0 tests=ALL_TRUSTED,MISSING_DATE,
- MISSING_MID,SPF_NONE autolearn=no autolearn_force=no version=3.4.0
-Received: from potku.adurom.net (88-114-240-156.elisa-laajakaista.fi
- [88.114.240.156])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested) (Authenticated sender: kvalo)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id 6B1F5C433CB;
- Tue, 12 May 2020 08:53:58 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 6B1F5C433CB
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- dmarc=none (p=none dis=none) header.from=codeaurora.org
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- spf=none smtp.mailfrom=kvalo@codeaurora.org
+ id 1jb353-0002PG-Vh
+ for b43-dev@lists.infradead.org; Tue, 19 May 2020 14:18:55 +0000
+Received: by mail-ua1-x930.google.com with SMTP id o35so637357uao.4
+ for <b43-dev@lists.infradead.org>; Tue, 19 May 2020 07:18:48 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:from:date:message-id:subject:to
+ :content-transfer-encoding;
+ bh=k3+8S4AY2uVpQH+RCiJkWL6MuiFNkRebQcOpXooUIsA=;
+ b=meSmS01XIcQsr950zb7oGW9O5o2Lq42OiTTOvhK150a6uS38u10GInz1zWnVm5SVIU
+ k0DvjLoX4zzEaU5QePVTNPn2Gto4cHJ8MpCqYIvLSwGeGITHBuR00+RwHfcz3kO77TDb
+ Z26konVPsDNnEKjciuY9tm5BhC3p8V3m9O/ybuMHjdQGi5IVy9Cnqd41s0K0H6x+LKC4
+ 9Y5ibKyHxnn3NGgpxi+vR07tcBUdLrWUJa5jSMWl+wZle6p5884gJJOwXibBepFncs0X
+ C8PyDYqtR24NBAF9STLjDaJo4l/6XOePpkDt2KZDgKP7rS1l81nG+NgdyrdXodUAszTO
+ wsdQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:from:date:message-id:subject:to
+ :content-transfer-encoding;
+ bh=k3+8S4AY2uVpQH+RCiJkWL6MuiFNkRebQcOpXooUIsA=;
+ b=FIzbNrUYzFBmKr6WC5glPb9EKmy+Q9kV+rhQevIQ2c/GNSfRFO/ZbGKHLF62Ej37R7
+ 4XkLsUT/odVPX5oSpavjYzXDz+qE8juom+sBvSMrMEP3nH30hcAH/8b4582i8zaaEd/n
+ lWolubEncfSJXDG1nEkoDcLaIu+UJyUVSrOAPXO4m4MIPMOb0w2iMqu+24VYsxxrEiJ7
+ mfCbpxr41FJgiQlMRzIKYFrDdvSG0vMP4Q8vVAVWN5SaPIZa13zoLWR4rXjKHfrXGhqk
+ qELlOeYGs40T0UivQPXDvaekNRIoj53d61CrCBEEPbS63uo9CkS8hySoBGRZze5EZc1u
+ N6nA==
+X-Gm-Message-State: AOAM532Okw/IDJg4fX35QubDTN+dNMlrWpi94Iv/KYenOUxHKBgIOfxv
+ Xnh4ZdQ2yXvs5x91Wrv/cwoJCK4k/AOE968a7kVN+SKOopnP
+X-Google-Smtp-Source: ABdhPJwT/eeoChjn43sE/ao1TZ/IsnK0ThJEffFuAh/9tn9H3kFTSWY4tH65AalS8HYpIiGtsDZC/qIOpNi1KxCtjgA=
+X-Received: by 2002:ab0:268a:: with SMTP id t10mr14988636uao.20.1589897927968; 
+ Tue, 19 May 2020 07:18:47 -0700 (PDT)
 MIME-Version: 1.0
-Subject: Re: [PATCH] b43: remove dead function b43_rssinoise_postprocess()
-From: Kalle Valo <kvalo@codeaurora.org>
-In-Reply-To: <20200507110741.37757-1-yanaijie@huawei.com>
-References: <20200507110741.37757-1-yanaijie@huawei.com>
-To: Jason Yan <yanaijie@huawei.com>
-User-Agent: pwcli/0.1.0-git (https://github.com/kvalo/pwcli/) Python/3.5.2
-Message-Id: <20200512085400.81AF7C43637@smtp.codeaurora.org>
-Date: Tue, 12 May 2020 08:54:00 +0000 (UTC)
+From: Rui Salvaterra <rsalvaterra@gmail.com>
+Date: Tue, 19 May 2020 15:18:36 +0100
+Message-ID: <CALjTZvbLOr5zAYyp75Cs6Zo8mWNUVq3ZRJu56G1iHdiihFejWQ@mail.gmail.com>
+Subject: [BUG?] b43: can't connect to WPA3 network (nohwcrypt=1)
+To: b43-dev@lists.infradead.org, linux-wireless@vger.kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200512_015412_061540_591ADC93 
-X-CRM114-Status: UNSURE (   6.55  )
+X-CRM114-CacheID: sfid-20200519_071854_372848_1FF66119 
+X-CRM114-Status: UNSURE (   7.62  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [104.130.122.27 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:930 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [rsalvaterra[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
- [104.130.122.27 listed in wl.mailspike.net]
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: b43-dev@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,30 +91,38 @@ List-Post: <mailto:b43-dev@lists.infradead.org>
 List-Help: <mailto:b43-dev-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/b43-dev>,
  <mailto:b43-dev-request@lists.infradead.org?subject=subscribe>
-Cc: Jason Yan <yanaijie@huawei.com>, netdev@vger.kernel.org,
- linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org,
- b43-dev@lists.infradead.org, tglx@linutronix.de, davem@davemloft.net
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "b43-dev" <b43-dev-bounces@lists.infradead.org>
 Errors-To: b43-dev-bounces+lists+b43-dev=lfdr.de@lists.infradead.org
 
-Jason Yan <yanaijie@huawei.com> wrote:
-
-> This function is dead for more than 10 years. Remove it.
-> 
-> Signed-off-by: Jason Yan <yanaijie@huawei.com>
-
-Patch applied to wireless-drivers-next.git, thanks.
-
-f2cd32a443da rndis_wlan: Remove logically dead code
-
--- 
-https://patchwork.kernel.org/patch/11533111/
-
-https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
-
-_______________________________________________
-b43-dev mailing list
-b43-dev@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/b43-dev
+SGksIGV2ZXJ5b25lIQoKSSd2ZSBiZWVuIHRyeWluZyB0byBjb25uZWN0IHRvIGEgV1BBMyAocGVy
+c29uYWwsIG5vdCBlbnRlcnByaXNlKQpuZXR3b3JrIGJ1dCwgYXMgZXhwZWN0ZWQsIHRoZSBjb25u
+ZWN0aW9uIGFsd2F5cyBmYWlscyB3aXRoIGhhcmR3YXJlCmVuY3J5cHRpb24gKG1vc3QgbGlrZWx5
+IGR1ZSB0byBtYW5kYXRvcnkgTUZQLCB3aGljaCB0aGUgaGFyZHdhcmUgd29uJ3QKZG8pLiBXaGF0
+IEkgZGlkbid0IGV4cGVjdCB3YXMgdG8gaGF2ZSB0aGUgZXhhY3Qgc2FtZSBwcm9ibGVtIHdoZW4K
+dXNpbmcgc29mdHdhcmUgY3J5cHRvLiBJJ3ZlIHRyaWVkIHdpdGggb3RoZXIgZGV2aWNlcywgYW5k
+IHRoZXkgd29yawpmaW5lLiBPbmUgdGhpbmcgSSBub3RpY2VkIGlzIHRoaXM6IGZvciBleGFtcGxl
+LCBhIFJhbGluayBSVDI3OTAKZGV2aWNlLCBvbiBhbm90aGVyIG1hY2hpbmUsIHNob3dzIHRoZSBm
+b2xsb3dpbmcgc3VwcG9ydGVkIGN5cGhlcnMgd2l0aApoYXJkd2FyZSBjcnlwdG/igKYKCiAgICAg
+ICAgKiBXRVA0MCAoMDAtMGYtYWM6MSkKICAgICAgICAqIFdFUDEwNCAoMDAtMGYtYWM6NSkKICAg
+ICAgICAqIFRLSVAgKDAwLTBmLWFjOjIpCiAgICAgICAgKiBDQ01QLTEyOCAoMDAtMGYtYWM6NCkK
+ICAgICAgICAqIENDTVAtMjU2ICgwMC0wZi1hYzoxMCkKICAgICAgICAqIEdDTVAtMTI4ICgwMC0w
+Zi1hYzo4KQogICAgICAgICogR0NNUC0yNTYgKDAwLTBmLWFjOjkpCgrigKYgYW5kIHdpdGggc29m
+dHdhcmUgY3J5cHRv4oCmCgogICAgICAgICogV0VQNDAgKDAwLTBmLWFjOjEpCiAgICAgICAgKiBX
+RVAxMDQgKDAwLTBmLWFjOjUpCiAgICAgICAgKiBUS0lQICgwMC0wZi1hYzoyKQogICAgICAgICog
+Q0NNUC0xMjggKDAwLTBmLWFjOjQpCiAgICAgICAgKiBDQ01QLTI1NiAoMDAtMGYtYWM6MTApCiAg
+ICAgICAgKiBHQ01QLTEyOCAoMDAtMGYtYWM6OCkKICAgICAgICAqIEdDTVAtMjU2ICgwMC0wZi1h
+Yzo5KQogICAgICAgICogQ01BQyAoMDAtMGYtYWM6NikKICAgICAgICAqIENNQUMtMjU2ICgwMC0w
+Zi1hYzoxMykKICAgICAgICAqIEdNQUMtMTI4ICgwMC0wZi1hYzoxMSkKICAgICAgICAqIEdNQUMt
+MjU2ICgwMC0wZi1hYzoxMikKCuKApiB3aGlsZSBiNDMgc2hvd3MgZXhhY3RseSB0aGUgc2FtZSBp
+biBib3RoIG1vZGVz4oCmCgogICAgICAgICogV0VQNDAgKDAwLTBmLWFjOjEpCiAgICAgICAgKiBX
+RVAxMDQgKDAwLTBmLWFjOjUpCiAgICAgICAgKiBUS0lQICgwMC0wZi1hYzoyKQogICAgICAgICog
+Q0NNUC0xMjggKDAwLTBmLWFjOjQpCiAgICAgICAgKiBDQ01QLTI1NiAoMDAtMGYtYWM6MTApCiAg
+ICAgICAgKiBHQ01QLTEyOCAoMDAtMGYtYWM6OCkKICAgICAgICAqIEdDTVAtMjU2ICgwMC0wZi1h
+Yzo5KQoKVGhpcyBpcyBhIEJDTTQzMTggZGV2aWNlIChQQ0kgSUQgMTRlNDo0MzE4KSwgYnV0IEkg
+ZG9uJ3Qga25vdyBpZgp0aGF0J3MgcmVsZXZhbnQuCklzIHRoaXMgYmVoYXZpb3VyIGV4cGVjdGVk
+PwoKVGhhbmtzIGluIGFkdmFuY2UsClJ1aQoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX18KYjQzLWRldiBtYWlsaW5nIGxpc3QKYjQzLWRldkBsaXN0cy5pbmZy
+YWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vYjQz
+LWRldgo=
