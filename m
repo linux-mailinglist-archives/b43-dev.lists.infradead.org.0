@@ -2,63 +2,56 @@ Return-Path: <b43-dev-bounces+lists+b43-dev=lfdr.de@lists.infradead.org>
 X-Original-To: lists+b43-dev@lfdr.de
 Delivered-To: lists+b43-dev@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E61931DC0AB
-	for <lists+b43-dev@lfdr.de>; Wed, 20 May 2020 22:56:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A7DA21DC8CA
+	for <lists+b43-dev@lfdr.de>; Thu, 21 May 2020 10:36:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=CnQsvuSvzK4u2bb6OAiDmEUJZWexFa3Lh2vKSJjd9fY=; b=UGnNEfW+qCKG2JfLbj9yj9Xlg
-	fIGyewsVbs1oVVJ4wSHwFlkhlo3RvP9zzVuXt9SfExjKnDEQrv8/c3OrD9WYFLsNeH8zrUelL3Qq3
-	r11C765a5kwybFcgfJBn9iD3izjJqd91Q7D+v/g80kGieXvrXVOi5UxVAVW4QfucqJTOPctVI+Qql
-	AlKVQ+Y8s1U5RXDufkSKzJPwsrxMJe87B1d3PhFvs81cIry9HyD9bZrhClYLPaUU3uOkih1z8QQxV
-	zNpQT/CF+FDbckaYKoA/Zezf4XERCX1p2G4wxoK9lyE+5uleJmshcOusSVYNYj94IbEHcOw3TLVHP
-	LSuCaZXDQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6/lryKLtJM0D4yEd8LQZJV9cq+bpGkySukNsVF23k0M=; b=umBGMpivNPKEuh
+	yF6O4DBpmhOEc4twQNUyPh6cZ6MJ+F7O/CVnEFuBXb/67vocvRgUUSYglW1+J136RVkcx8GgRqIN3
+	y7Eyyf4AEEVDZoEUgXssruVBWSejH8okb9cbRgdu5FafMta/pmGjVkJF+RgmE8Sk+8x039vxpPO6n
+	tBO68WkTY9dz5Z4ilz437TGTKZPJOIcrC0VSEUC3m6+fHrJfIpV6DwE7wHLOAm3SpkXAPc0Qcm8DB
+	jbLHYnGEIM8g6Cy2VGhSY86NG1hOx/iKcu+qJ8SLRM1oUHVl+3nUmdsRx2AMD+Vyig4j/qi0e85vm
+	gTi4AHqpR00B+y0/GlFQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbVlH-0002qD-E5; Wed, 20 May 2020 20:56:23 +0000
-Received: from mail-oo1-xc44.google.com ([2607:f8b0:4864:20::c44])
+	id 1jbggb-0008Rd-As; Thu, 21 May 2020 08:36:17 +0000
+Received: from mail-vk1-xa43.google.com ([2607:f8b0:4864:20::a43])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbVlE-0002pK-EK
- for b43-dev@lists.infradead.org; Wed, 20 May 2020 20:56:21 +0000
-Received: by mail-oo1-xc44.google.com with SMTP id p123so968446oop.12
- for <b43-dev@lists.infradead.org>; Wed, 20 May 2020 13:56:19 -0700 (PDT)
+ id 1jbggW-0008RB-UF
+ for b43-dev@lists.infradead.org; Thu, 21 May 2020 08:36:14 +0000
+Received: by mail-vk1-xa43.google.com with SMTP id z3so1493942vka.10
+ for <b43-dev@lists.infradead.org>; Thu, 21 May 2020 01:36:12 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=Z5984Y6a+qDCOEn0z7BxJFP/LZWybUR8jBVn+MZPqzU=;
- b=bx5Dek8bIuSdHGgRSOJMqztYvhd7IYJEdLijM0NZy3OscNjvkmgg5mJB6ILcyu2F7h
- wqa5iMI6wqAJtDacHoWSONy9OmeLRinwvM6HoOgUwB7t94IOOu4VIxDfFdlwvlOSvFcs
- OziZiPBQDcv+dLEizyAoZJHOzQC9nOTg34bzVyhnQBfwHPizENTTCm/pOqu2/Bxa/weP
- xXX8IerAaVNDOw/xJIatxpNZk9SlnDeBnqyXj/QoGI6P/nek3ah2g7ttJZl4PLyvjvY3
- UAZncG1LHFr6Akm1HjC9y41X9lq01kY5g0+IIpoH7ByOzO76BAFGr9ploN80KEzj18q8
- ZtIA==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=+Ntmxv1WGjMNV/B3U/bZGop11ppaur3FZfYTHyL9d1s=;
+ b=sd6OQhdbDgWPHIhpVIswIIm3hgtzSFmXYCjpoflfbO76qTSYkG5lzPRBcgU9ZXpYDI
+ IOq750r/HF2pRCyjL6jyqGzHxpwLT0enGRGCiXZKtEutQ3BBMbA4D0YdCawJVXUOK6DX
+ 3jh894WYXMYOB+kuQRho4i5nrT00TNjwA0hii1n5ikE30VS+J9DgcenG9lX0v3HFnxoI
+ ECJn7j3nso8Exa0GH+zl5m9EFh+eXoKW0ZHg/fzBq006d/8iEEMsGWhiGI7MW/YkDthF
+ 7hsAWMqe1dtcOhCNKC2XhK9JCOVc8ad+tD9zCt0Mb+vLusnMyPkxgo19MaRMHX/pIKXb
+ W4Yg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:subject:to:cc:references:from:message-id
- :date:user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=Z5984Y6a+qDCOEn0z7BxJFP/LZWybUR8jBVn+MZPqzU=;
- b=hPfIw9QH17ZCQiI5ofFB547G52x8V3jmNG9YOkL0X44HKiYPZ7lml1h8lMa76Mlo8P
- LDn2W5khsxyW8crUByckRjxaNuZWbZjKK7LxNZtBxSw1zEiZ5MybAFccMqAlELv5K/yo
- SFtuI4lBWhKGj28PcPn5xFAWzQIFf58e1UoH7Q2bnbHAP62AkU3O2zJy65Ggrp9OV61W
- ol+8pv4oQkXFMjnh9abpaPoU5xi8zEdtfIFL/LqOnNOjJU3FuZRekMXWKhJR3CyvXg64
- fbtNPYrBp7BRRVVkKOKg+nEZ45kGrOP6sK+qOS0o7B5Oh1Z6Qk5RgS9SUylxtzy+Ou+V
- V7Fw==
-X-Gm-Message-State: AOAM532Ypn7dNhVBUp7yKH29MJ85/rCt5Q0in46qc13vGu3gbu/cgOZs
- GOgydFhEK4cBCiyk4gGoUCR14JOu
-X-Google-Smtp-Source: ABdhPJxG01/Dr6KTDEEXmLD1kP1QzYtrY4GCTFkON1SZKwqJJrkgW+5HLgZbtzyUi7v+IK5hmqKGTQ==
-X-Received: by 2002:a4a:94eb:: with SMTP id l40mr4965781ooi.30.1590008179073; 
- Wed, 20 May 2020 13:56:19 -0700 (PDT)
-Received: from localhost.localdomain (cpe-24-31-245-230.kc.res.rr.com.
- [24.31.245.230])
- by smtp.gmail.com with ESMTPSA id f5sm666682oig.32.2020.05.20.13.56.18
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 20 May 2020 13:56:18 -0700 (PDT)
-Subject: Re: [BUG?] b43: can't connect to WPA3 network (nohwcrypt=1)
-To: Rui Salvaterra <rsalvaterra@gmail.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=+Ntmxv1WGjMNV/B3U/bZGop11ppaur3FZfYTHyL9d1s=;
+ b=B/ACFaRIFB5zHwSz22C8NWwNHBDVHCRDfEKKTeTMnzek0wilYjBCoCwFoSDzcFF56A
+ vOp9z8Fz6FyYfF2egqXZ6Y/F+Ublc4HjNgQuOf/EakMs8kZ0sDiUdJQfYF69+6aJwADA
+ jjqpqZXrbxkMfbH2UV4zqrJ3q9AyABR2T/QNF6I7yDPSMbXvgjUSnc3jrwxuXeJF05fP
+ 5TxIEaMTk/rux9CmzlGR6dfa1+Mg4BfMiFam/uXU2V5AkxVOVF6677RDYZQCrVN31zqu
+ 3kuHWuvcOZYFT48lU3Rvq11fSkbTKPkKSNllKpMpbLOFC20ZLU5VXebdMuoGtLKt0Afe
+ SCMA==
+X-Gm-Message-State: AOAM53366SWLZRSeoCk1vVSaIQQ7gI0Ez9R4Hwk7grn0nURRAkjB8/aO
+ 7OfXK8ks+qrRqETb8yaPAw/qF01oKRjt5cQQIg==
+X-Google-Smtp-Source: ABdhPJwUg5wJDopJxG4IDHWbUscBN1sSeETsn09df6vx+nKGD0Rk7m3bSuwfrNAP0DXKjOhRVY9AJJR2Ct8wE+RUeFM=
+X-Received: by 2002:a1f:9fc9:: with SMTP id i192mr6860699vke.97.1590050170262; 
+ Thu, 21 May 2020 01:36:10 -0700 (PDT)
+MIME-Version: 1.0
 References: <CALjTZvbLOr5zAYyp75Cs6Zo8mWNUVq3ZRJu56G1iHdiihFejWQ@mail.gmail.com>
  <3483242e-c2ad-ec83-0c2c-ce952bc9b638@lwfinger.net>
  <CALjTZvatxQ2BvUeZGcTFijBf1PiLizJuDdENxg2b=tPQL_NAzQ@mail.gmail.com>
@@ -68,38 +61,36 @@ References: <CALjTZvbLOr5zAYyp75Cs6Zo8mWNUVq3ZRJu56G1iHdiihFejWQ@mail.gmail.com>
  <CALjTZvaPi2FL-epk-Vd2wOLye2O0J8G5aZPsqzHXt2b7u=HyuQ@mail.gmail.com>
  <263e247c-3bf9-6d42-996b-bc513efe4b71@lwfinger.net>
  <CALjTZvauK0Hh+aoabcDX9kkQZ4zN2ZjPnB+aq7YrJ9+-4ihiAg@mail.gmail.com>
-From: Larry Finger <Larry.Finger@lwfinger.net>
-Message-ID: <87fffd5d-242a-7195-c4cc-80260dbd53c5@lwfinger.net>
-Date: Wed, 20 May 2020 15:56:17 -0500
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.8.0
-MIME-Version: 1.0
-In-Reply-To: <CALjTZvauK0Hh+aoabcDX9kkQZ4zN2ZjPnB+aq7YrJ9+-4ihiAg@mail.gmail.com>
-Content-Language: en-US
+ <87fffd5d-242a-7195-c4cc-80260dbd53c5@lwfinger.net>
+In-Reply-To: <87fffd5d-242a-7195-c4cc-80260dbd53c5@lwfinger.net>
+From: Rui Salvaterra <rsalvaterra@gmail.com>
+Date: Thu, 21 May 2020 09:35:58 +0100
+Message-ID: <CALjTZvYCFNSQ6HMN4owkiGTVrYaiU8R-P1KXgvkwGqcOo8uMuw@mail.gmail.com>
+Subject: Re: [BUG?] b43: can't connect to WPA3 network (nohwcrypt=1)
+To: Larry Finger <Larry.Finger@lwfinger.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200520_135620_484267_442B6CDB 
-X-CRM114-Status: GOOD (  16.56  )
-X-Spam-Score: 0.4 (/)
+X-CRM114-CacheID: sfid-20200521_013612_993196_6894A492 
+X-CRM114-Status: UNSURE (   9.82  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.4 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:c44 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:a43 listed in]
  [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider [larry.finger[at]gmail.com]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ provider [rsalvaterra[at]gmail.com]
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: b43-dev@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -112,61 +103,43 @@ List-Help: <mailto:b43-dev-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/b43-dev>,
  <mailto:b43-dev-request@lists.infradead.org?subject=subscribe>
 Cc: linux-wireless@vger.kernel.org, b43-dev@lists.infradead.org
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "b43-dev" <b43-dev-bounces@lists.infradead.org>
 Errors-To: b43-dev-bounces+lists+b43-dev=lfdr.de@lists.infradead.org
 
-On 5/20/20 3:28 PM, Rui Salvaterra wrote:
-> On Wed, 20 May 2020 at 21:08, Larry Finger <Larry.Finger@lwfinger.net> wrote:
->>
->> I found this line in the b43 logs:
->> nl80211: NL80211_CMD_SET_PMKSA failed: -95 (Operation not supported)
->>
->> Could we also see the supplicant log for the RaLink driver that works?
-> 
-> Sure thing, here you go! This one's much shorter, since the connection
-> was successful.
-
-A quick difference - this one supports 3 additional ciphers:
-
-vedder wpa_supplicant[376]: nl80211: Supported cipher 00-0f-ac:13
-vedder wpa_supplicant[376]: nl80211: Supported cipher 00-0f-ac:11
-vedder wpa_supplicant[376]: nl80211: Supported cipher 00-0f-ac:12
-
-The one with :13 is for  BIP-CMAC-256, :11 is BIP-GMAC-128, and :12 is 
-BIP-GMAC-256. I did not find a reference that says that these are needed for 
-WPA3, but I am suspicious.
-
-Thus far, I have not found where the driver tells nl80211 what should be supported.
-
-Perhaps, we were calling ieee80211_hw_set() in the wrong place. Try
-
-diff --git a/drivers/net/wireless/broadcom/b43/main.c 
-b/drivers/net/wireless/broadcom/b43/main.c
-index 39da1a4c30ac..211d6126734f 100644
---- a/drivers/net/wireless/broadcom/b43/main.c
-+++ b/drivers/net/wireless/broadcom/b43/main.c
-@@ -5569,7 +5569,10 @@ static struct b43_wl *b43_wireless_init(struct 
-b43_bus_dev *dev)
-         /* fill hw info */
-         ieee80211_hw_set(hw, RX_INCLUDES_FCS);
-         ieee80211_hw_set(hw, SIGNAL_DBM);
--
-+       if (modparam_nohwcrypt) {
-+               printk(KERN_INFO "b43: Setting MFP_CAPABLE\n");
-+               ieee80211_hw_set(hw, MFP_CAPABLE);
-+       }
-         hw->wiphy->interface_modes =
-                 BIT(NL80211_IFTYPE_AP) |
-                 BIT(NL80211_IFTYPE_MESH_POINT) |
-
-In addition, check that the printk message is seen in dmesg.
-
-Larry
-
-
-_______________________________________________
-b43-dev mailing list
-b43-dev@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/b43-dev
+SGksIExhcnJ5LAoKT24gV2VkLCAyMCBNYXkgMjAyMCBhdCAyMTo1NiwgTGFycnkgRmluZ2VyIDxM
+YXJyeS5GaW5nZXJAbHdmaW5nZXIubmV0PiB3cm90ZToKPgo+IEEgcXVpY2sgZGlmZmVyZW5jZSAt
+IHRoaXMgb25lIHN1cHBvcnRzIDMgYWRkaXRpb25hbCBjaXBoZXJzOgo+Cj4gdmVkZGVyIHdwYV9z
+dXBwbGljYW50WzM3Nl06IG5sODAyMTE6IFN1cHBvcnRlZCBjaXBoZXIgMDAtMGYtYWM6MTMKPiB2
+ZWRkZXIgd3BhX3N1cHBsaWNhbnRbMzc2XTogbmw4MDIxMTogU3VwcG9ydGVkIGNpcGhlciAwMC0w
+Zi1hYzoxMQo+IHZlZGRlciB3cGFfc3VwcGxpY2FudFszNzZdOiBubDgwMjExOiBTdXBwb3J0ZWQg
+Y2lwaGVyIDAwLTBmLWFjOjEyCgpXZWxsLCB5ZXMsIEkgd3JvdGUgZXhhY3RseSB0aGF0IGluIHRo
+ZSBmaXJzdCBlbWFpbC4gOikgQnV0IG5vdGljZQp0aGVyZSdzIGFub3RoZXIgY3lwaGVyIG1pc3Np
+bmcgZnJvbSB0aGF0IGxpc3TigKYKCnZlZGRlciB3cGFfc3VwcGxpY2FudFszNzZdOiBubDgwMjEx
+OiBTdXBwb3J0ZWQgY2lwaGVyIDAwLTBmLWFjOjYKCuKApiB3aGljaCBpcyBDTUFDLgoKPiBUaGUg
+b25lIHdpdGggOjEzIGlzIGZvciAgQklQLUNNQUMtMjU2LCA6MTEgaXMgQklQLUdNQUMtMTI4LCBh
+bmQgOjEyIGlzCj4gQklQLUdNQUMtMjU2LiBJIGRpZCBub3QgZmluZCBhIHJlZmVyZW5jZSB0aGF0
+IHNheXMgdGhhdCB0aGVzZSBhcmUgbmVlZGVkIGZvcgo+IFdQQTMsIGJ1dCBJIGFtIHN1c3BpY2lv
+dXMuCgpBY3R1YWxseSwgSSd2ZSBiZWVuIGRpZ2dpbmcgYXJvdW5kIGluIG15IG90aGVyIG1hY2hp
+bmVzLCBhbmQgSSBub3RpY2VkCnRoYXQgYW4gSW50ZWwgY2FyZCBJIGhhdmUsIHdoaWNoIGhhcyBu
+byBwcm9ibGVtcyBjb25uZWN0aW5nIHRvIG15IFdQQTMKQVAsIHN1cHBvcnRzIGEgbXVjaCBuYXJy
+b3dlciB2YXJpZXR5IG9mIGN5cGhlcnMuIEFjY29yZGluZyB0byBpdyBsaXN0LAppdHMgc3VwcG9y
+dGVkIGN5cGhlcnMgYXJlOgoKICAgICAgICAqIFdFUDQwICgwMC0wZi1hYzoxKQogICAgICAgICog
+V0VQMTA0ICgwMC0wZi1hYzo1KQogICAgICAgICogVEtJUCAoMDAtMGYtYWM6MikKICAgICAgICAq
+IENDTVAtMTI4ICgwMC0wZi1hYzo0KQogICAgICAgICogQ01BQyAoMDAtMGYtYWM6NikKClNvLCB0
+aGUgb25seSBleHRyYSBjeXBoZXIgaXQgc3VwcG9ydHMgaXMgQ01BQy4gRGlnZ2luZyBhcm91bmQg
+dGhlIHdlYiwKSSBmb3VuZCB0aGlzIFsxXSBibG9nIHBvc3QsIHdoaWNoIGRvZXMgc2VlbSB0byBp
+bWxweSBDTUFDIGlzIG5lY2Vzc2FyeQpmb3IgdGhlIGdyb3VwIGN5cGhlci4gQWRkaXRpb25hbGx5
+LCB0aGVyZSdzIHRoaXMgbGluZSBpbiB0aGUgc2Vjb25kCmxvZyBJIHNlbnQgeW91ICh3aXRoIHRo
+ZSBzdWNjZXNzZnVsIGF1dGhlbnRpY2F0aW9uKToKCnZlZGRlciB3cGFfc3VwcGxpY2FudFszNzZd
+OiBXUEE6IEVBUE9MLUtleSBNSUMgdXNpbmcgQUVTLUNNQUMKKEFLTS1kZWZpbmVkIC0gU0FFKQoK
+TXkgY29uY2x1c2lvbiBpcyB0aGF0IENNQUMgbW9kZSBpcyByZXF1aXJlZCBmb3IgV1BBMyBQZXJz
+b25hbC4gV2hhdApzdHJpa2VzIG1lIGFzIG9kZCBpcyBiNDMgbm90IHN1cHBvcnRpbmcgYW55IGFk
+ZGl0aW9uYWwgY3lwaGVycyBpbgpzb2Z0d2FyZSBjcnlwdG8gbW9kZS4KV2l0aCB0aGF0IHNhaWQs
+IEknbSBnb2luZyB0byB0cnkgeW91ciBwYXRjaCwgYnV0IEknbSA5NSAlIGNvbmZpZGVudAp0aGUg
+cmVzdWx0IHdpbGwgYmUgdGhlIHNhbWUuCgpUaGFua3MsClJ1aQoKWzFdIGh0dHBzOi8vbXJuY2Np
+ZXcuY29tLzIwMTkvMTEvMjkvd3BhMy1zYWUtbW9kZS8KCl9fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fCmI0My1kZXYgbWFpbGluZyBsaXN0CmI0My1kZXZAbGlz
+dHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3Rp
+bmZvL2I0My1kZXYK
