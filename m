@@ -2,35 +2,64 @@ Return-Path: <b43-dev-bounces+lists+b43-dev=lfdr.de@lists.infradead.org>
 X-Original-To: lists+b43-dev@lfdr.de
 Delivered-To: lists+b43-dev@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0D5311DCC44
-	for <lists+b43-dev@lfdr.de>; Thu, 21 May 2020 13:40:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2E4631DCF3D
+	for <lists+b43-dev@lfdr.de>; Thu, 21 May 2020 16:11:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:References:In-Reply-To:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=VMrFauMqoTurb52769yWWg3HrNNcYzVW7aLBsc7dIsw=; b=YMr7CxNeX1rNgBO5OJQZp+fQu
-	/hLhjYyQvEHOoIFMkZWia9y6V59lwaW86tpfPo540i7kDb6sv8HWPlp1cq94acL+ZFb3HBWO8nsey
-	AqXlN3IP7572hzDmg7hVbqo2c5Ls+wX6rZSwqqOjNgG05AR8dcDwqRqsAQrWq9wIxwQpy5wcSr67f
-	04M3ZZ6QfwYLDbidKl5r7h02X5ewVM9H1JzXgT1HpcCYldxJTBgfQ6gKsmq79A61vp6Fp8e8J9Tqb
-	JyGIGHPCpdyYfKGEiqiKYdIrcKec25S3AZrTPrrZjjH/JSO52UmISxa/C2DPElj5J9FN8iIKny3Lm
-	3rM5g4GvQ==;
+	 bh=HID46YDCXzsf0BwGbdbhkkHxI4UiOGDuq01HWWMeGu4=; b=Ufaqtwot+pP4whTh39yKMp5O6
+	nsVdWHkDGNg6d+Y7A4aSHNQsqNaxJ0FzLSmOF0kjwtyMd8hWwErKH/GQ32TnowUhFWfqkrmcEfdR1
+	T56m/304l+J79bP4qDR7Cbat+F/xutU+SqufMyHZ9hwFTyhBnGoGQVkqkH2xncm71L6+DCwkppkAJ
+	P464B2ftgA/Vc08fLowQgWiCyXJ1PqwWziWaN8L98PxiqydrCk5xX/WClAXbst53XWgcWzMrZwCfn
+	y4PAVWERgHKg1iAjmRkL/hNFODv1GYiv7CMTVe93G1H2ImDQ2mXyJM7Ei1Ko6Z+0TpYtjxdBa6/MT
+	E8muY8htw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jbjZ9-0007pI-Lg; Thu, 21 May 2020 11:40:47 +0000
-Received: from bues.ch ([2a01:138:9005::1:4])
+	id 1jbluF-0006kz-EL; Thu, 21 May 2020 14:10:43 +0000
+Received: from mail-oo1-xc33.google.com ([2607:f8b0:4864:20::c33])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jbjZ6-0007od-Jj
- for b43-dev@lists.infradead.org; Thu, 21 May 2020 11:40:45 +0000
-Received: by bues.ch with esmtpsa (Exim 4.92) (envelope-from <m@bues.ch>)
- id 1jbjZ3-0007A3-1P; Thu, 21 May 2020 13:40:41 +0200
-Date: Thu, 21 May 2020 13:40:11 +0200
-From: Michael =?UTF-8?B?QsO8c2No?= <m@bues.ch>
-To: Rui Salvaterra <rsalvaterra@gmail.com>
+ id 1jblu8-0006ju-Kk
+ for b43-dev@lists.infradead.org; Thu, 21 May 2020 14:10:38 +0000
+Received: by mail-oo1-xc33.google.com with SMTP id a83so1462444oob.9
+ for <b43-dev@lists.infradead.org>; Thu, 21 May 2020 07:10:35 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=sender:subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=aMJeVUM1wAAh22sySV2lmbc3Pmg8bbmB6WxZxgSOH7I=;
+ b=a+vr7oSiOtKlE2RJUc+P2EqgCxnPO88D+H8KuQ3dQBaNRmpqGVF3aejCVkDUQ04P2+
+ xUe78XGqblMS4lzJA4Q96IYMptjjeziB32ezax4M5R4znV8OOOj8xNfXGYUJMLHSo0JE
+ tTVF70LQS9QxVFC/J18vqNEuo1+/THUhFcGb0IZE/Ak6ZV9/jzG5fPrHlcVCzu7FiWf1
+ 9bAt+mf5woScLZjhr1mt+dJzGr5VuT88jEsCrRm0wIZoBhnpTqzXTH3ejQ24mdaw0DX8
+ NbN5pEwqa5Ryxny2rgNVkROApj/l/G5Q7s0dHEAjGeJ/T8srH4+Y79SEvEYhyqzxHPJe
+ MbIg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:sender:subject:to:cc:references:from:message-id
+ :date:user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=aMJeVUM1wAAh22sySV2lmbc3Pmg8bbmB6WxZxgSOH7I=;
+ b=mKf3MxNfoUVRGHPDpRcnfp8yXrbhzcuQco5EJjFJljyGGK7AIO8pytBsjSbqfuo1Yl
+ eB+jSQXKBXR54dZSNSVr8kdYhe/5/LICwBI35xDavY6VDscM/aTXIK2H6dtXagDpkvS6
+ hGZmrOi6uGByGFFHIfczrv7UdkNEXk3VNnWX0ZLgj2sFyFSP0fd9IoxYgW7PZcfEQlyp
+ 7Zgw0SyPFIpwd7EJaA/o6ckxQrzZxdiQ5jvu2pz0MspaYVXfrxqIdxkW4/AL0lNM2G5C
+ RV9LcMwR1Ryh9LpzPmeW1g2bi7+5ARz8zGgUWhaAnO1NdDd/+lra39OhGjUAoTTHz0Hq
+ O4hQ==
+X-Gm-Message-State: AOAM533SR7GftwCSerAq5IAEpHrUzlUw1dZZFtw0reytVJ7SBMJ0BglJ
+ xpbZ5OAQTxDFgv/W+MpX0pSzRGCv
+X-Google-Smtp-Source: ABdhPJzyTFm/CoI4i2cbYOKO5IRZqEaMAqwKMNeC8Eww4nCTPBUs6D8ZHhd3FBJOIShxd+QxtF9asg==
+X-Received: by 2002:a4a:9843:: with SMTP id z3mr7517711ooi.31.1590070235121;
+ Thu, 21 May 2020 07:10:35 -0700 (PDT)
+Received: from localhost.localdomain (cpe-24-31-245-230.kc.res.rr.com.
+ [24.31.245.230])
+ by smtp.gmail.com with ESMTPSA id v24sm1603628otn.59.2020.05.21.07.10.33
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Thu, 21 May 2020 07:10:34 -0700 (PDT)
 Subject: Re: [BUG?] b43: can't connect to WPA3 network (nohwcrypt=1)
-Message-ID: <20200521134011.656381ad@wiggum>
-In-Reply-To: <CALjTZvan46UTwcUxOSN=RiE6XHm-29Ln8B6wiv40V_RVxWewtA@mail.gmail.com>
+To: =?UTF-8?Q?Michael_B=c3=bcsch?= <m@bues.ch>,
+ Rui Salvaterra <rsalvaterra@gmail.com>
 References: <CALjTZvbLOr5zAYyp75Cs6Zo8mWNUVq3ZRJu56G1iHdiihFejWQ@mail.gmail.com>
  <3483242e-c2ad-ec83-0c2c-ce952bc9b638@lwfinger.net>
  <CALjTZvatxQ2BvUeZGcTFijBf1PiLizJuDdENxg2b=tPQL_NAzQ@mail.gmail.com>
@@ -45,19 +74,39 @@ References: <CALjTZvbLOr5zAYyp75Cs6Zo8mWNUVq3ZRJu56G1iHdiihFejWQ@mail.gmail.com>
  <CALjTZvYMF_ERBfzkhaHvsTu6kt7MW+L_979sOVs8hcH7zF_Nyg@mail.gmail.com>
  <20200521124608.4b5c78f2@wiggum>
  <CALjTZvan46UTwcUxOSN=RiE6XHm-29Ln8B6wiv40V_RVxWewtA@mail.gmail.com>
-X-Mailer: Claws Mail 3.17.5 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+ <20200521134011.656381ad@wiggum>
+From: Larry Finger <Larry.Finger@lwfinger.net>
+Message-ID: <462b5428-bd66-a844-9bb3-7113ee9e5ef0@lwfinger.net>
+Date: Thu, 21 May 2020 09:10:33 -0500
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
+ Thunderbird/68.8.0
 MIME-Version: 1.0
+In-Reply-To: <20200521134011.656381ad@wiggum>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200521_044044_648091_7060B922 
-X-CRM114-Status: UNSURE (   5.92  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200521_071036_681865_DAF1073B 
+X-CRM114-Status: GOOD (  10.91  )
+X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:c33 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [larry.finger[at]gmail.com]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: b43-dev@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,65 +118,39 @@ List-Post: <mailto:b43-dev@lists.infradead.org>
 List-Help: <mailto:b43-dev-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/b43-dev>,
  <mailto:b43-dev-request@lists.infradead.org?subject=subscribe>
-Cc: linux-wireless@vger.kernel.org, b43-dev@lists.infradead.org,
- Larry Finger <Larry.Finger@lwfinger.net>
-Content-Type: multipart/mixed; boundary="===============5645541316111690075=="
+Cc: linux-wireless@vger.kernel.org, b43-dev@lists.infradead.org
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="windows-1252"; Format="flowed"
 Sender: "b43-dev" <b43-dev-bounces@lists.infradead.org>
 Errors-To: b43-dev-bounces+lists+b43-dev=lfdr.de@lists.infradead.org
 
---===============5645541316111690075==
-Content-Type: multipart/signed; boundary="Sig_/AV9X9MSUSOSPOMgNOyje6wA";
- protocol="application/pgp-signature"; micalg=pgp-sha512
+On 5/21/20 6:40 AM, Michael B=FCsch wrote:
+> On Thu, 21 May 2020 12:30:43 +0100
+> Rui Salvaterra <rsalvaterra@gmail.com> wrote:
+> =
 
---Sig_/AV9X9MSUSOSPOMgNOyje6wA
-Content-Type: text/plain; charset=US-ASCII
-Content-Transfer-Encoding: quoted-printable
+>> Also note that this a PowerPC laptop (iBook G4).
+> =
 
-On Thu, 21 May 2020 12:30:43 +0100
-Rui Salvaterra <rsalvaterra@gmail.com> wrote:
+> That's not exactly a modern CPU, but measurements would be useful
+> anyway.
 
-> Also note that this a PowerPC laptop (iBook G4).=20
+Michael,
 
-That's not exactly a modern CPU, but measurements would be useful
-anyway.
+Thanks for a hearty morning laugh. I needed the endorphins.
 
---=20
-Michael
+I will be able to run some tests using a BCM4312 on an Intel i7 CPU running=
+ at =
 
---Sig_/AV9X9MSUSOSPOMgNOyje6wA
-Content-Type: application/pgp-signature
-Content-Description: OpenPGP digital signature
+2.90 GHz. It is a Haswell chip launched is Q3 2013 - a little more modern. =
+My =
 
------BEGIN PGP SIGNATURE-----
+setup will be using WPA2 connecting to an AC1750 AP.
 
-iQIzBAEBCgAdFiEEihRzkKVZOnT2ipsS9TK+HZCNiw4FAl7GaJsACgkQ9TK+HZCN
-iw4hGQ//YPTU7z5h33wbU0LuzQF3mE+KOGduPHaBMAkqpFTcGrDRQWQHPLsujC1n
-duRp3TG+RHAZF6Npq8nHCkhx2Q/buFeWg1e4fSvnfWVXd8r4xyt/g68a+oCpWDFq
-cQkzu8bd9HKTW+rkCAZEjAz8Y1PNk05Wdy2qrUKFBm4wmpVWT2+ynIS0Cn8YIJZn
-BNxtN2S6TYK++ll0EiMn+ckvsUzgGKdWx5FvycUuwmasc01ggk/AcveBFsz/oigp
-VjeoROi1Sya2Tilgp48riQyra2mZIoQrp7mUboJNCebuBmw9AWpNDhwhXHjzBjXn
-zVib2HRD5NhCn2J4Ko0Hoykdgv4orYzlQh+rkb3rBRvAB33forcTLxHCSKuEgBDk
-sbPMaZhze58AsPF1ljfineaeS6cK/Sy7Z+eDXdF9zMCr0OmiCGDtOIMaigQVM358
-dv2+z+fGX2SJmVdRAD4EYWcSCaGzAuHJDrGl3Hw0sU6eoIlalUc5AP7m8DTzMUbB
-8+LAv35mQNQaLsu8SqmqTR45+X8V4jnjlMMDXd12ReAYmqtT/L9+wCeFKBUX7Es5
-Zkc5TEiQ+++/0wXUHxsAuLaDk7+sm+vx5JT+s0Lcc6wZhyB/z37C5OJmVymhRXuX
-Ik1qRdodu9GIYGUfPfsDBTqdIOQy91NkDlXz62AVlo+uN5WHX4I=
-=11fZ
------END PGP SIGNATURE-----
+Larry
 
---Sig_/AV9X9MSUSOSPOMgNOyje6wA--
-
-
---===============5645541316111690075==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 b43-dev mailing list
 b43-dev@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/b43-dev
-
---===============5645541316111690075==--
-
