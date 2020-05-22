@@ -2,63 +2,56 @@ Return-Path: <b43-dev-bounces+lists+b43-dev=lfdr.de@lists.infradead.org>
 X-Original-To: lists+b43-dev@lfdr.de
 Delivered-To: lists+b43-dev@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 400E41DE5E3
-	for <lists+b43-dev@lfdr.de>; Fri, 22 May 2020 13:49:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 179231DE845
+	for <lists+b43-dev@lfdr.de>; Fri, 22 May 2020 15:46:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
-	Date:References:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=n/exMXr0rSnDoc+A4fQxSRVox2zuhkpzNU7kPdig6Wc=; b=jl0+HkcRRTwDCa
-	rlArbQ0gllL/Etw18gcjK51THi4uffZRhd+gxXlP6N8+OPC3qu4FwHUW9Tf0aiegwcoMgT1i+rT81
-	Dp0j1iuXrDLqoREiLpecAnKJBgx420OQ+MbaE1l1EekyOKZUs2SHEZdmzY6/UhSaajMDwcKssIrqz
-	bfQK7wHzxGsKmCo8ooo8UdKAaAxItRSNTGSVMQUbSvXDVi2fzv30TUUExS0rw0COV2rS0HYbhfZI1
-	xVT+UCIW2cSpcTe4q+QUBBZZFguNG0ZpxLcrhtOqYop/jdkNmtX9c1LMs+dYNbM7dYbO7XpxKHejd
-	YL/790QgVx88QZRyZtLA==;
+	List-Owner; bh=JkKm8YG55Hm0rE/LfsX3OnKusH0wvnNtlftDQBNjj4A=; b=harCg1EU+giAZc
+	f95U6PyLdHyF8t8153dqX7lhDxtXhkwiUuVbDn+piO7DGqHVekGafH7sOegLvJdO+8ZQsaB1X90dC
+	/jk7PgPrJH9k4EFm7MoiRTr3ICuC4D3MpglUC6+1mi5kJX8mq4JJeLcKgf/OjmZAXkvmdVkIE4CXv
+	vDDsUrDzeaabmAmr/voqIpPxCXO/SxprxKlxLQIP8H3tOmgc0r0A70xbHDae7fuar9zxiGTn+yDrv
+	mkl97I0MjxLH1gKeCL/0+P1AC6HiXY0xS92Em904eVt+qgO0wQXUaBRf0bUyp6VdZtEXj94PYKV1r
+	arXYaGCmO4pkeS0s9ruA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jc6BJ-0000Ee-PV; Fri, 22 May 2020 11:49:41 +0000
-Received: from mail26.static.mailgun.info ([104.130.122.26])
+	id 1jc80Z-0000G8-36; Fri, 22 May 2020 13:46:43 +0000
+Received: from mail-vs1-xe2b.google.com ([2607:f8b0:4864:20::e2b])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jc6BF-0000E7-Em
- for b43-dev@lists.infradead.org; Fri, 22 May 2020 11:49:39 +0000
-DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
- q=dns/txt; 
- s=smtp; t=1590148175; h=Content-Transfer-Encoding: Content-Type:
- MIME-Version: Message-ID: In-Reply-To: Date: References: Subject: Cc:
- To: From: Sender; bh=CaBNehdl9YUvZtml2EZG/wfTsnotSusNOcw0nP51B/c=;
- b=AcCQkhIY1NwwWbrpMkUTvPvX+s4ODmsb/k2Hc/udxozvlVA8EJ/CX5uUy+mCFImgVz9ySaWB
- czxT5HXSrS0frODMgLrV7/BLGIklQHh1EdlQulJzJtRfsn8NSVaXiT1UwxL1Mm7lMZqTHVX1
- FfirGHJrUKeKVg8kcupCIvHWfpw=
-X-Mailgun-Sending-Ip: 104.130.122.26
-X-Mailgun-Sid: WyIxODVhOSIsICJiNDMtZGV2QGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
-Received: from smtp.codeaurora.org
- (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171]) by
- smtp-out-n04.prod.us-east-1.postgun.com with SMTP id
- 5ec7bc4e4110e1471827d03a (version=TLS1.2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256); Fri, 22 May 2020 11:49:34
- GMT
-Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id 5AD8BC433C8; Fri, 22 May 2020 11:49:33 +0000 (UTC)
-X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
- aws-us-west-2-caf-mail-1.web.codeaurora.org
-X-Spam-Level: 
-X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE,
- URIBL_BLOCKED autolearn=unavailable autolearn_force=no version=3.4.0
-Received: from tynnyri.adurom.net (tynnyri.adurom.net [51.15.11.48])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested) (Authenticated sender: kvalo)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id 7C958C433C6;
- Fri, 22 May 2020 11:49:31 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 7C958C433C6
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- dmarc=none (p=none dis=none) header.from=codeaurora.org
-Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
- spf=none smtp.mailfrom=kvalo@codeaurora.org
-From: Kalle Valo <kvalo@codeaurora.org>
-To: Michael =?utf-8?Q?B=C3=BCsch?= <m@bues.ch>
-Subject: Re: [BUG?] b43: can't connect to WPA3 network (nohwcrypt=1)
+ id 1jc80W-0000FS-0I
+ for b43-dev@lists.infradead.org; Fri, 22 May 2020 13:46:41 +0000
+Received: by mail-vs1-xe2b.google.com with SMTP id 1so6058670vsl.9
+ for <b43-dev@lists.infradead.org>; Fri, 22 May 2020 06:46:38 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=kR7qqMGRLRdfRzqK6+0vu/8LZfKbHqHc5WGvZ7+qZ14=;
+ b=gioZKgijyezBfiTPIag9dJrvK1gzJxnfWstFDEVoystTRDaMN4EuMTQ+W/QcQnc+zF
+ rZN0QricxHYWU1G8i0CEO/xUbM1dIXpAyZydHWYNF1zDUaEPoXAhneYNXm55qkBfTADQ
+ 00yWfXCbqn81SbEazN2dJ+fODyjXY4BIy0hiLa09KY833vvLpMBscd5uCqlDAV3/tOQr
+ slJy9i6cX5zqgvA+XCqVIyEl9fXExl1LqU31OMAlMTdPcUGDyq4ydf6Zrg0vGHAkDtxY
+ E0tZCI2LZMr8w36mazMMxBYMo09IQvS9n0ocwTP5sTFSFJjmhYnvSbVNnb/WErqbGR/R
+ cE8w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=kR7qqMGRLRdfRzqK6+0vu/8LZfKbHqHc5WGvZ7+qZ14=;
+ b=O2rp4jOxTrzzt3StuvHwhTv7E5UPFq8OXRZ9mIWeKN0r77Be9rMqe+FDbqWuoyn0dm
+ L4wS+zcaoByfHQQhMk46EHPcTmrntrOn1WUtkcDsI1YvKXy7XXhIuqSNGor41Uh86h4F
+ x3aVRgutqGmKnCxtDN5sHa3iwd6WcELoP6lfYY59ryYVotwHJX8drjGO/VmuKe9hLmhl
+ qXQRIGw+U+0QPFKKAtGgiBStT14ci2YxA/I8SN9WzkPxeB87R8R/vqejUrmnBNoT+4hn
+ WMTvnfhC42jK/HIIg5GeT7jlDa474dIJI7Ql2S+f26Vbnv2Zq/7KsmxdAZN6PE/+60hB
+ mGQQ==
+X-Gm-Message-State: AOAM531e/wTsIReA0Fl43J5JuC2A135GGhkk2bZXs4/j1pJ8N2Fou6DK
+ SwXlen8tugEOLxtqG+bp1wBJaJYzNXbtk6xxyg==
+X-Google-Smtp-Source: ABdhPJwbz3E3I2HcF1B/r20RAYkb7RaUDHXKNLxz3TlKY7BtTmXqiFUumBdudKcACf52Ky650mnEcjQX3HphUXxyX9U=
+X-Received: by 2002:a05:6102:22f7:: with SMTP id
+ b23mr10327693vsh.172.1590155197806; 
+ Fri, 22 May 2020 06:46:37 -0700 (PDT)
+MIME-Version: 1.0
 References: <CALjTZvbLOr5zAYyp75Cs6Zo8mWNUVq3ZRJu56G1iHdiihFejWQ@mail.gmail.com>
  <CALjTZvaPi2FL-epk-Vd2wOLye2O0J8G5aZPsqzHXt2b7u=HyuQ@mail.gmail.com>
  <263e247c-3bf9-6d42-996b-bc513efe4b71@lwfinger.net>
@@ -76,31 +69,36 @@ References: <CALjTZvbLOr5zAYyp75Cs6Zo8mWNUVq3ZRJu56G1iHdiihFejWQ@mail.gmail.com>
  <CALjTZvbvE_cDg9mfszscSBowznp1UpxqiN1LQfbgeCOYatKMNg@mail.gmail.com>
  <f6152cd7-1043-dde2-7fc1-634d8b07a231@lwfinger.net>
  <20200522121910.254aefc1@wiggum>
-Date: Fri, 22 May 2020 14:49:28 +0300
-In-Reply-To: <20200522121910.254aefc1@wiggum> ("Michael
- \=\?utf-8\?Q\?B\=C3\=BCs\?\= \=\?utf-8\?Q\?ch\=22's\?\= message of
- "Fri, 22 May 2020 12:19:10 +0200")
-Message-ID: <87a720gpfb.fsf@tynnyri.adurom.net>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.1 (gnu/linux)
-MIME-Version: 1.0
+ <87a720gpfb.fsf@tynnyri.adurom.net>
+In-Reply-To: <87a720gpfb.fsf@tynnyri.adurom.net>
+From: Rui Salvaterra <rsalvaterra@gmail.com>
+Date: Fri, 22 May 2020 14:46:26 +0100
+Message-ID: <CALjTZvYiFfqN3UMSM89Pg1rB9fJga+L1hVkBriEDeaej7oXcPw@mail.gmail.com>
+Subject: Re: [BUG?] b43: can't connect to WPA3 network (nohwcrypt=1)
+To: Kalle Valo <kvalo@codeaurora.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200522_044937_554979_E4F2C150 
-X-CRM114-Status: GOOD (  17.86  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20200522_064640_076761_B49287D8 
+X-CRM114-Status: UNSURE (   7.98  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [104.130.122.26 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:e2b listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [rsalvaterra[at]gmail.com]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [104.130.122.26 listed in wl.mailspike.net]
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: b43-dev@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -112,46 +110,33 @@ List-Post: <mailto:b43-dev@lists.infradead.org>
 List-Help: <mailto:b43-dev-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/b43-dev>,
  <mailto:b43-dev-request@lists.infradead.org?subject=subscribe>
-Cc: Rui Salvaterra <rsalvaterra@gmail.com>, linux-wireless@vger.kernel.org,
- b43-dev@lists.infradead.org, Larry Finger <Larry.Finger@lwfinger.net>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: linux-wireless@vger.kernel.org, b43-dev@lists.infradead.org,
+ =?UTF-8?Q?Michael_B=C3=BCsch?= <m@bues.ch>,
+ Larry Finger <Larry.Finger@lwfinger.net>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "b43-dev" <b43-dev-bounces@lists.infradead.org>
 Errors-To: b43-dev-bounces+lists+b43-dev=lfdr.de@lists.infradead.org
 
-TWljaGFlbCBCw7xzY2ggPG1AYnVlcy5jaD4gd3JpdGVzOgoKPiBPbiBUaHUsIDIxIE1heSAyMDIw
-IDE2OjQ3OjQxIC0wNTAwCj4gTGFycnkgRmluZ2VyIDxMYXJyeS5GaW5nZXJAbHdmaW5nZXIubmV0
-PiB3cm90ZToKPgo+PiBPbiA1LzIxLzIwIDM6MjMgUE0sIFJ1aSBTYWx2YXRlcnJhIHdyb3RlOgo+
-PiA+IE9uIFRodSwgMjEgTWF5IDIwMjAgYXQgMjA6MTksIFJ1aSBTYWx2YXRlcnJhIDxyc2FsdmF0
-ZXJyYUBnbWFpbC5jb20+IHdyb3RlOiAgCj4+ID4+Cj4+ID4+IFN1cmUsIEknbGwgZ2l2ZSBpdCBh
-IHNwaW4uIEknbSBub3cgY29tcGlsaW5nIHRoZSBrZXJuZWwgZm9yIHRoZSBsYXB0b3AKPj4gPj4g
-d2l0aCB0aGUgb3RoZXIgYjQzIGNhcmQgKEJDTTQzMTEpLiAgCj4+ID4gCj4+ID4gTm9wZSwga21z
-ZyBpcyBjbGVhbi4gSSdtIHByZXR0eSBzdXJlIHRoZSBjb25kaXRpb24gaXMgZXZhbHVhdGluZyB0
-bwo+PiA+IGZhbHNlIGJlY2F1c2Ugd2UgZG8gaGF2ZSB0aGUgZmlybXdhcmUsIGl0J3MganVzdCB0
-aGF0IHRoZSBjcnlwdG8KPj4gPiBlbmdpbmUgZG9lc24ndCBzdXBwb3J0IHRoZSByZXF1aXJlZCBh
-bGdvLgo+PiA+IElzIGhhcmR3YXJlIGVuY3J5cHRpb24gYW4gYWxsLW9yLW5vdGhpbmcgdGhpbmcg
-aW4gbWFjODAyMTE/IFdvdWxkbid0Cj4+ID4gaXQgYmUgcG9zc2libGUgdXNlIHRoZSBoYXJkd2Fy
-ZSBhcyBtdWNoIGFzIHBvc3NpYmxlIGFuZCBmYWxsIGJhY2sgdG8KPj4gPiBzb2Z0d2FyZSBvbmx5
-IGZvciB0aGUgdW5zdXBwb3J0ZWQgZmVhdHVyZXM/IChJIGd1ZXNzIHRoZSBhbnN3ZXIgaXMKPj4g
-PiAibm8sIGJlY2F1c2UgdGhlIGZpcm13YXJlIGdldHMgaW4gdGhlIHdheSIsIGJ1dCBJIGhhZCB0
-byBhc2suKQo+PiA+ICAgCj4+IAo+PiBNeSBmaXJzdCBmYWlsdXJlIGluZGljYXRlcyB0aGUgbWFj
-ODAyMTEgbmVlZHMgdG8ga25vdyBmcm9tIHRoZSBzdGFydCB0aGF0IAo+PiBzb2Z0d2FyZSBlbmNy
-eXB0aW9uIGlzIHRvIGJlIHVzZWQuIFRoZSBvbmx5IHBsYWNlcyB0aGF0IHRoZSBkcml2ZXIgbWFr
-ZXMgbm90ZSBvZiAKPj4gdGhlIG5vaHdjcnlwdCBpcyBpbiBiNDNfb3Bfc2V0X2tleSgpIHdoZXJl
-IGl0IHJldHVybnMgLUVOT1NQQywgYW5kIG91ciBuZXcgb25lIAo+PiB3aGVyZSBNRlBfQ0FQQUJM
-RSBpcyBzZXQuIE90aGVyd2lzZSwgdGhlIHBhY2tldCBmbGFncyBpbmRpY2F0ZSB0aGF0IGVuY3J5
-cHRpb24gCj4+IGlzIG5vdCBuZWVkZWQuCj4KPgo+IFRoYW5rIHlvdSBhbGwgdmVyeSBtdWNoIGZv
-ciBiZW5jaG1hcmtpbmcgdGhpcy4KPgo+IEFzIHdlIHNlZSwgaHdjcnlwdG8gaGFzIGEgbWFqb3Ig
-ZWZmZWN0IG9uIENQVSBsb2FkLgo+IEJ1dCBJJ20gc3RpbGwgaW4gZmF2b3Igb2YgY2hhbmdpbmcg
-dGhlIGRlZmF1bHQgdG8gbm9od2NyeXB0PTEuCgpJJ20gdGhpbmtpbmcgdGhlIHNhbWUuCgo+IFRo
-YXQgd291bGQgYmUgYSB0cmFkZSBvZmYgYmV0d2VlbiBhIHdpZmkgdGhhdCBkb2VzIHdvcmsgd2l0
-aCAiYmFkIgo+IHBlcmZvcm1hbmNlIHZzLiBhIHdpZmkgdGhhdCBkb2VzIG5vdCB3b3JrIGF0IGFs
-bCBieSBkZWZhdWx0LgoKQW5kIGRpZCB0aGUgImJhZCIgcGVyZm9ybWFuY2UgZXZlbiBoYXZlIGFu
-eSByZWFsIHZpc2libGUgY2hhbmdlcyB0byB0aGUKdXNlcj8gSU1ITyB0aGlzICJiYWQiIHBlcmZv
-cm1hbmNlIGlzIHNtYWxsIHByaWNlIHRvIHBheSBmcm9tIGdldHRpbmcKV1BBMyBzdXBwb3J0ZWQg
-b3V0LW9mLWJveCwgZXNwZWNpYWxseSB3aGVuIHRoZSBkYXRhIHRocm91Z2hwdXQgaXMKdW5hZmZl
-Y3RlZC4KCi0tIApodHRwczovL3dpcmVsZXNzLndpa2kua2VybmVsLm9yZy9lbi9kZXZlbG9wZXJz
-L2RvY3VtZW50YXRpb24vc3VibWl0dGluZ3BhdGNoZXMKCl9fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fCmI0My1kZXYgbWFpbGluZyBsaXN0CmI0My1kZXZAbGlz
-dHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3Rp
-bmZvL2I0My1kZXYK
+Hi, Kalle,
+
+On Fri, 22 May 2020 at 12:49, Kalle Valo <kvalo@codeaurora.org> wrote:
+>
+> And did the "bad" performance even have any real visible changes to the
+> user? IMHO this "bad" performance is small price to pay from getting
+> WPA3 supported out-of-box, especially when the data throughput is
+> unaffected.
+
+I agree, I also believe the additional security provided by WPA3 is
+more important. The CPU overhead impact exists and is measurable but,
+to be honest, I didn't notice any worse performance while browsing the
+web, for example (which is already slow enough on a G4 CPU, as you can
+imagine).
+
+Thanks,
+Rui
+
+_______________________________________________
+b43-dev mailing list
+b43-dev@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/b43-dev
