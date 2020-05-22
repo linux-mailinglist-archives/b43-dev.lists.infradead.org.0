@@ -2,66 +2,64 @@ Return-Path: <b43-dev-bounces+lists+b43-dev=lfdr.de@lists.infradead.org>
 X-Original-To: lists+b43-dev@lfdr.de
 Delivered-To: lists+b43-dev@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 468C61DEDFD
-	for <lists+b43-dev@lfdr.de>; Fri, 22 May 2020 19:15:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 34CAD1DEECE
+	for <lists+b43-dev@lfdr.de>; Fri, 22 May 2020 20:02:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=aCGw/2W9a69XgoIFnYY5//UR9C07mMMdfE2ZgTmRPjQ=; b=pRlYOvbyYcFV/Cn7DXamTfb+8
-	UQfOvb1fRG9K8kw6eO9DEtyqDLsrDePkknJYeEMcevFSytVn/1KrBvjdmYmp49Gtok+jVDQlEYL5+
-	y/5XD7wG2i4SZ1+dUcBKDOMhmffv04Ot3yMnoA4TaFiOnH0BlHOupdJvhdjut+HoNonuPkXTrEEbS
-	nXqkLM6EJ5U1O+F+FITI9F6IN4zSzUpQD7xH8y4jIOImEsnlXFIjQoom62kQDhg+K+l7JKYjWLp3P
-	RcYjGVJ6YrU6Vd1BO2Bf2/ep1vzv/d5vM9fW/rVY45je/rv7DRHvPN3xu79SXgzFFBQYbKLW8HlY/
-	VnTeI2VrA==;
+	 bh=q/QgBUAhGQPnCi78fWgYpr6f9DEAyOhdUY/L9iWrddE=; b=cnoYVXb38NRyw9JfkmIE39HVs
+	hcUfs17OQGYuTtxYuphg0OifiZg7xfMeBX30O5QXAFqXHUzClhg7XgAnwR9JIfFNViU4ZpEFzfeNX
+	+RRPFCPh1Lcs2cQHDjABgb62z5KontL7HyWFHoKgLFXGg3xnc1P78Oek3LQ8MGLgqqgFwbjo4gm4n
+	c6WPgmVjiwhqvEwMz9rkkNkp73inNh9GtfnSPS9jRadjEKV7HMj4MwEvelqC9K2BiEAVRu7RwwYvk
+	7UO0bdwpxC6zr01iqI5lwMM6wGxTk7K9AUgcMo9z4S88bKJq0stCX2IORzaRZjO37hAN44xjCjhCn
+	tJsYFgZzA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jcBGH-00032V-3S; Fri, 22 May 2020 17:15:09 +0000
-Received: from mail-oi1-x22a.google.com ([2607:f8b0:4864:20::22a])
+	id 1jcC0G-00085b-Fy; Fri, 22 May 2020 18:02:40 +0000
+Received: from mail-oo1-xc41.google.com ([2607:f8b0:4864:20::c41])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jcBGB-00023g-AG
- for b43-dev@lists.infradead.org; Fri, 22 May 2020 17:15:05 +0000
-Received: by mail-oi1-x22a.google.com with SMTP id i22so9899266oik.10
- for <b43-dev@lists.infradead.org>; Fri, 22 May 2020 10:15:02 -0700 (PDT)
+ id 1jcC0C-000856-T2
+ for b43-dev@lists.infradead.org; Fri, 22 May 2020 18:02:38 +0000
+Received: by mail-oo1-xc41.google.com with SMTP id p123so2329256oop.12
+ for <b43-dev@lists.infradead.org>; Fri, 22 May 2020 11:02:36 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=sender:subject:to:cc:references:from:message-id:date:user-agent
  :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=ckgg64SC7fdaahBmYEinAAOpnv23m7eSUns6AU0ttpM=;
- b=WV++N2+NBkx939H4jCUnBjEIa5vqsfMYuYB9/gNv32VZ01Vt1N4KUaqF8YeMW+S1B6
- ML8n9WN17S5sY970pKC9/Smncy1NGrEAV+GdSRlaybfdHyHAnSLOigLVTKbMmz7JRYYc
- psgyf9xT4D2PdYq0m0wXX2N0HwGA5xNBSrmu4Yp3Gsi19NXEysm2FG0iGaOsrEDMkJ+9
- 96NbUqdPqbykiEKhJmc396bcP5SCgwly7PBrNOQh9zANC2V0teZVaDEFrpxRXz0+4Ye0
- LzgcuR5UIPDEjQPgf48bl85nX0fDh6wypvtbi3jkeKT87uc+01LHqZwYPv+xPL9OdWP5
- 5Uqw==
+ bh=GSCGiEHsC3ZI9KkAAWSs4IF8BYPJlvX2P9br2V/0CYY=;
+ b=kc6ySc7htv/sdXoWpcKgEwVDH/I8bN4tLrXxQOTr96bwgtmdfz94141cTihoyVqcNa
+ TLsIr2ZVSx0muS+daWEPFrJyMGKlk/CzJY2OLR1JqISkwTnzUjo2tnMeG578WNlLy9Dh
+ oPkdoYPft6BwC6NBEcKYUAw5olnHQRdEkKd6c/bCxAKN1yv5ruxL+MxyAemNZ/UXarid
+ EEsnazb070uj7oCNHbCeAWx4ys7O7/L/c6Khb+PUgQQW7Zwh0gXj40IuB3gt1wgDWIZZ
+ OmFnPiz0EOmHNfMhygQaSfdAme7T9aaDhCimS/SFCya9fidilr78YBYXyOQ9+pHobx+O
+ DllQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:sender:subject:to:cc:references:from:message-id
  :date:user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=ckgg64SC7fdaahBmYEinAAOpnv23m7eSUns6AU0ttpM=;
- b=EP9iTG708y1LIdt6s2XPcLywfPNbbD70xCy9g6yc6eGwdRaTLoIPEJDALSuBZqU1Rg
- i6AQSuz7JmVaUjnaP0FnWKoe8djjyl4oEi/XjsqVep8A5DAyMcZNoA89dGP11a2oQS1R
- PSLcNYHtujkEetK63ZFYkKaekXC64MUE8chGvLsTsRo1INjPDp0VLhRLS0umSxPfwAHv
- 4s3rwHsiuKjzMOKQ7MjYeWfG8xqzTHYpjcAB+uf2Ci9Y65JNsra3GrGvBTVpgzXtsgvV
- P5UoqxSgwQ0AIau82gTcBBAfuKcQ3WGLtEZguzDh4QRRHcP+l79AlTSP0lqGMYNCtxHs
- ZL6A==
-X-Gm-Message-State: AOAM533bXC7bnLek1jpKaQN/+5s+YVsWHaJo6dSeHVphgAeF56k7IpGP
- wYdxeIgH8Hz6fUGEkXDJ1xxzPbmH
-X-Google-Smtp-Source: ABdhPJxcM6bXLt737eva3Gj24e82sS+5h+WaUPfDEvgAJ/BEkVNj9TGuK+NG3G0OJOBNl2tJgxqJ9g==
-X-Received: by 2002:aca:d609:: with SMTP id n9mr3372266oig.77.1590167702013;
- Fri, 22 May 2020 10:15:02 -0700 (PDT)
+ bh=GSCGiEHsC3ZI9KkAAWSs4IF8BYPJlvX2P9br2V/0CYY=;
+ b=ny1utSiDFCW/wpZjnq0M3iZcHB3CGNa/VBPh6BHd37/j5u2l6ZX45UDEbAyCkj47Xf
+ ZtgGZW+HJXOaRw6RyonOo0ATZ6TGFEt2c8yBOz3SJUeghJO+nOBXa0CIIlC74TuLzFfs
+ De8uqADFKEPc4XtUQrH1YFwsa1ERTFOOaJ0oQUN1oLIQPAJY07OkM1MrR065hRAJM1Ys
+ uXTMMDArtHbAaTBJWD9xgRsD4HXFpmf0XALr0nTfI5v3KDuUl4aLqSuTjZJez3uEQtZk
+ z5VUz/24h0W6mPLBazyKbgZJG85W/RgIiCS6fR/Ghk/iXKuLyVjL3eAhlHN6iHkg42YV
+ srXQ==
+X-Gm-Message-State: AOAM532Z5y3sihwmUu6gZoKis16kuozGKTPV/BdDR9RBMEgrbeSFjj5i
+ /G0k1P7AKW6An+Zibg83z0iC7N4V
+X-Google-Smtp-Source: ABdhPJw3fJr7z57yyO2xSEloYu70PYL9yCldhdxZGiPi/OE57BVHbFQoxztyB/SMYdpUCMvdu47+yg==
+X-Received: by 2002:a4a:5147:: with SMTP id s68mr3953933ooa.86.1590170555804; 
+ Fri, 22 May 2020 11:02:35 -0700 (PDT)
 Received: from localhost.localdomain (cpe-24-31-245-230.kc.res.rr.com.
  [24.31.245.230])
- by smtp.gmail.com with ESMTPSA id z12sm2707473oor.0.2020.05.22.10.15.00
+ by smtp.gmail.com with ESMTPSA id d11sm2638792otc.5.2020.05.22.11.02.34
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Fri, 22 May 2020 10:15:01 -0700 (PDT)
+ Fri, 22 May 2020 11:02:34 -0700 (PDT)
 Subject: Re: [BUG?] b43: can't connect to WPA3 network (nohwcrypt=1)
-To: Kalle Valo <kvalo@codeaurora.org>, =?UTF-8?Q?Michael_B=c3=bcsch?=
- <m@bues.ch>
+To: Rui Salvaterra <rsalvaterra@gmail.com>, Kalle Valo <kvalo@codeaurora.org>
 References: <CALjTZvbLOr5zAYyp75Cs6Zo8mWNUVq3ZRJu56G1iHdiihFejWQ@mail.gmail.com>
- <263e247c-3bf9-6d42-996b-bc513efe4b71@lwfinger.net>
  <CALjTZvauK0Hh+aoabcDX9kkQZ4zN2ZjPnB+aq7YrJ9+-4ihiAg@mail.gmail.com>
  <87fffd5d-242a-7195-c4cc-80260dbd53c5@lwfinger.net>
  <CALjTZvYCFNSQ6HMN4owkiGTVrYaiU8R-P1KXgvkwGqcOo8uMuw@mail.gmail.com>
@@ -76,24 +74,25 @@ References: <CALjTZvbLOr5zAYyp75Cs6Zo8mWNUVq3ZRJu56G1iHdiihFejWQ@mail.gmail.com>
  <CALjTZvbvE_cDg9mfszscSBowznp1UpxqiN1LQfbgeCOYatKMNg@mail.gmail.com>
  <f6152cd7-1043-dde2-7fc1-634d8b07a231@lwfinger.net>
  <20200522121910.254aefc1@wiggum> <87a720gpfb.fsf@tynnyri.adurom.net>
+ <CALjTZvYiFfqN3UMSM89Pg1rB9fJga+L1hVkBriEDeaej7oXcPw@mail.gmail.com>
 From: Larry Finger <Larry.Finger@lwfinger.net>
-Message-ID: <842ae4a0-5aa5-a464-3218-8955a3ee445a@lwfinger.net>
-Date: Fri, 22 May 2020 12:15:00 -0500
+Message-ID: <f1f97888-e7f6-d272-6ed1-8c040d8a7c91@lwfinger.net>
+Date: Fri, 22 May 2020 13:02:33 -0500
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
  Thunderbird/68.8.0
 MIME-Version: 1.0
-In-Reply-To: <87a720gpfb.fsf@tynnyri.adurom.net>
+In-Reply-To: <CALjTZvYiFfqN3UMSM89Pg1rB9fJga+L1hVkBriEDeaej7oXcPw@mail.gmail.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200522_101503_387802_5AF2A9AA 
-X-CRM114-Status: GOOD (  12.38  )
+X-CRM114-CacheID: sfid-20200522_110236_935450_DFA10FD9 
+X-CRM114-Status: GOOD (  14.63  )
 X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:22a listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:c41 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider [larry.finger[at]gmail.com]
@@ -120,36 +119,51 @@ List-Help: <mailto:b43-dev-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/b43-dev>,
  <mailto:b43-dev-request@lists.infradead.org?subject=subscribe>
 Cc: linux-wireless@vger.kernel.org, b43-dev@lists.infradead.org,
- Rui Salvaterra <rsalvaterra@gmail.com>
+ =?UTF-8?Q?Michael_B=c3=bcsch?= <m@bues.ch>
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "b43-dev" <b43-dev-bounces@lists.infradead.org>
 Errors-To: b43-dev-bounces+lists+b43-dev=lfdr.de@lists.infradead.org
 
-On 5/22/20 6:49 AM, Kalle Valo wrote:
+On 5/22/20 8:46 AM, Rui Salvaterra wrote:
+> Hi, Kalle,
 > 
-> And did the "bad" performance even have any real visible changes to the
-> user? IMHO this "bad" performance is small price to pay from getting
-> WPA3 supported out-of-box, especially when the data throughput is
-> unaffected.
+> On Fri, 22 May 2020 at 12:49, Kalle Valo <kvalo@codeaurora.org> wrote:
+>>
+>> And did the "bad" performance even have any real visible changes to the
+>> user? IMHO this "bad" performance is small price to pay from getting
+>> WPA3 supported out-of-box, especially when the data throughput is
+>> unaffected.
+> 
+> I agree, I also believe the additional security provided by WPA3 is
+> more important. The CPU overhead impact exists and is measurable but,
+> to be honest, I didn't notice any worse performance while browsing the
+> web, for example (which is already slow enough on a G4 CPU, as you can
+> imagine).
 
-Kalle,
+Rui,
 
-The only bad effect is to consume 2-3 times more CPU than used if the firmware 
-handles encryption. On a modern system, the effect is negligible; however, these 
-cards are found only on older systems that have uni-processors.
+Does this one-line
+patch work for WPA3 without setting the nohwcrypt option?
 
-I have reread the mac80211 documentation (comments in code at least), and it 
-appears that it should be possible to set MFP_CAPABLE unconditionally, and use 
-the set_key() callback to let mac80211 know if the driver/firmware will handle 
-encryption. The module parameter could be removed; however, I favor leaving it 
-in case of broken hardware.
+diff --git a/drivers/net/wireless/broadcom/b43/main.c 
+b/drivers/net/wireless/broadcom/b43/main.c
+index 39da1a4c30ac..3ad94dad2d89 100644
+--- a/drivers/net/wireless/broadcom/b43/main.c
++++ b/drivers/net/wireless/broadcom/b43/main.c
+@@ -5569,7 +5569,7 @@ static struct b43_wl *b43_wireless_init(struct b43_bus_dev 
+*dev)
+         /* fill hw info */
+         ieee80211_hw_set(hw, RX_INCLUDES_FCS);
+         ieee80211_hw_set(hw, SIGNAL_DBM);
+-
++       ieee80211_hw_set(hw, MFP_CAPABLE);
+         hw->wiphy->interface_modes =
+                 BIT(NL80211_IFTYPE_AP) |
+                 BIT(NL80211_IFTYPE_MESH_POINT) |
 
-@Rui: I will send you a new patch for testing.
 
 Larry
-
-
 
 _______________________________________________
 b43-dev mailing list
