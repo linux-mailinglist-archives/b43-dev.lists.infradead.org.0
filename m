@@ -2,35 +2,63 @@ Return-Path: <b43-dev-bounces+lists+b43-dev=lfdr.de@lists.infradead.org>
 X-Original-To: lists+b43-dev@lfdr.de
 Delivered-To: lists+b43-dev@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1C04F1DE46A
-	for <lists+b43-dev@lfdr.de>; Fri, 22 May 2020 12:29:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 400E41DE5E3
+	for <lists+b43-dev@lfdr.de>; Fri, 22 May 2020 13:49:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:References:In-Reply-To:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=GBPVL8Vivge8lZmqATGYjPPdY2ftJG10RBF8+ygBvjM=; b=Kv9PlwOIxA0j1f1Ux41JrffUW
-	RNs/zQ/iThKub6v/x1Zhv/G60WT+VEBLlRmcmAJXa4s4VB/nAS6O9IZb4VWgP158kRoBVvnep78LX
-	EAEXsbYcpBMemwOBQxwgZQhqyWaxhR0h9AkXXoj6itJ8rDgu/n+NlDXrueOuzYn7NsfxkRHrQW0T6
-	HM1wOuvsIM/YsoGCmN+olDwPTfux6WYeryH0/2aRh9m0UqCXAlPeCezlwPLFG4Kwo5rhlg9NKZytr
-	i8xNu3pcX0alOlHf5kWIyufybfBSfUCf75seXAF1lvfRFeoVOOQVxCCuR054wIlbTIIhiZrpvG3SW
-	8n24gzoeQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
+	Date:References:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=n/exMXr0rSnDoc+A4fQxSRVox2zuhkpzNU7kPdig6Wc=; b=jl0+HkcRRTwDCa
+	rlArbQ0gllL/Etw18gcjK51THi4uffZRhd+gxXlP6N8+OPC3qu4FwHUW9Tf0aiegwcoMgT1i+rT81
+	Dp0j1iuXrDLqoREiLpecAnKJBgx420OQ+MbaE1l1EekyOKZUs2SHEZdmzY6/UhSaajMDwcKssIrqz
+	bfQK7wHzxGsKmCo8ooo8UdKAaAxItRSNTGSVMQUbSvXDVi2fzv30TUUExS0rw0COV2rS0HYbhfZI1
+	xVT+UCIW2cSpcTe4q+QUBBZZFguNG0ZpxLcrhtOqYop/jdkNmtX9c1LMs+dYNbM7dYbO7XpxKHejd
+	YL/790QgVx88QZRyZtLA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jc4v6-0005eb-La; Fri, 22 May 2020 10:28:52 +0000
-Received: from bues.ch ([2a01:138:9005::1:4])
+	id 1jc6BJ-0000Ee-PV; Fri, 22 May 2020 11:49:41 +0000
+Received: from mail26.static.mailgun.info ([104.130.122.26])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jc4mx-0003l4-6F
- for b43-dev@lists.infradead.org; Fri, 22 May 2020 10:20:28 +0000
-Received: by bues.ch with esmtpsa (Exim 4.92) (envelope-from <m@bues.ch>)
- id 1jc4ml-0007KJ-FG; Fri, 22 May 2020 12:20:15 +0200
-Date: Fri, 22 May 2020 12:19:10 +0200
-From: Michael =?UTF-8?B?QsO8c2No?= <m@bues.ch>
-To: Larry Finger <Larry.Finger@lwfinger.net>
+ id 1jc6BF-0000E7-Em
+ for b43-dev@lists.infradead.org; Fri, 22 May 2020 11:49:39 +0000
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
+ q=dns/txt; 
+ s=smtp; t=1590148175; h=Content-Transfer-Encoding: Content-Type:
+ MIME-Version: Message-ID: In-Reply-To: Date: References: Subject: Cc:
+ To: From: Sender; bh=CaBNehdl9YUvZtml2EZG/wfTsnotSusNOcw0nP51B/c=;
+ b=AcCQkhIY1NwwWbrpMkUTvPvX+s4ODmsb/k2Hc/udxozvlVA8EJ/CX5uUy+mCFImgVz9ySaWB
+ czxT5HXSrS0frODMgLrV7/BLGIklQHh1EdlQulJzJtRfsn8NSVaXiT1UwxL1Mm7lMZqTHVX1
+ FfirGHJrUKeKVg8kcupCIvHWfpw=
+X-Mailgun-Sending-Ip: 104.130.122.26
+X-Mailgun-Sid: WyIxODVhOSIsICJiNDMtZGV2QGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
+Received: from smtp.codeaurora.org
+ (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171]) by
+ smtp-out-n04.prod.us-east-1.postgun.com with SMTP id
+ 5ec7bc4e4110e1471827d03a (version=TLS1.2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256); Fri, 22 May 2020 11:49:34
+ GMT
+Received: by smtp.codeaurora.org (Postfix, from userid 1001)
+ id 5AD8BC433C8; Fri, 22 May 2020 11:49:33 +0000 (UTC)
+X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
+ aws-us-west-2-caf-mail-1.web.codeaurora.org
+X-Spam-Level: 
+X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE,
+ URIBL_BLOCKED autolearn=unavailable autolearn_force=no version=3.4.0
+Received: from tynnyri.adurom.net (tynnyri.adurom.net [51.15.11.48])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested) (Authenticated sender: kvalo)
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id 7C958C433C6;
+ Fri, 22 May 2020 11:49:31 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 7C958C433C6
+Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
+ dmarc=none (p=none dis=none) header.from=codeaurora.org
+Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
+ spf=none smtp.mailfrom=kvalo@codeaurora.org
+From: Kalle Valo <kvalo@codeaurora.org>
+To: Michael =?utf-8?Q?B=C3=BCsch?= <m@bues.ch>
 Subject: Re: [BUG?] b43: can't connect to WPA3 network (nohwcrypt=1)
-Message-ID: <20200522121910.254aefc1@wiggum>
-In-Reply-To: <f6152cd7-1043-dde2-7fc1-634d8b07a231@lwfinger.net>
 References: <CALjTZvbLOr5zAYyp75Cs6Zo8mWNUVq3ZRJu56G1iHdiihFejWQ@mail.gmail.com>
  <CALjTZvaPi2FL-epk-Vd2wOLye2O0J8G5aZPsqzHXt2b7u=HyuQ@mail.gmail.com>
  <263e247c-3bf9-6d42-996b-bc513efe4b71@lwfinger.net>
@@ -47,18 +75,32 @@ References: <CALjTZvbLOr5zAYyp75Cs6Zo8mWNUVq3ZRJu56G1iHdiihFejWQ@mail.gmail.com>
  <CALjTZva70Ni-s5VjRZL5BPswEtz5VZsX+dvE6rq2ztLJQ9v3kA@mail.gmail.com>
  <CALjTZvbvE_cDg9mfszscSBowznp1UpxqiN1LQfbgeCOYatKMNg@mail.gmail.com>
  <f6152cd7-1043-dde2-7fc1-634d8b07a231@lwfinger.net>
-X-Mailer: Claws Mail 3.17.5 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+ <20200522121910.254aefc1@wiggum>
+Date: Fri, 22 May 2020 14:49:28 +0300
+In-Reply-To: <20200522121910.254aefc1@wiggum> ("Michael
+ \=\?utf-8\?Q\?B\=C3\=BCs\?\= \=\?utf-8\?Q\?ch\=22's\?\= message of
+ "Fri, 22 May 2020 12:19:10 +0200")
+Message-ID: <87a720gpfb.fsf@tynnyri.adurom.net>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.1 (gnu/linux)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200522_032027_231699_71B2C45B 
-X-CRM114-Status: GOOD (  17.85  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20200522_044937_554979_E4F2C150 
+X-CRM114-Status: GOOD (  17.86  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [104.130.122.26 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [104.130.122.26 listed in wl.mailspike.net]
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: b43-dev@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,104 +112,46 @@ List-Post: <mailto:b43-dev@lists.infradead.org>
 List-Help: <mailto:b43-dev-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/b43-dev>,
  <mailto:b43-dev-request@lists.infradead.org?subject=subscribe>
-Cc: linux-wireless@vger.kernel.org, b43-dev@lists.infradead.org,
- Rui Salvaterra <rsalvaterra@gmail.com>
-Content-Type: multipart/mixed; boundary="===============3683955167715724462=="
+Cc: Rui Salvaterra <rsalvaterra@gmail.com>, linux-wireless@vger.kernel.org,
+ b43-dev@lists.infradead.org, Larry Finger <Larry.Finger@lwfinger.net>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "b43-dev" <b43-dev-bounces@lists.infradead.org>
 Errors-To: b43-dev-bounces+lists+b43-dev=lfdr.de@lists.infradead.org
 
---===============3683955167715724462==
-Content-Type: multipart/signed; boundary="Sig_/CecN_GWaXptE7.hUdn20d0I";
- protocol="application/pgp-signature"; micalg=pgp-sha512
-
---Sig_/CecN_GWaXptE7.hUdn20d0I
-Content-Type: text/plain; charset=US-ASCII
-Content-Transfer-Encoding: quoted-printable
-
-On Thu, 21 May 2020 16:47:41 -0500
-Larry Finger <Larry.Finger@lwfinger.net> wrote:
-
-> On 5/21/20 3:23 PM, Rui Salvaterra wrote:
-> > On Thu, 21 May 2020 at 20:19, Rui Salvaterra <rsalvaterra@gmail.com> wr=
-ote: =20
-> >>
-> >> Sure, I'll give it a spin. I'm now compiling the kernel for the laptop
-> >> with the other b43 card (BCM4311). =20
-> >=20
-> > Nope, kmsg is clean. I'm pretty sure the condition is evaluating to
-> > false because we do have the firmware, it's just that the crypto
-> > engine doesn't support the required algo.
-> > Is hardware encryption an all-or-nothing thing in mac80211? Wouldn't
-> > it be possible use the hardware as much as possible and fall back to
-> > software only for the unsupported features? (I guess the answer is
-> > "no, because the firmware gets in the way", but I had to ask.)
-> >  =20
->=20
-> My first failure indicates the mac80211 needs to know from the start that=
-=20
-> software encryption is to be used. The only places that the driver makes =
-note of=20
-> the nohwcrypt is in b43_op_set_key() where it returns -ENOSPC, and our ne=
-w one=20
-> where MFP_CAPABLE is set. Otherwise, the packet flags indicate that encry=
-ption=20
-> is not needed.
-
-
-Thank you all very much for benchmarking this.
-
-As we see, hwcrypto has a major effect on CPU load.
-But I'm still in favor of changing the default to nohwcrypt=3D1.
-That would be a trade off between a wifi that does work with "bad"
-performance vs. a wifi that does not work at all by default. It would
-not stop people from enabling hwcrypto again.
-
-But I'm also wondering, if we can dynamically decide whether to allow
-hwcrypto.
-Can't we set the MFP-flag all the time and then in b43_op_set_key
-decide whether we allow hwcrypto or not? As far as I remember mac80211
-falls back to sw-crypto, if an error is returned from the key op. So it
-would "just" be a matter of detecting whether MFP is actually being
-used in the network we are trying to connect to from within the key op.
-Is that information available somewhere in mac80211?
-
---=20
-Michael
-
---Sig_/CecN_GWaXptE7.hUdn20d0I
-Content-Type: application/pgp-signature
-Content-Description: OpenPGP digital signature
-
------BEGIN PGP SIGNATURE-----
-
-iQIyBAEBCgAdFiEEihRzkKVZOnT2ipsS9TK+HZCNiw4FAl7Hpx4ACgkQ9TK+HZCN
-iw4njw/3ctsn6f+mOYg3I6VpNRJm9ym+rhJGzFFQ+78xMMAK4gOmwflhrOe02RO5
-mEwT4HdUnkoNyJeCywbkABdKJ+JaZ6ZjIHttNx5Nn+UPtFxN9JKT1mAHIYGKD1VO
-7Rbc+m5/GF+kbfSyIswZfq2cdOm8vVtknOA7g0/jiyIhmWsNiQIzW32cL43bw6zu
-adaMH+TT0+JTkWvi4GAYv7u95tcm1jzsAbSzi3+sr9ESQACElaN6kq0YhI2uwmz7
-ix8evNlyK37V0HiRDCxohb4D2Z8USKmve1he/sz1esi1a7jEhoE/wfonCOMn4TYv
-JWM8D7XNmmyx46lyroppgw74ZnHqqPLVGD1EhSC3s4KGNRi0QA065KrNLkCI9+u+
-lI9Pl2dNBACQ9JN+H1I2cmBB65/ESDcbVg050XRUenIpyibs4cHeoHiFy55vIEJu
-yDYQK/DpDapQg6wWMx9IHN+pP4taJEd2nn6idMAssWp/xp07Pb72DxfeIy/uQAbL
-x3paPjOyEXPlO2i9QtOo0zdgpZN58ww7AcX42AlmiLOdcgJGbge3+orUT+i2ksNb
-Ew8UNAqXncATMhUdLWefA3W/9iRQoZH8Sdb1s6vqXXM72HOL2ZDngqmArHJTbf2T
-1zL20huIFbBnRb5SKApCW2GAzs9iuDaF/dcMdXxCzG8LpRx6bg==
-=gUxY
------END PGP SIGNATURE-----
-
---Sig_/CecN_GWaXptE7.hUdn20d0I--
-
-
---===============3683955167715724462==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
-_______________________________________________
-b43-dev mailing list
-b43-dev@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/b43-dev
-
---===============3683955167715724462==--
-
+TWljaGFlbCBCw7xzY2ggPG1AYnVlcy5jaD4gd3JpdGVzOgoKPiBPbiBUaHUsIDIxIE1heSAyMDIw
+IDE2OjQ3OjQxIC0wNTAwCj4gTGFycnkgRmluZ2VyIDxMYXJyeS5GaW5nZXJAbHdmaW5nZXIubmV0
+PiB3cm90ZToKPgo+PiBPbiA1LzIxLzIwIDM6MjMgUE0sIFJ1aSBTYWx2YXRlcnJhIHdyb3RlOgo+
+PiA+IE9uIFRodSwgMjEgTWF5IDIwMjAgYXQgMjA6MTksIFJ1aSBTYWx2YXRlcnJhIDxyc2FsdmF0
+ZXJyYUBnbWFpbC5jb20+IHdyb3RlOiAgCj4+ID4+Cj4+ID4+IFN1cmUsIEknbGwgZ2l2ZSBpdCBh
+IHNwaW4uIEknbSBub3cgY29tcGlsaW5nIHRoZSBrZXJuZWwgZm9yIHRoZSBsYXB0b3AKPj4gPj4g
+d2l0aCB0aGUgb3RoZXIgYjQzIGNhcmQgKEJDTTQzMTEpLiAgCj4+ID4gCj4+ID4gTm9wZSwga21z
+ZyBpcyBjbGVhbi4gSSdtIHByZXR0eSBzdXJlIHRoZSBjb25kaXRpb24gaXMgZXZhbHVhdGluZyB0
+bwo+PiA+IGZhbHNlIGJlY2F1c2Ugd2UgZG8gaGF2ZSB0aGUgZmlybXdhcmUsIGl0J3MganVzdCB0
+aGF0IHRoZSBjcnlwdG8KPj4gPiBlbmdpbmUgZG9lc24ndCBzdXBwb3J0IHRoZSByZXF1aXJlZCBh
+bGdvLgo+PiA+IElzIGhhcmR3YXJlIGVuY3J5cHRpb24gYW4gYWxsLW9yLW5vdGhpbmcgdGhpbmcg
+aW4gbWFjODAyMTE/IFdvdWxkbid0Cj4+ID4gaXQgYmUgcG9zc2libGUgdXNlIHRoZSBoYXJkd2Fy
+ZSBhcyBtdWNoIGFzIHBvc3NpYmxlIGFuZCBmYWxsIGJhY2sgdG8KPj4gPiBzb2Z0d2FyZSBvbmx5
+IGZvciB0aGUgdW5zdXBwb3J0ZWQgZmVhdHVyZXM/IChJIGd1ZXNzIHRoZSBhbnN3ZXIgaXMKPj4g
+PiAibm8sIGJlY2F1c2UgdGhlIGZpcm13YXJlIGdldHMgaW4gdGhlIHdheSIsIGJ1dCBJIGhhZCB0
+byBhc2suKQo+PiA+ICAgCj4+IAo+PiBNeSBmaXJzdCBmYWlsdXJlIGluZGljYXRlcyB0aGUgbWFj
+ODAyMTEgbmVlZHMgdG8ga25vdyBmcm9tIHRoZSBzdGFydCB0aGF0IAo+PiBzb2Z0d2FyZSBlbmNy
+eXB0aW9uIGlzIHRvIGJlIHVzZWQuIFRoZSBvbmx5IHBsYWNlcyB0aGF0IHRoZSBkcml2ZXIgbWFr
+ZXMgbm90ZSBvZiAKPj4gdGhlIG5vaHdjcnlwdCBpcyBpbiBiNDNfb3Bfc2V0X2tleSgpIHdoZXJl
+IGl0IHJldHVybnMgLUVOT1NQQywgYW5kIG91ciBuZXcgb25lIAo+PiB3aGVyZSBNRlBfQ0FQQUJM
+RSBpcyBzZXQuIE90aGVyd2lzZSwgdGhlIHBhY2tldCBmbGFncyBpbmRpY2F0ZSB0aGF0IGVuY3J5
+cHRpb24gCj4+IGlzIG5vdCBuZWVkZWQuCj4KPgo+IFRoYW5rIHlvdSBhbGwgdmVyeSBtdWNoIGZv
+ciBiZW5jaG1hcmtpbmcgdGhpcy4KPgo+IEFzIHdlIHNlZSwgaHdjcnlwdG8gaGFzIGEgbWFqb3Ig
+ZWZmZWN0IG9uIENQVSBsb2FkLgo+IEJ1dCBJJ20gc3RpbGwgaW4gZmF2b3Igb2YgY2hhbmdpbmcg
+dGhlIGRlZmF1bHQgdG8gbm9od2NyeXB0PTEuCgpJJ20gdGhpbmtpbmcgdGhlIHNhbWUuCgo+IFRo
+YXQgd291bGQgYmUgYSB0cmFkZSBvZmYgYmV0d2VlbiBhIHdpZmkgdGhhdCBkb2VzIHdvcmsgd2l0
+aCAiYmFkIgo+IHBlcmZvcm1hbmNlIHZzLiBhIHdpZmkgdGhhdCBkb2VzIG5vdCB3b3JrIGF0IGFs
+bCBieSBkZWZhdWx0LgoKQW5kIGRpZCB0aGUgImJhZCIgcGVyZm9ybWFuY2UgZXZlbiBoYXZlIGFu
+eSByZWFsIHZpc2libGUgY2hhbmdlcyB0byB0aGUKdXNlcj8gSU1ITyB0aGlzICJiYWQiIHBlcmZv
+cm1hbmNlIGlzIHNtYWxsIHByaWNlIHRvIHBheSBmcm9tIGdldHRpbmcKV1BBMyBzdXBwb3J0ZWQg
+b3V0LW9mLWJveCwgZXNwZWNpYWxseSB3aGVuIHRoZSBkYXRhIHRocm91Z2hwdXQgaXMKdW5hZmZl
+Y3RlZC4KCi0tIApodHRwczovL3dpcmVsZXNzLndpa2kua2VybmVsLm9yZy9lbi9kZXZlbG9wZXJz
+L2RvY3VtZW50YXRpb24vc3VibWl0dGluZ3BhdGNoZXMKCl9fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fCmI0My1kZXYgbWFpbGluZyBsaXN0CmI0My1kZXZAbGlz
+dHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3Rp
+bmZvL2I0My1kZXYK
