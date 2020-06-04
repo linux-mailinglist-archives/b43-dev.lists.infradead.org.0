@@ -2,78 +2,77 @@ Return-Path: <b43-dev-bounces+lists+b43-dev=lfdr.de@lists.infradead.org>
 X-Original-To: lists+b43-dev@lfdr.de
 Delivered-To: lists+b43-dev@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0A7031EE6A2
-	for <lists+b43-dev@lfdr.de>; Thu,  4 Jun 2020 16:27:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 03E671EE6B6
+	for <lists+b43-dev@lfdr.de>; Thu,  4 Jun 2020 16:35:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Q6WxMdoX6+ApntTjwFj5OFIzy48BEEh/7Y7EdVlU99Q=; b=cKic7RBjvddAaM
-	/5CDTONLPuBcorSQfS655T2bWM1CUiVgubNUCDra1I0hANxx2HUMw9Qh8h8sk5y0lNiJCfLy+FTVJ
-	Z09dB7P6LRFCq4A/rO8TimXnQ4eEthVMqrc1zZFQIt3KSD7Ts6TBrdx6Xh71AYXAf4bkdtv2RylNz
-	nA6w+BM7vdFZCjiaz+KQusJBlG01Sy3S5T0neGQFqfAF+9EXFVFgvPd7OG8zZ0UHkSwajVcSHKVmU
-	BVtz3I6ObzsYizgsUHNdjxRBXTtgpcJTia3o2RW2I7npJOkzoAcJBbetzk1xffpdVNt84oRsAYdIv
-	ib4tJnvAESgHdMHm2M4Q==;
+	List-Owner; bh=U6Z29Ac23qRZKHQpoa7u98XtYKiaxs6pbi2pCijEZW8=; b=iv9rIaFj4sC8jL
+	er9aR4dT1AfiXrx0SYFy3JtBzQPVJHYIl6/sDzSX2PXFStscfVN1HpuzARKsU6jZLyuYEiRhisqIO
+	0AVsXbLICYeFHRXP7v/62k+hKUCIPfaNJHsUaqbMOIq2atvFwG/GQKp6jrCqdAvTBD25eMXCXuz+d
+	jqAQWJdr3DM+8sOvye6d1L1EVv9rj80DW01FBvDuEp31ecXqkcBjx/GbSU+o5CA9VWZMnm0clwG0j
+	Urw1FiFN4znNNwMXYUQDiObpjvRny0nsrOqtJds7XtQXSE6zabuHGlt3DW9M4BzZMbTUsyavhsPBK
+	v4sH7KdYSejD9xDGGN+w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgqqT-0008CY-KW; Thu, 04 Jun 2020 14:27:49 +0000
-Received: from mail-pj1-x1042.google.com ([2607:f8b0:4864:20::1042])
+	id 1jgqxQ-0002xD-V3; Thu, 04 Jun 2020 14:35:00 +0000
+Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgqqQ-0008CC-0m
- for b43-dev@lists.infradead.org; Thu, 04 Jun 2020 14:27:47 +0000
-Received: by mail-pj1-x1042.google.com with SMTP id m2so1252629pjv.2
- for <b43-dev@lists.infradead.org>; Thu, 04 Jun 2020 07:27:45 -0700 (PDT)
+ id 1jgqxN-0002wr-KL
+ for b43-dev@lists.infradead.org; Thu, 04 Jun 2020 14:34:59 +0000
+Received: by mail-pl1-x643.google.com with SMTP id t16so2248541plo.7
+ for <b43-dev@lists.infradead.org>; Thu, 04 Jun 2020 07:34:57 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to;
- bh=ELp8NKpDU/b4oaZzGkEuk3yIxekW0FfVsfMh0kEq3DQ=;
- b=e7eITrZAAG4SVhaatsNGEFfKSAV4mgFFeMordqmQufFe6/vzeagmQ484X5shPhREQO
- NcIW+cQNizrMWNfglE0Jh5V6uWSzvceN4EXsYppzfKNVQcK2K6MGcm3eAbNC9iODqDY1
- 7i/uriuA9VGz8WZ62VSr78LapWZNk/5N3ydBE=
+ bh=ove4i1/jldMZ8oj/uY7NqV8r09suzUfhCHwuSYH9N6k=;
+ b=TjCwc4Glzpv6zTuI4ORcCO3GKt0+Ccro7aRK1+e6UcK9/8RNeB8TRca2cDcrCZcFnw
+ dOZz9z/5MHyMXIaUdvhXgJxFJWPi992hZGVtspEgPL5VJyozAoxBel+yRY8wrOsFSawW
+ q/r0W2zg8NzemNia+bwbRZAfOWsgUJYKa74vc=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to;
- bh=ELp8NKpDU/b4oaZzGkEuk3yIxekW0FfVsfMh0kEq3DQ=;
- b=rhFYqfNB+cgswoMChUHyjiDGmp4CcjKBLLb717BPJEKB8V1Xz6nkR67PpoAfka+tsN
- lUdxY2PuKSv/AAqE6rbhjrHx6QgX+oeToXbICM5N51lFV2I9JWeJt9hvQ3bxBRwXHvay
- un07QIkGtDpLC2eDAKTzEiusSsbrtBigFZpHk/kDzyWQOcJ9JVB014eutnVTjMEKE/TC
- 6MJ9oKlNh6qt5TLBtOPELGPYjCtT82V8eZyzx6exKQuQ/UTMh7P1d1HTIRz69/q/QqxQ
- Gqd4dz8IeZvh+jVCjh6+j4rKY9cNQ4bES8OyVcnUnRUw+v9JOXbL482YGH1t1LsHgtgC
- sEvw==
-X-Gm-Message-State: AOAM532qpFzgmxa001LbVLXFnN2WanRM46m5wUAtSVikk4L/jWt+IkvP
- dOKc39A9cVgIvgnpgt294vk6jw==
-X-Google-Smtp-Source: ABdhPJyh46iXXKU9Sh1DXTFOzkFXYm4paCXLSWoWqbxFRDWCjy8xbqFVrhjjddGEPZlvsY+JnIndAg==
-X-Received: by 2002:a17:90b:188d:: with SMTP id
- mn13mr6391960pjb.84.1591280865425; 
- Thu, 04 Jun 2020 07:27:45 -0700 (PDT)
+ bh=ove4i1/jldMZ8oj/uY7NqV8r09suzUfhCHwuSYH9N6k=;
+ b=slgQOPZFTlK8QEqvCWNlvXw5BVvGNAAmnPKMjvztOQatbLP7djXNkdcJ15/rDjk/Df
+ Nqgn1+BV7MdUV5qxtjsjIfjKwzcHJMc46zTk6EUElhto4ujbZDCXCEEWbdOimfTdu0mt
+ 0Bd6q8+18+f8VmDV58Nr9McNGeX5UW035PXxQyX10iUWsl56qLqBhXMvl6AEjP5q2UAg
+ HRp+DAOOkquL3UwqCEzXVF7KDfcXMmr/kbcTNZZiDDbFyn7c+X8Z3RihtlUg9H/iivsS
+ 5PgMTX6u7lwe+FLshs77/Ed8ki4UAvsGDB76nj6SnwhD8likm2CivalM4L7ApsRK9FCw
+ 0cmw==
+X-Gm-Message-State: AOAM531AjCijSc/LOG+Q/J8quhaju5PG/lmwqtt9KOk428/rbwCmFJEf
+ Mv/OCCbSegsqM70E2XJpm/aCAw==
+X-Google-Smtp-Source: ABdhPJwYFZeK5TkHVANf3TB7Mzvs6z8AC7rMNyAbLjxTjQqaX9yKSG5fQNVZZytsALVosdoYYC3FFg==
+X-Received: by 2002:a17:90a:950e:: with SMTP id
+ t14mr5847304pjo.99.1591281296926; 
+ Thu, 04 Jun 2020 07:34:56 -0700 (PDT)
 Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
- by smtp.gmail.com with ESMTPSA id j15sm5944936pjj.12.2020.06.04.07.27.43
+ by smtp.gmail.com with ESMTPSA id q8sm6069346pjj.51.2020.06.04.07.34.55
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 04 Jun 2020 07:27:44 -0700 (PDT)
-Date: Thu, 4 Jun 2020 07:27:42 -0700
+ Thu, 04 Jun 2020 07:34:55 -0700 (PDT)
+Date: Thu, 4 Jun 2020 07:34:54 -0700
 From: Kees Cook <keescook@chromium.org>
-To: Sedat Dilek <sedat.dilek@gmail.com>
-Subject: Re: [PATCH 00/10] Remove uninitialized_var() macro
-Message-ID: <202006040727.265B0E586@keescook>
-References: <20200603233203.1695403-1-keescook@chromium.org>
- <20200604033347.GA3962068@ubuntu-n2-xlarge-x86>
- <CA+icZUU4Re5g3rRJ=WF3_KiCEc3CUmbH_PibTunuK_E1QskEjQ@mail.gmail.com>
+To: Thomas Gleixner <tglx@linutronix.de>
+Subject: Re: [PATCH 01/10] x86/mm/numa: Remove uninitialized_var() usage
+Message-ID: <202006040728.8797FAA4@keescook>
+References: <20200603233203.1695403-2-keescook@chromium.org>
+ <874krr8dps.fsf@nanos.tec.linutronix.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CA+icZUU4Re5g3rRJ=WF3_KiCEc3CUmbH_PibTunuK_E1QskEjQ@mail.gmail.com>
+In-Reply-To: <874krr8dps.fsf@nanos.tec.linutronix.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200604_072746_072680_4466F168 
-X-CRM114-Status: GOOD (  12.09  )
+X-CRM114-CacheID: sfid-20200604_073457_683242_5F962735 
+X-CRM114-Status: GOOD (  18.14  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:1042 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -96,46 +95,121 @@ List-Post: <mailto:b43-dev@lists.infradead.org>
 List-Help: <mailto:b43-dev-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/b43-dev>,
  <mailto:b43-dev-request@lists.infradead.org?subject=subscribe>
-Cc: Andy Whitcroft <apw@canonical.com>,
- Clang-Built-Linux ML <clang-built-linux@googlegroups.com>,
+Cc: Andy Whitcroft <apw@canonical.com>, clang-built-linux@googlegroups.com,
  linux-ide@vger.kernel.org, netdev@vger.kernel.org, x86@kernel.org,
  linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-spi@vger.kernel.org, linux-block@vger.kernel.org,
  Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>, linux-mm@kvack.org,
  Alexander Potapenko <glider@google.com>, b43-dev@lists.infradead.org,
- Joe Perches <joe@perches.com>, Nathan Chancellor <natechancellor@gmail.com>,
- Linus Torvalds <torvalds@linux-foundation.org>, linux-clk@vger.kernel.org,
- drbd-dev@lists.linbit.com
+ Joe Perches <joe@perches.com>, Linus Torvalds <torvalds@linux-foundation.org>,
+ linux-clk@vger.kernel.org, drbd-dev@lists.linbit.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "b43-dev" <b43-dev-bounces@lists.infradead.org>
 Errors-To: b43-dev-bounces+lists+b43-dev=lfdr.de@lists.infradead.org
 
-On Thu, Jun 04, 2020 at 09:26:58AM +0200, Sedat Dilek wrote:
-> On Thu, Jun 4, 2020 at 5:33 AM Nathan Chancellor
-> <natechancellor@gmail.com> wrote:
-> >
-> > On Wed, Jun 03, 2020 at 04:31:53PM -0700, Kees Cook wrote:
-> > > Using uninitialized_var() is dangerous as it papers over real bugs[1]
-> > > (or can in the future), and suppresses unrelated compiler warnings
-> > > (e.g. "unused variable"). If the compiler thinks it is uninitialized,
-> > > either simply initialize the variable or make compiler changes.
-> > >
-> > > As recommended[2] by[3] Linus[4], remove the macro.
-> > [...]
-> > For the series, consider it:
-> >
-> > Tested-by: Nathan Chancellor <natechancellor@gmail.com> [build]
-> [...]
+On Thu, Jun 04, 2020 at 09:58:07AM +0200, Thomas Gleixner wrote:
+> Kees Cook <keescook@chromium.org> writes:
+> > -#ifdef NODE_NOT_IN_PAGE_FLAGS
+> > -	pfn_align = node_map_pfn_alignment();
+> > -	if (pfn_align && pfn_align < PAGES_PER_SECTION) {
+> > -		printk(KERN_WARNING "Node alignment %LuMB < min %LuMB, rejecting NUMA config\n",
+> > -		       PFN_PHYS(pfn_align) >> 20,
+> > -		       PFN_PHYS(PAGES_PER_SECTION) >> 20);
+> > -		return -EINVAL;
+> > +	if (IS_ENABLED(NODE_NOT_IN_PAGE_FLAGS)) {
 > 
-> I tried with updated version (checkpatch) of your tree and see no
-> (new) warnings in my build-log.
+> Hrm, clever ...
 > 
-> Feel free to add my...
+> > +		unsigned long pfn_align = node_map_pfn_alignment();
+> > +
+> > +		if (pfn_align && pfn_align < PAGES_PER_SECTION) {
+> > +			pr_warn("Node alignment %LuMB < min %LuMB, rejecting NUMA config\n",
+> > +				PFN_PHYS(pfn_align) >> 20,
+> > +				PFN_PHYS(PAGES_PER_SECTION) >> 20);
+> > +			return -EINVAL;
+> > +		}
+> >  	}
+> > -#endif
+> >  	if (!numa_meminfo_cover_memory(mi))
+> >  		return -EINVAL;
+> >  
+> > diff --git a/include/linux/page-flags-layout.h b/include/linux/page-flags-layout.h
+> > index 71283739ffd2..1a4cdec2bd29 100644
+> > --- a/include/linux/page-flags-layout.h
+> > +++ b/include/linux/page-flags-layout.h
+> > @@ -100,7 +100,7 @@
+> >   * there.  This includes the case where there is no node, so it is implicit.
+> >   */
+> >  #if !(NODES_WIDTH > 0 || NODES_SHIFT == 0)
+> > -#define NODE_NOT_IN_PAGE_FLAGS
+> > +#define NODE_NOT_IN_PAGE_FLAGS 1
 > 
-> Tested-by: Sedat Dilek <sedat.dilek@gmail.com>
+> but if we ever lose the 1 then the above will silently compile the code
+> within the IS_ENABLED() section out.
 
-Awesome! Thank you both! :)
+That's true, yes. I considered two other ways to do this:
+
+1) smallest patch, but more #ifdef:
+
+diff --git a/arch/x86/mm/numa.c b/arch/x86/mm/numa.c
+index 59ba008504dc..fbf5231a3d35 100644
+--- a/arch/x86/mm/numa.c
++++ b/arch/x86/mm/numa.c
+@@ -541,7 +541,9 @@ static void __init numa_clear_kernel_node_hotplug(void)
+ 
+ static int __init numa_register_memblks(struct numa_meminfo *mi)
+ {
+-	unsigned long uninitialized_var(pfn_align);
++#ifdef NODE_NOT_IN_PAGE_FLAGS
++	unsigned long pfn_align;
++#endif
+ 	int i, nid;
+ 
+ 	/* Account for nodes with cpus and no memory */
+
+2) medium size, weird style:
+
+diff --git a/arch/x86/mm/numa.c b/arch/x86/mm/numa.c
+index 59ba008504dc..0df7ba9b21b2 100644
+--- a/arch/x86/mm/numa.c
++++ b/arch/x86/mm/numa.c
+@@ -541,7 +541,6 @@ static void __init numa_clear_kernel_node_hotplug(void)
+ 
+ static int __init numa_register_memblks(struct numa_meminfo *mi)
+ {
+-	unsigned long uninitialized_var(pfn_align);
+ 	int i, nid;
+ 
+ 	/* Account for nodes with cpus and no memory */
+@@ -570,12 +569,15 @@ static int __init numa_register_memblks(struct numa_meminfo *mi)
+ 	 * whether its granularity is fine enough.
+ 	 */
+ #ifdef NODE_NOT_IN_PAGE_FLAGS
+-	pfn_align = node_map_pfn_alignment();
+-	if (pfn_align && pfn_align < PAGES_PER_SECTION) {
+-		printk(KERN_WARNING "Node alignment %LuMB < min %LuMB, rejecting NUMA config\n",
+-		       PFN_PHYS(pfn_align) >> 20,
+-		       PFN_PHYS(PAGES_PER_SECTION) >> 20);
+-		return -EINVAL;
++	{
++		unsigned long pfn_align = node_map_pfn_alignment();
++
++		if (pfn_align && pfn_align < PAGES_PER_SECTION) {
++			pr_warn("Node alignment %LuMB < min %LuMB, rejecting NUMA config\n",
++			       PFN_PHYS(pfn_align) >> 20,
++			       PFN_PHYS(PAGES_PER_SECTION) >> 20);
++			return -EINVAL;
++		}
+ 	}
+ #endif
+ 	if (!numa_meminfo_cover_memory(mi))
+
+and 3 is what I sent: biggest, but removes #ifdef
+
+Any preference?
+
+Thanks!
 
 -- 
 Kees Cook
