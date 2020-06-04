@@ -2,80 +2,80 @@ Return-Path: <b43-dev-bounces+lists+b43-dev=lfdr.de@lists.infradead.org>
 X-Original-To: lists+b43-dev@lfdr.de
 Delivered-To: lists+b43-dev@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E33411EEBAF
-	for <lists+b43-dev@lfdr.de>; Thu,  4 Jun 2020 22:16:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 432D91EEBC0
+	for <lists+b43-dev@lfdr.de>; Thu,  4 Jun 2020 22:18:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=U+FClfZDPoQqKPz+5f/hxyjGOtotApYy/BjH3X1Bpyw=; b=KqltAJ4cXCzJHn
-	6R8Aml1avrtIrIDzULj7AWu09mflTqEPW9WYvT+REzKsk/WyBezOLnPS9lFxx8e+fCzXAW76MBX0L
-	EoN0oWCOPWMVYWJ3/l7ZmaySQe9bFzwpL2nQDwpQ1KbflYsFG13wBljVXCsS5AiX8ERHOOvNhngvP
-	C5ESlKRDEj0SKFaUujaKl5WdXzC9XhXNRE6Iu/a4TlRCSjq6hPInVWXUqY9yljjIgBcefEaHblOKC
-	WesSm+FQ3hFq9tIy1nvPKVPkJAZDaNgVOfEJv3loCWFSMZ2+Y48awEXOuWVY+Z/pyE4HwAk/4p8we
-	ww0IZj/Fx7NC8XLl3v8A==;
+	List-Owner; bh=gmBx31h2INPJ5VJnBoDgt/yirC32C0/lcYuXdu7QN6I=; b=PyZADrvErolXCk
+	Br0H/2oeuVfLIWxLHz1rkrcA1cNDKSbrlFDj+Yb9B3MAhcED/nWB1D8RXDkubb+dFxmos9gr/vNCG
+	tbcwb2ffuYblum14gLaXWK6MzQqKrVTgjinKofnO80xBUGpTwzmqFv3sHvglhCKmYn0BCu3teWRdK
+	MM5+qcDH1habh5cLM0fDps9ipevpIK9X8hDxD5eJsXtutWHGMEy5jfxLznGyXdpeZ5j93ySLGqMaZ
+	aG6Vqc9PPviSt4MXhc/u/XnuNOVb1E8TV3ix2pr2GLdElPHKXMwwHD0aEXkFg2gEcTTq5B/N8lDcT
+	60gD7/8QUOZiCcZB/y1g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgwHo-0004V7-RY; Thu, 04 Jun 2020 20:16:24 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1jgwK0-0004jk-91; Thu, 04 Jun 2020 20:18:40 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgwHl-0004Um-8g
- for b43-dev@lists.infradead.org; Thu, 04 Jun 2020 20:16:22 +0000
-Received: by mail-pg1-x542.google.com with SMTP id n23so3988589pgb.12
- for <b43-dev@lists.infradead.org>; Thu, 04 Jun 2020 13:16:20 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=pCXmYsl76J0CAlxoPdk8mPZO/WOJwZ5J1IK/xTYSvtY=;
- b=Ul9IqQ41ZiXh1TA37NXxQoP1MYWZkk1ImeHfZoGz6a6IPTQKCTgkI4vMbYvxIt8wpE
- ElHA9RWwTvFCaySEtclTRP/dyePJtOWdEk29ahiOH2gLk0aIx7jxMqS8sHpI0dAD9/eD
- v2pQeh6hmu6BRKkCyhh5mYDGk/czBtEllytZVgQeNFhavoEfrbFwLLVfzZ/2XW9eqAuC
- T6PPxSNZdkIUyyCpj3L+bHh3A58HE+YTCCyomOaAjuPFYAu7WNLA0VPJGgc8Oy3KvimW
- enSRBgfNysV+6XPIzSx1E3hPpfiQZPkCEErtaeB8Ewgc+PLJOHksAeBzo6J1PIYEAlTL
- B91g==
+ id 1jgwJw-0004j0-0K
+ for b43-dev@lists.infradead.org; Thu, 04 Jun 2020 20:18:37 +0000
+Received: by mail-pf1-x441.google.com with SMTP id 64so3777105pfg.8
+ for <b43-dev@lists.infradead.org>; Thu, 04 Jun 2020 13:18:34 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to;
+ bh=KSgduwKhAGu1Me5hdrsNlT/LSTVts5IMrrdQbnnmgtM=;
+ b=iwsRqxQEY+LpPM+s+DR5Kt1prnKy4GHGxqj/QUqqkkqSMBCDJe1CHdT/yKZJkiBDXL
+ Y6szw+en5NZ6khTYpwS0FGviJsYX/r26zXRpTi2oURHUxJskaDdTNYF20YKqgU+50wUG
+ aJZ2WjX85SJKBXLpicthf/oXnlRh2W1BmzGAE=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=pCXmYsl76J0CAlxoPdk8mPZO/WOJwZ5J1IK/xTYSvtY=;
- b=a6IwgxrpcS4VhmiqOM1Npsx9blQLzYzvZtgB1FO+5QjI9w1+eeE+0HAVEnrltEHwNa
- 61lwPe8Qg8no0R5leG0J1xx+4NiPEbL1pjKME3TaTHOYe1dgyGiIWPGUFvxFlbdsw1mp
- XG/GvKRqC9JBkI68yaMP+wspFB2L1UGjSfHkurY3ZkTrig/Khu/Dlu3hQLzfwXZ2gZFr
- Pbhrf+Y5MEk5va7gEv364eui95SqcE8BAH6zcayXE+3cgkvH9828YNlVkI3zJO9obpbV
- WZUzktzrkNhagCOPzuaYhjD1ZPnXhnh1vVGv0ogMUThqRA7I6zlw6uNhydhLEkSuLXDA
- LosQ==
-X-Gm-Message-State: AOAM531VgkFubZ4ldaeG+Wkp/JRRjk21RcuP45BIvlINYXTH8TaCn+07
- +NgtmvqhInJjfEmtpe3U5cvHcg7ita3YxFKWHe2VYw==
-X-Google-Smtp-Source: ABdhPJye6FZH70P5vXHcitY46EI4rxFnZqJif4KZJI8zWDppq3cq3MmDJfiH17IwjHHvUarffuS8hk7FOMV62ymzGuM=
-X-Received: by 2002:a63:4f09:: with SMTP id d9mr5970154pgb.10.1591301780211;
- Thu, 04 Jun 2020 13:16:20 -0700 (PDT)
-MIME-Version: 1.0
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=KSgduwKhAGu1Me5hdrsNlT/LSTVts5IMrrdQbnnmgtM=;
+ b=C4ZiwygsfFhrG3jE4v/K1JiOs7bbzLVXvdDAAsbugCV6Wbv9F6WXJ1ljvs8fzFMFzk
+ +yoqKVULtWM01nWGHPV8NArAPXq7ZvRvZAsPQO9skCsh8peuDQbUFlmhnIW6tzda6Jj+
+ /xE4Hdqqk4fYVww883au+Xuh6/Sp7R//7TaF2CZXbPROBI8FkLThd5hK/wwODtqEbGxH
+ k4A/W40N1pXknGyVXLc5VXkWviJP3ms1GhqC4EZTaPcURuLqk98poZQVq7zScWd1uhp9
+ jgSR/DJRp/OwXCK+VPHbVTNlZbsapFBdRUbn3iR24um1LiMTsPiHQDOuq1bK4+MCVuCD
+ sAJw==
+X-Gm-Message-State: AOAM532MYMlj730ETtIu7Lhwh2836nHqdKviFDcIFumVwQu9TvWPqebT
+ dEBQVsetjxCraECSdNIkKlLVVw==
+X-Google-Smtp-Source: ABdhPJy6jmo6NLjATFT9PEAZE69aJp2ake2/5E+UKA7LNV6vmFPBoWj+KBik/aUM7ISRTcCYuBBaWw==
+X-Received: by 2002:a63:c58:: with SMTP id 24mr6232804pgm.246.1591301913875;
+ Thu, 04 Jun 2020 13:18:33 -0700 (PDT)
+Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
+ by smtp.gmail.com with ESMTPSA id r5sm5581320pji.20.2020.06.04.13.18.32
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 04 Jun 2020 13:18:33 -0700 (PDT)
+Date: Thu, 4 Jun 2020 13:18:31 -0700
+From: Kees Cook <keescook@chromium.org>
+To: Nick Desaulniers <ndesaulniers@google.com>
+Subject: Re: [PATCH 03/10] b43: Remove uninitialized_var() usage
+Message-ID: <202006041316.A15D952@keescook>
 References: <20200603233203.1695403-1-keescook@chromium.org>
- <20200603233203.1695403-5-keescook@chromium.org>
-In-Reply-To: <20200603233203.1695403-5-keescook@chromium.org>
-From: Nick Desaulniers <ndesaulniers@google.com>
-Date: Thu, 4 Jun 2020 13:16:08 -0700
-Message-ID: <CAKwvOdnd30bcqoNXF1ugadU=KbW3aXu07+T-891amO2_b7kQdg@mail.gmail.com>
-Subject: Re: [PATCH 04/10] rtlwifi: rtl8192cu: Remove uninitialized_var() usage
-To: Kees Cook <keescook@chromium.org>
+ <20200603233203.1695403-4-keescook@chromium.org>
+ <CAKwvOdnNuFySqAMk7s_cXqFM=dPX4JfvqNVLCuj90Gn4tzciAw@mail.gmail.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CAKwvOdnNuFySqAMk7s_cXqFM=dPX4JfvqNVLCuj90Gn4tzciAw@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200604_131621_325042_5136E97F 
-X-CRM114-Status: GOOD (  15.15  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20200604_131836_069686_CECCDC71 
+X-CRM114-Status: GOOD (  23.64  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -83,8 +83,7 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: b43-dev@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -112,58 +111,82 @@ Content-Transfer-Encoding: 7bit
 Sender: "b43-dev" <b43-dev-bounces@lists.infradead.org>
 Errors-To: b43-dev-bounces+lists+b43-dev=lfdr.de@lists.infradead.org
 
-On Wed, Jun 3, 2020 at 4:32 PM Kees Cook <keescook@chromium.org> wrote:
->
-> Using uninitialized_var() is dangerous as it papers over real bugs[1]
-> (or can in the future), and suppresses unrelated compiler warnings (e.g.
-> "unused variable"). If the compiler thinks it is uninitialized, either
-> simply initialize the variable or make compiler changes. As a precursor
-> to removing[2] this[3] macro[4], just initialize this variable to NULL,
-> and avoid sending garbage by returning.
->
-> [1] https://lore.kernel.org/lkml/20200603174714.192027-1-glider@google.com/
-> [2] https://lore.kernel.org/lkml/CA+55aFw+Vbj0i=1TGqCR5vQkCzWJ0QxK6CernOU6eedsudAixw@mail.gmail.com/
-> [3] https://lore.kernel.org/lkml/CA+55aFwgbgqhbp1fkxvRKEpzyR5J8n1vKT1VZdz9knmPuXhOeg@mail.gmail.com/
-> [4] https://lore.kernel.org/lkml/CA+55aFz2500WfbKXAx8s67wrm9=yVJu65TpLgN_ybYNv0VEOKA@mail.gmail.com/
->
-> Signed-off-by: Kees Cook <keescook@chromium.org>
+On Thu, Jun 04, 2020 at 01:08:44PM -0700, Nick Desaulniers wrote:
+> On Wed, Jun 3, 2020 at 4:32 PM Kees Cook <keescook@chromium.org> wrote:
+> >
+> > Using uninitialized_var() is dangerous as it papers over real bugs[1]
+> > (or can in the future), and suppresses unrelated compiler warnings (e.g.
+> > "unused variable"). If the compiler thinks it is uninitialized, either
+> > simply initialize the variable or make compiler changes. As a precursor
+> > to removing[2] this[3] macro[4], just initialize this variable to NULL,
+> > and make the (unreachable!) code do a conditional test.
+> >
+> > [1] https://lore.kernel.org/lkml/20200603174714.192027-1-glider@google.com/
+> > [2] https://lore.kernel.org/lkml/CA+55aFw+Vbj0i=1TGqCR5vQkCzWJ0QxK6CernOU6eedsudAixw@mail.gmail.com/
+> > [3] https://lore.kernel.org/lkml/CA+55aFwgbgqhbp1fkxvRKEpzyR5J8n1vKT1VZdz9knmPuXhOeg@mail.gmail.com/
+> > [4] https://lore.kernel.org/lkml/CA+55aFz2500WfbKXAx8s67wrm9=yVJu65TpLgN_ybYNv0VEOKA@mail.gmail.com/
+> >
+> > Signed-off-by: Kees Cook <keescook@chromium.org>
+> > ---
+> >  drivers/net/wireless/broadcom/b43/phy_n.c | 10 +++++++---
+> >  1 file changed, 7 insertions(+), 3 deletions(-)
+> >
+> > diff --git a/drivers/net/wireless/broadcom/b43/phy_n.c b/drivers/net/wireless/broadcom/b43/phy_n.c
+> > index d3c001fa8eb4..88cdcea10d61 100644
+> > --- a/drivers/net/wireless/broadcom/b43/phy_n.c
+> > +++ b/drivers/net/wireless/broadcom/b43/phy_n.c
+> > @@ -4222,7 +4222,7 @@ static void b43_nphy_tx_gain_table_upload(struct b43_wldev *dev)
+> 
+> The TODOs and `#if 0` in this function are concerning.  It looks like
+> `rf_pwr_offset_table` is only used when `phy->rev` is >=7 && < 19.
+> 
+> Further, the loop has a case for `phy->rev >= 19` but we would have
+> returned earlier if that was the case.
 
-Reviewed-by: Nick Desaulniers <ndesaulniers@google.com>
-Fixes: dc0313f46664 ("rtlwifi: rtl8192cu: Add routine hw")
+Yeah, that's why I put the "(unreachable!)" note in the commit log. ;)
 
-> ---
->  drivers/net/wireless/realtek/rtlwifi/rtl8192cu/hw.c | 4 ++--
->  1 file changed, 2 insertions(+), 2 deletions(-)
->
-> diff --git a/drivers/net/wireless/realtek/rtlwifi/rtl8192cu/hw.c b/drivers/net/wireless/realtek/rtlwifi/rtl8192cu/hw.c
-> index f070f25bb735..5b071b70bc08 100644
-> --- a/drivers/net/wireless/realtek/rtlwifi/rtl8192cu/hw.c
-> +++ b/drivers/net/wireless/realtek/rtlwifi/rtl8192cu/hw.c
-> @@ -592,7 +592,7 @@ static void _rtl92cu_init_chipn_one_out_ep_priority(struct ieee80211_hw *hw,
->                                                     bool wmm_enable,
->                                                     u8 queue_sel)
->  {
-> -       u16 uninitialized_var(value);
-> +       u16 value;
->
->         switch (queue_sel) {
->         case TX_SELE_HQ:
-> @@ -606,7 +606,7 @@ static void _rtl92cu_init_chipn_one_out_ep_priority(struct ieee80211_hw *hw,
->                 break;
->         default:
->                 WARN_ON(1); /* Shall not reach here! */
-> -               break;
-> +               return;
->         }
->         _rtl92c_init_chipn_reg_priority(hw, value, value, value, value,
->                                         value, value);
+> 
+> >         u32 rfpwr_offset;
+> >         u8 pga_gain, pad_gain;
+> >         int i;
+> > -       const s16 *uninitialized_var(rf_pwr_offset_table);
+> > +       const s16 *rf_pwr_offset_table = NULL;
+> >
+> >         table = b43_nphy_get_tx_gain_table(dev);
+> >         if (!table)
+> > @@ -4256,9 +4256,13 @@ static void b43_nphy_tx_gain_table_upload(struct b43_wldev *dev)
+> >                         pga_gain = (table[i] >> 24) & 0xf;
+> >                         pad_gain = (table[i] >> 19) & 0x1f;
+> >                         if (b43_current_band(dev->wl) == NL80211_BAND_2GHZ)
+> > -                               rfpwr_offset = rf_pwr_offset_table[pad_gain];
+> > +                               rfpwr_offset = rf_pwr_offset_table
+> > +                                               ? rf_pwr_offset_table[pad_gain]
+> > +                                               : 0;
+> >                         else
+> > -                               rfpwr_offset = rf_pwr_offset_table[pga_gain];
+> > +                               rfpwr_offset = rf_pwr_offset_table
+> > +                                               ? rf_pwr_offset_table[pga_gain]
+> > +                                               : 0;
+> 
+> 
+> The code is trying to check `phy->rev >= 7 && phy->rev < 19` once
+> before the loop, then set `rf_pwr_offset_table`, so having another
+> conditional on `rf_pwr_offset_table` in the loop is unnecessary. I'm
+> ok with initializing it to `NULL`, but I'm not sure the conditional
+> check is necessary.  Do you get a compiler warning otherwise?
 
-Whew! Nothing like passing the same value 6 times! (Other callers do
-use distinct values though, just curious seeing this instance.)
+I mean, sort of the best thing to do is just remove nearly everything
+here since it's actually unreachable. But it is commented as "when
+supported ..." etc, so I figured I'd leave it. As part of that I didn't
+want to leave any chance of a NULL deref, so I added the explicit tests
+just for robustness.
+
+*shrug*
+
+-Kees
 
 -- 
-Thanks,
-~Nick Desaulniers
+Kees Cook
 
 _______________________________________________
 b43-dev mailing list
