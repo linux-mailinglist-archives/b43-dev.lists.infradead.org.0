@@ -2,82 +2,81 @@ Return-Path: <b43-dev-bounces+lists+b43-dev=lfdr.de@lists.infradead.org>
 X-Original-To: lists+b43-dev@lfdr.de
 Delivered-To: lists+b43-dev@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E81931EEC03
-	for <lists+b43-dev@lfdr.de>; Thu,  4 Jun 2020 22:30:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 530821EECB6
+	for <lists+b43-dev@lfdr.de>; Thu,  4 Jun 2020 22:59:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:
+	From:In-Reply-To:References:MIME-Version:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=J5IZjCg6t83K+2WZNM28MqITLtW2R7wZWr+E4yFcCAQ=; b=syUKwlZqQavpaE
-	/qvXcJmLneBKL7hWz3lyPySA5CuLygNtjIIOfKxvY8rL3J11OfmGLdSOF2CmCVBJkk+BJlozDKq44
-	HMRo6P6HyTm5kbpDgsoJmO+WJOMajUsD7HDiqFBtwjc46uOjHQZvPjPDRgo5xHkKy1j5HAaAL/NHI
-	XQsnqgjhQ3A3JkKE7a2znIGjVy/0lvC/+R7YihDPB727nPP+Y2qk3fNTTotAJVWavQUiSJSrf3lAg
-	rSxFWS237BmPuonoNUGOPrE7OgcDv7ji95A2RGw0TTzCdfigffTWhgW4yscR/GBxoTfqx7CFz/tjP
-	JwL7L3+SUqaiV7RrE4pA==;
+	List-Owner; bh=midknkn70WHVGgJv921cVnC3M0RCHTilWbqZknvF3O8=; b=mqQTcwGWamok2a
+	+LKh3RdOkclEQeCdQmgV9fKqbFN95wUGIW45crPDSq852vzkEtWSF7pZN9chVRuyNQLHjZFVh3re0
+	mxa5Dw8pvlpq/LLUQIfH6ATzwmZxxS3Xr8W08nGBLtRMPuUbpvYKe0eveo8+4USF6EldRx/UvFlqg
+	AOWKIJ9bkm+PpvATDoT69LEX0V7wYd2oihi9gixLDuoqqgAVIQ/eodIf0ZvuDi+ZHt/pCIOD+gDOe
+	zN74cUVmd/v16ldbvAYCmRsZPQUXjp4m9C0tKnQjeQZ0CVGo+lpd7lq40Ptz1OXclgISzLqM6cWHl
+	uFUN65fL0bK2sJs4DRow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgwV0-0002cp-C8; Thu, 04 Jun 2020 20:30:02 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1jgwws-00079W-4X; Thu, 04 Jun 2020 20:58:50 +0000
+Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgwUv-0002c3-1u
- for b43-dev@lists.infradead.org; Thu, 04 Jun 2020 20:29:58 +0000
-Received: by mail-pg1-x541.google.com with SMTP id o8so4025085pgm.7
- for <b43-dev@lists.infradead.org>; Thu, 04 Jun 2020 13:29:56 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=bnsaMm5xHsmGTKM8crY5633RBfnrE452zASAiUrFU6c=;
- b=N9f0DBz11v8qKCu5VA9JXvurX/AQtTOXbiTH5jmNKefXzNsIFm+M7WPzmoaUlp4aH2
- r+jMi/YmukLuVqYctzsJtxcn0mVNYhMsSNT9VA6N7PnsQg5yUlK9mfLk/5/Ruh0U/Pwu
- PDPRxMt4IzbnxQDI/neSyUM1ytXRkW/vLuLZKE80o7Nj5PUF2JyDsoKL+PvQ95dTnNfZ
- KgrObLpuy2lSQ1b3DD2riryZUDl8/MGtuP3prwyWT2YzcrBoR4Z0ygA8w4IwkVOIQfT2
- XknAaA0BFuOmwbwTbgOy7UCAxJmRzkJu3RwBQHvX6d2dQvm2RBoWXIh1YpGHB5SsL5b+
- hRAg==
+ id 1jgwwI-0006dQ-OO
+ for b43-dev@lists.infradead.org; Thu, 04 Jun 2020 20:58:17 +0000
+Received: by mail-io1-xd42.google.com with SMTP id c8so7951125iob.6
+ for <b43-dev@lists.infradead.org>; Thu, 04 Jun 2020 13:58:14 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:reply-to:from:date:message-id
+ :subject:to:cc;
+ bh=Qe+5VsgePcwf6ejrqCiKCctQ/WjhPUBGKBkCEYX6uA4=;
+ b=odXbhUUcIf+wDeJdjDiEFXtAYFDHAH8SAaNwcJFDM9qyOS5kIxKELihPixhgMuWsuM
+ P3ftGyZTm8N3iRqAE/zGh/6Tj/FwKzi+e312hNAri4dLyhuZsVZ6pvT0TGWVr82qZhqP
+ xpzITULxMsu9HCeR/Fu8fY00Ujga47C2NYw0ZWpAq8nhchSjrc9Gx1hdB9IUk3cXGfsx
+ VWi9Q6APAlhH+HlN+wzjZ2rOVsUqe/9ob+rhxSJYeRVHffy8QZ1CHAECUXaQz476rziC
+ s3Xe2jQo9509hzQq9oZweKonvblBmfe30dX1ICjs/m7aTkmW94D1z6eVMJOHyrzwGabS
+ qQKA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=bnsaMm5xHsmGTKM8crY5633RBfnrE452zASAiUrFU6c=;
- b=uHuGxjLK2eXbLjQhCFMIzR4WslwKii/dZGju6kKKevyl9MBpPSjZhsO4+OFHvJn2YY
- nbb7ZV6Jj6X8k+e6+U/BJ4F8kwWpfHZpVQ+I/xdx/KkL2E+hY01tSRzFwaECiW2nmzmG
- KpZjK2VbiGYTsdBbWNlvNnDh78vPyrIZRn85lJAS1nbWhWb+p70e+N2M3BfAIvIugxZV
- SeCsmudHZnuB+AEl7pwZgyySqIc2cSImzzGJ8y4xEZaqG54416aUehuEf//yzyM2Vymg
- LAgsvzvycKct7DuNLzPt+JZ6nXV9HSNgqZBQV8QwqkGbhkuK417sBa+56Lhpn3Ydf6YA
- uaZw==
-X-Gm-Message-State: AOAM532vFVjE6GdfR9KujZRPUrzmzUbEMsk1Qhii4nQZ7RfmT08hGeWE
- Pb/tTGqYncG/FUkMibywdbm3okdItksj56ePBiJFFw==
-X-Google-Smtp-Source: ABdhPJy84Bpyo9gVnHDmhNZ0Cl7JJ5pAaUOhbP1nHyEJIJ3dMgwhwkaPgsD+FnKg2zDZj7i1oTdj2nlsRsGHJYRwQ7w=
-X-Received: by 2002:a63:f00d:: with SMTP id k13mr6286936pgh.263.1591302596138; 
- Thu, 04 Jun 2020 13:29:56 -0700 (PDT)
+ h=x-gm-message-state:mime-version:references:in-reply-to:reply-to
+ :from:date:message-id:subject:to:cc;
+ bh=Qe+5VsgePcwf6ejrqCiKCctQ/WjhPUBGKBkCEYX6uA4=;
+ b=JK0hP2I5DnAgTUSLlB5mvYBlbP3ckUcRj1CMyc51a/2hQRlNMVsX7thJ9A994tY5c1
+ ZsSPSdEwj4WWdCKYPBpMA79S+H44KsX6QxghqdokBd0K0Z5K/+IPzFXwExjSYFTjBeEu
+ myrdiMthBAa9rgY1mUFAuE4W4IilbKZNcEb4CyFDRSm1npwzkhmRXyBhIsutd9JyHMPS
+ 4oQ6brAYjSXYiEqW2pypFGRXHvVFcOVI++fCuawajlHjqWCRiOWD6Uu6ylwD7FduK+/5
+ /YNEeYXOb/puppUbQSeplhlatwAGo0SfOPRkiX8OAFnaG01MW/4hG9YauiB5IHrp6bte
+ /G0g==
+X-Gm-Message-State: AOAM5332EHwJjKvb6nHW3bauo1ifS8GXbFpaUm+xs2YindapDt6lQyC9
+ qypvCexeT8mbwyPPS0EjvCzw3QGhyWog46zvfe4=
+X-Google-Smtp-Source: ABdhPJyHp6QCOAL+6a1wVmeMAZXhyv99uIVM4TXT2D1wSQJb1hxXPIfOtwEqduYsONFSiqzgwB7hE4xuQIiOkGIx+qI=
+X-Received: by 2002:a02:ca18:: with SMTP id i24mr6012139jak.70.1591304293893; 
+ Thu, 04 Jun 2020 13:58:13 -0700 (PDT)
 MIME-Version: 1.0
 References: <20200603233203.1695403-1-keescook@chromium.org>
  <20200603233203.1695403-6-keescook@chromium.org>
  <CAKwvOdm5zDide5RuppY_jG=r46=UMdVJBrkBqD5x=dOMTG9cZg@mail.gmail.com>
  <202006041318.B0EA9059C7@keescook>
 In-Reply-To: <202006041318.B0EA9059C7@keescook>
-From: Nick Desaulniers <ndesaulniers@google.com>
-Date: Thu, 4 Jun 2020 13:29:44 -0700
-Message-ID: <CAKwvOdk3Wc1gC0UMsFZsZqQ8n_bkPjNAJo5u3nfcyXcBaZCMHw@mail.gmail.com>
+From: Sedat Dilek <sedat.dilek@gmail.com>
+Date: Thu, 4 Jun 2020 22:58:02 +0200
+Message-ID: <CA+icZUX7HE6cVoyiKtvOe85F+npUzGy5wmScTNCKRVeCEy8Juw@mail.gmail.com>
 Subject: Re: [PATCH 05/10] ide: Remove uninitialized_var() usage
 To: Kees Cook <keescook@chromium.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200604_132957_117714_61E40DEF 
-X-CRM114-Status: GOOD (  12.75  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20200604_135814_949655_171600F3 
+X-CRM114-Status: GOOD (  13.84  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [sedat.dilek[at]gmail.com]
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -85,8 +84,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: b43-dev@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,13 +95,14 @@ List-Post: <mailto:b43-dev@lists.infradead.org>
 List-Help: <mailto:b43-dev-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/b43-dev>,
  <mailto:b43-dev-request@lists.infradead.org?subject=subscribe>
+Reply-To: sedat.dilek@gmail.com
 Cc: Andy Whitcroft <apw@canonical.com>,
+ linux-wireless <linux-wireless@vger.kernel.org>,
  clang-built-linux <clang-built-linux@googlegroups.com>,
- Saravana Kannan <saravanak@google.com>, linux-ide@vger.kernel.org,
- Network Development <netdev@vger.kernel.org>,
+ linux-ide@vger.kernel.org, Network Development <netdev@vger.kernel.org>,
  Sebastian Andrzej Siewior <bigeasy@linutronix.de>,
  "maintainer:X86 ARCHITECTURE \(32-BIT AND 64-BIT\)" <x86@kernel.org>,
- linux-wireless <linux-wireless@vger.kernel.org>,
+ Nick Desaulniers <ndesaulniers@google.com>,
  LKML <linux-kernel@vger.kernel.org>, linux-spi@vger.kernel.org,
  linux-block@vger.kernel.org, Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>,
  Linux Memory Management List <linux-mm@kvack.org>,
@@ -116,7 +114,7 @@ Content-Transfer-Encoding: 7bit
 Sender: "b43-dev" <b43-dev-bounces@lists.infradead.org>
 Errors-To: b43-dev-bounces+lists+b43-dev=lfdr.de@lists.infradead.org
 
-On Thu, Jun 4, 2020 at 1:20 PM Kees Cook <keescook@chromium.org> wrote:
+On Thu, Jun 4, 2020 at 10:20 PM Kees Cook <keescook@chromium.org> wrote:
 >
 > On Thu, Jun 04, 2020 at 12:29:17PM -0700, Nick Desaulniers wrote:
 > > On Wed, Jun 3, 2020 at 4:32 PM Kees Cook <keescook@chromium.org> wrote:
@@ -149,18 +147,20 @@ On Thu, Jun 4, 2020 at 1:20 PM Kees Cook <keescook@chromium.org> wrote:
 > changes backported into a -stable without -Wmaybe-uninitialized
 > disabled, but in these cases (variable removal), that actually does make
 > sense. Thanks!
+>
 
-Saravana showed me a cool trick for quickly finding commits that
-removed a particular identifier that I find faster than `git blame` or
-vim-fugitive for the purpose of Fixes tags:
-$ git log -S <string> <file>
-I've added it to our wiki:
-https://github.com/ClangBuiltLinux/linux/wiki/Command-line-tips-and-tricks#for-finding-which-commit-may-have-removed-a-string-try.
-I should update the first tip; what was your suggestion for
-constraining the search to the current remote?
--- 
-Thanks,
-~Nick Desaulniers
+Fixes tag does not automatically mean it is "for-stable".
+
+[1] says:
+
+> Patches that fix a severe bug in a released kernel should be directed
+> toward the stable maintainers by putting a line like this::
+>
+>   Cc: stable@vger.kernel.org
+
+- Sedat -
+
+[1] https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/Documentation/process/submitting-patches.rst#n299
 
 _______________________________________________
 b43-dev mailing list
