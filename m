@@ -2,79 +2,78 @@ Return-Path: <b43-dev-bounces+lists+b43-dev=lfdr.de@lists.infradead.org>
 X-Original-To: lists+b43-dev@lfdr.de
 Delivered-To: lists+b43-dev@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E42041EDBAA
-	for <lists+b43-dev@lfdr.de>; Thu,  4 Jun 2020 05:33:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0B8F81EDBB3
+	for <lists+b43-dev@lfdr.de>; Thu,  4 Jun 2020 05:33:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Na2oF7mFvOJKPNdoM56871b8M1KOMGn9Ct5jipxBsIA=; b=V2gH3uiS31cFEc
-	fm+s+y51ZV9OufKS0ikuMmnQBSlQt7FOWIrurEp2vPchMdDgaH3GX4mpdCFbc1d3c3T4lKeQPDypS
-	NCeIyQ7JTaRuqhzxF68/lIs9PAVrb9K4vmG0f36sHEPokrFIY2q6L/vNoTkHeSWSAAuMyxxdCkT9h
-	vxbO437pxX8WRJJf+FRoG5HdAN4Z4FpRDeNcXTEZxC6j6LW1OQU3kHA1G9A7H4JbWdM3eUFDu/1ee
-	7Bc3nmDFbqBADrC9+vjMWi2kYIvXLfVs64NiAegNEpdMAGox01Sc1peA8mzoggFvrX5Zs+kHJXrfY
-	DHRPSZ9bOkI1F2DwvQpg==;
+	List-Owner; bh=4/3VyNMlLIGSAhrW3BI68ELUC3J31Beg/BpnjRVk7JE=; b=C85cN4riEOfioJ
+	OHF9kWjOoG4gkPRklG15eD+RmjTd9RZwAbnd/2VYOwy6Z6lf8ibvOdgwkytPfCIQuf5pNUjhPPi3c
+	JFLjMI2JHOlsY+tZazplvzonhoshZYr69tVQzKj7wHrShZshi1D7kDMdx09IxYqV5vaakEAuDjNwq
+	wCl83KCy6C1GcrVeWoM8xzRItZSwHR6b5/P0oKZ5WPCO4lco5ungga+fyx+o1JQJ8PeNoPo4g3bbg
+	fY/JfwiiVYQQNjVrmes1jutxhXBVsLl3146LNGt8QPm8i3mvBXv9GPns3oKF0Na2+dybHfC7DiT0F
+	Z2cSmms5y6j3ZhCTfFzw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jggdC-0003zI-E1; Thu, 04 Jun 2020 03:33:26 +0000
-Received: from mail-oi1-x244.google.com ([2607:f8b0:4864:20::244])
+	id 1jggdf-00046x-Rt; Thu, 04 Jun 2020 03:33:55 +0000
+Received: from mail-ot1-x343.google.com ([2607:f8b0:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jggd8-0003yE-4l
- for b43-dev@lists.infradead.org; Thu, 04 Jun 2020 03:33:23 +0000
-Received: by mail-oi1-x244.google.com with SMTP id j189so3833751oih.10
- for <b43-dev@lists.infradead.org>; Wed, 03 Jun 2020 20:33:19 -0700 (PDT)
+ id 1jggdb-00045j-TM
+ for b43-dev@lists.infradead.org; Thu, 04 Jun 2020 03:33:53 +0000
+Received: by mail-ot1-x343.google.com with SMTP id k15so3688989otp.8
+ for <b43-dev@lists.infradead.org>; Wed, 03 Jun 2020 20:33:50 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to;
- bh=8Faii11PvSo51bdsAemmq3+A0d7oNRL4/GLZ67cBSMg=;
- b=An50kzaFvA39pC4h/8bP4oIWOqTSG046GlYB5+emgXeZszQTtbXKqSjDjHWmw8n8um
- VXpLlrq83m2ZAS8J26v56FTDUjfbdw4fWaYAjEK9Ox20DjsyL1kabqtQvJ0qaNA6AN6x
- WQHzqT/rIk17+lobg6a1Qz4niujZV9KifIFoGU6CnMcUxFKQqfbbxVvC4XVpIL5SSTtt
- 6xGwnGkCkYTcRnL3OaIoBi5ReA1N/8hWVCv9k4QJ2ieUjD5HXDXWHDv6XZ9+0M+W+p2j
- GHjogeet/zLPYDJFnvbD/NGsLeEzoRiqyu6IiidyEX/Bv9x5fa84lURyrkrcSmOp3voL
- uKqQ==
+ bh=MtysUER1l5a/zqtCZtWbYXE2kDcmWMdAVlNOZNySUKQ=;
+ b=hAU6iC7SzuADMG5Aos+RZHGnFaCQ8z6d36F+7W8dHx8UydKYHSdkcMT8w6CUcGNzag
+ njj37uaHb1XsQkeNNgODWxw+JmIPSJFsiOzWaiRts6JwLN85uBohYPmIU0IknkNXqApb
+ 3XrfusUHfNL5s13uf3b2DyoPaSWSJxflMEAZNaYtnurxuCdr4w+7UzwHmt4ux1uoSJZY
+ VRuPqpiBPltoh715g3N7dXpDuR406aK9rtLam9pcwGJmc9amafFSMtWft6BzB9EYs6D1
+ 9LU1A/I8cVMacSajcwltKX+v5EE6MYClw1IEQtopq+DleI/1RwWeGJEmC369juox9UBM
+ UuWg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to;
- bh=8Faii11PvSo51bdsAemmq3+A0d7oNRL4/GLZ67cBSMg=;
- b=Te3E7wu4NWVKoUU7Q9H8O+cYgvz0V97XDkrFEUgWCw8KubmVzftuS6FeAL8KHUqbbJ
- /rWcSHOxtTp8S0MgoY0thsneiR3OtkF9KILM4JCfM/4gxTS2NQdqD5sQHvlcu76Y3ujr
- zG8PaEP6uVf+McdtJndtOZ7eAhcSuMMWZMC8bJdkBo6B0yB8+khO8ebGsAxZOSL8lv1E
- 6kuacLMr5YRnU/THz2TFyLP7farqE/3THGfIt2Lmv1O0uJG38Yhl88brtYrljj9TgCK8
- oNfL/ffapV6X5C4Bi2r+EFP6ZVRKFt2R5hVnmVTGIRJulfX30VbkhOA+TDK4+fJmVMCu
- p8mw==
-X-Gm-Message-State: AOAM530ba6IoRBtNj9vi3KFtjd+Rqd7YfWLNyAPHep0GWTuH8afbiWP+
- aH9K+NRre0rrx4Krt3NPyCY=
-X-Google-Smtp-Source: ABdhPJwnzfVVb4uCTFG1lxg30QZrwlILRC7pC1WmnFYGEgON5rzpjMpDI7aYXPTUb98IobrtcgZC+g==
-X-Received: by 2002:aca:b707:: with SMTP id h7mr1938490oif.174.1591241599191; 
- Wed, 03 Jun 2020 20:33:19 -0700 (PDT)
+ bh=MtysUER1l5a/zqtCZtWbYXE2kDcmWMdAVlNOZNySUKQ=;
+ b=RYDayQNJf6HDm87CCqD4gIS2AFxC9+44bazxB02G6vVl3TIrrED3cbOxAuDWhfeTfd
+ RWWCpFHRj/2tOgCa9w/PMxpoiXaRq/Et4ceaoGMnh47eKbudDIQdEZgNkxLxuVv/3wPi
+ WqMMYHKDbaMp92vfA6LVoC9e3xhXQeKvmLzTQckAQF0ylyu9DcOIraNLQSMlilSpSwsK
+ vJO+MnNuq4GEe9e962ykrAWGuivuhK10N5PpbXnjTv/HP6Du1mR5ffeRVze6f5t8xzUf
+ KJjeG3bEH1AcMFoEl4Ka9ZB4wmTvSPH9sxzWOJFoz9D3lWUPuK5Xg/8/SAJXZmdO5bwW
+ 0zzg==
+X-Gm-Message-State: AOAM531RIVLuqKz4ZxI3EiKaRrQuzSEd/6WUgjl5wNz6G4zIGohevOrt
+ 9NHAudC5E14zOBj1saEY2zRoYdzCSb4=
+X-Google-Smtp-Source: ABdhPJwauBmbuSyRfNNxnZntj92z7/qBAcGhEUztVFaDTipPYCkr+MSp0RGhU7FWUD4z+qoEhiCdIA==
+X-Received: by 2002:a9d:7387:: with SMTP id j7mr2354350otk.157.1591241630021; 
+ Wed, 03 Jun 2020 20:33:50 -0700 (PDT)
 Received: from ubuntu-n2-xlarge-x86 ([2604:1380:4111:8b00::3])
- by smtp.gmail.com with ESMTPSA id n60sm327816otn.75.2020.06.03.20.33.17
+ by smtp.gmail.com with ESMTPSA id z13sm969120oom.3.2020.06.03.20.33.48
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 03 Jun 2020 20:33:17 -0700 (PDT)
-Date: Wed, 3 Jun 2020 20:33:15 -0700
+ Wed, 03 Jun 2020 20:33:49 -0700 (PDT)
+Date: Wed, 3 Jun 2020 20:33:47 -0700
 From: Nathan Chancellor <natechancellor@gmail.com>
 To: Kees Cook <keescook@chromium.org>
-Subject: Re: [PATCH 09/10] treewide: Remove uninitialized_var() usage
-Message-ID: <20200604033315.GA1131596@ubuntu-n2-xlarge-x86>
+Subject: Re: [PATCH 00/10] Remove uninitialized_var() macro
+Message-ID: <20200604033347.GA3962068@ubuntu-n2-xlarge-x86>
 References: <20200603233203.1695403-1-keescook@chromium.org>
- <20200603233203.1695403-10-keescook@chromium.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20200603233203.1695403-10-keescook@chromium.org>
+In-Reply-To: <20200603233203.1695403-1-keescook@chromium.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200603_203322_202664_58CCBFEE 
-X-CRM114-Status: GOOD (  13.97  )
+X-CRM114-CacheID: sfid-20200603_203351_941950_6852D4B7 
+X-CRM114-Status: GOOD (  10.54  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:244 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -111,65 +110,50 @@ Content-Transfer-Encoding: 7bit
 Sender: "b43-dev" <b43-dev-bounces@lists.infradead.org>
 Errors-To: b43-dev-bounces+lists+b43-dev=lfdr.de@lists.infradead.org
 
-On Wed, Jun 03, 2020 at 04:32:02PM -0700, Kees Cook wrote:
+On Wed, Jun 03, 2020 at 04:31:53PM -0700, Kees Cook wrote:
 > Using uninitialized_var() is dangerous as it papers over real bugs[1]
 > (or can in the future), and suppresses unrelated compiler warnings
 > (e.g. "unused variable"). If the compiler thinks it is uninitialized,
 > either simply initialize the variable or make compiler changes.
 > 
-> I preparation for removing[2] the[3] macro[4], remove all remaining
-> needless uses with the following script:
+> As recommended[2] by[3] Linus[4], remove the macro.
 > 
-> git grep '\buninitialized_var\b' | cut -d: -f1 | sort -u | \
-> 	xargs perl -pi -e \
-> 		's/\buninitialized_var\(([^\)]+)\)/\1/g;
-> 		 s:\s*/\* (GCC be quiet|to make compiler happy) \*/$::g;'
+> Most of the 300 uses don't cause any warnings on gcc 9.3.0, so they're in
+> a single treewide commit in this series. A few others needed to actually
+> get cleaned up, and I broke those out into individual patches.
 > 
-> drivers/video/fbdev/riva/riva_hw.c was manually tweaked to avoid
-> pathological white-space.
-> 
-> No outstanding warnings were found building allmodconfig with GCC 9.3.0
-> for x86_64, i386, arm64, arm, powerpc, powerpc64le, s390x, mips, sparc64,
-> alpha, and m68k.
+> -Kees
 > 
 > [1] https://lore.kernel.org/lkml/20200603174714.192027-1-glider@google.com/
 > [2] https://lore.kernel.org/lkml/CA+55aFw+Vbj0i=1TGqCR5vQkCzWJ0QxK6CernOU6eedsudAixw@mail.gmail.com/
 > [3] https://lore.kernel.org/lkml/CA+55aFwgbgqhbp1fkxvRKEpzyR5J8n1vKT1VZdz9knmPuXhOeg@mail.gmail.com/
 > [4] https://lore.kernel.org/lkml/CA+55aFz2500WfbKXAx8s67wrm9=yVJu65TpLgN_ybYNv0VEOKA@mail.gmail.com/
 > 
-> Signed-off-by: Kees Cook <keescook@chromium.org>
+> Kees Cook (10):
+>   x86/mm/numa: Remove uninitialized_var() usage
+>   drbd: Remove uninitialized_var() usage
+>   b43: Remove uninitialized_var() usage
+>   rtlwifi: rtl8192cu: Remove uninitialized_var() usage
+>   ide: Remove uninitialized_var() usage
+>   clk: st: Remove uninitialized_var() usage
+>   spi: davinci: Remove uninitialized_var() usage
+>   checkpatch: Remove awareness of uninitialized_var() macro
+>   treewide: Remove uninitialized_var() usage
+>   compiler: Remove uninitialized_var() macro
 
-<snip>
+I applied all of these on top of cb8e59cc8720 and ran a variety of
+builds with clang for arm32, arm64, mips, powerpc, s390, and x86_64 [1]
+and only saw one warning pop up (which was about a variable being
+unused, commented on patch 9 about it). No warnings about uninitialized
+variables came up; clang's -Wuninitialized was not impacted by
+78a5255ffb6a ("Stop the ad-hoc games with -Wno-maybe-initialized") so it
+should have caught anything egregious.
 
-> diff --git a/arch/powerpc/kvm/book3s_pr.c b/arch/powerpc/kvm/book3s_pr.c
-> index a0f6813f4560..a71fa7204882 100644
-> --- a/arch/powerpc/kvm/book3s_pr.c
-> +++ b/arch/powerpc/kvm/book3s_pr.c
-> @@ -1829,7 +1829,7 @@ static int kvmppc_vcpu_run_pr(struct kvm_run *kvm_run, struct kvm_vcpu *vcpu)
->  {
->  	int ret;
->  #ifdef CONFIG_ALTIVEC
-> -	unsigned long uninitialized_var(vrsave);
-> +	unsigned long vrsave;
->  #endif
+[1]: https://github.com/nathanchance/llvm-kernel-testing
 
-This variable is actually unused:
+For the series, consider it:
 
-../arch/powerpc/kvm/book3s_pr.c:1832:16: warning: unused variable 'vrsave' [-Wunused-variable]
-        unsigned long vrsave;
-                      ^
-1 warning generated.
-
-It has been unused since commit 99dae3bad28d ("KVM: PPC: Load/save
-FP/VMX/VSX state directly to/from vcpu struct").
-
-$ git grep vrsave 99dae3bad28d8fdd32b7bfdd5e2ec7bb2d4d019d arch/powerpc/kvm/book3s_pr.c
-99dae3bad28d8fdd32b7bfdd5e2ec7bb2d4d019d:arch/powerpc/kvm/book3s_pr.c:  unsigned long uninitialized_var(vrsave);
-
-I would nuke the whole '#ifdef' block.
-
-Cheers,
-Nathan
+Tested-by: Nathan Chancellor <natechancellor@gmail.com> [build]
 
 _______________________________________________
 b43-dev mailing list
