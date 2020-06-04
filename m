@@ -2,80 +2,80 @@ Return-Path: <b43-dev-bounces+lists+b43-dev=lfdr.de@lists.infradead.org>
 X-Original-To: lists+b43-dev@lfdr.de
 Delivered-To: lists+b43-dev@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BB4491EE728
-	for <lists+b43-dev@lfdr.de>; Thu,  4 Jun 2020 16:59:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AF7861EE79D
+	for <lists+b43-dev@lfdr.de>; Thu,  4 Jun 2020 17:22:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/Wcr8EqvIijSqk3oT9Kj9KaF7iI8pb54PN7sA6IqM9o=; b=iB5wrqVJqp3eyo
-	qNPSk53d3MYQHdHGw0VMxy9UEV5V9nhfy3NBOasCP8ywXl8SLYe/q6bhYbQBbGG0M8+7WmiPkKJ54
-	iMhph5A2zyR7GpttFkpsrMb/TogwoW/eIyHVM8doyh2XTfG2PkYtVXiwXp8btmU5ctJfNOY6G1LtW
-	SdgFh2Vuxe7laGKFvj4zQ08sSGBHi02MdhIyzw54SAvcHGXY+28JnMSJFLAdd56YOXCyIq81gQxhu
-	mjC5FjNnuajpwff+33Hu+c2/0VNFNxW7JHM5sAQpL4iPLQrJ1HEff7qlqvuGggxPwJry77Rd5dyd8
-	Yug/Y51qfMaRAkga0sDA==;
+	List-Owner; bh=5MM+lgqE9RNBFEQ2UFiPyAULu6Uqq/pAUbGmTtiIzB0=; b=b61qZ1TuTzu8sl
+	wr6GYQfjw1M+PYYYZlkBGhTfYQlhqyZCWCGhMOJvzFVUeIlm4cjpT3e87ihVVm9AF/Gfz4O5Caz5v
+	csP2BdRtKwPMGkPvtuae+UfpU7kEiKFGPEmx4nKZ0i5aIP3eDqPAe0Jfh+IUcbdIMTjQPa8fG9uzm
+	wAUFvjwxU67AHPyVPWky92orBcfA/7CcnpxoT6HDfP/8EM5ULb3Y1sldeaiIfnziNy5Ir0dBIs53X
+	YI+TDXeNg+TWzHz0I6KXYgASj1jw9yLxIGPJPlerB7Sng5c9VALDz0LIW4iW3X/x4X90junGIbhli
+	R6QmtgPFc8DhO4b+B7Qg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jgrLO-0001dS-4K; Thu, 04 Jun 2020 14:59:46 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1jgrhU-0001Ui-PI; Thu, 04 Jun 2020 15:22:36 +0000
+Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jgrLK-0001d9-Vz
- for b43-dev@lists.infradead.org; Thu, 04 Jun 2020 14:59:44 +0000
-Received: by mail-pf1-x442.google.com with SMTP id b5so3354910pfp.9
- for <b43-dev@lists.infradead.org>; Thu, 04 Jun 2020 07:59:42 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to;
- bh=xZR3lWkoYpLFg4eE+Etif6ukCUL5ApBdi/GoHnvWaEk=;
- b=TupHTdygAigywhS3pB8tAlBUKta4lXvoAYH4dzNzhrASd2l3DGn01fOXPA/fx+ddwx
- e63Z0EnMX9EmBApvSxhudimZg0Kyu1Ran7gh+CyYHPG3fZ0CjgSq6NhbXpLphCrF+Ouq
- t2GxHonz+RRUwsB+KYTkj8rNjo2/BKZIMEe8c=
+ id 1jgrhR-0001Tr-1S
+ for b43-dev@lists.infradead.org; Thu, 04 Jun 2020 15:22:34 +0000
+Received: by mail-lj1-x241.google.com with SMTP id b6so7831708ljj.1
+ for <b43-dev@lists.infradead.org>; Thu, 04 Jun 2020 08:22:32 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=Hll+dJXiojyLXcK519mMreswBK6PHaxvzDLgh0p26WU=;
+ b=L2DmN0uXC2KyUjBXJZi+YdM6TZcgHaAo/hwU1tP/L4478bcM5q0UoroK+b7mXP2R4P
+ CY4dtFPVvkSyAVNSadDFjTzPdwsP+D6eUqcI3kZvGZ6ajCkMMqMOFbgr3IfT104hlH1u
+ lRWeEsjQCwyQyAj9FSqtUsV2OVn1GCiiakgSfTvZ8K2MYTUl7u0hUTkpplg3e1KrWY/9
+ snhpOMwvfzp6FxIPzFqDy43iUYePSSShfDdso4J4gku4w5tWVs2i8FRQHbva/jSkg7vd
+ YZLPjLfOXFlhjCK9IXDlSvavi8M3D5kpvb1fwEUGzSEYis+R9Un5BXefFLYIPHMBjNN1
+ WgrQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=xZR3lWkoYpLFg4eE+Etif6ukCUL5ApBdi/GoHnvWaEk=;
- b=BrQWtBzqqcwzDiWS2klW8cqQV3SrZeBBXEceYiSt/Y4rt/Aiwt3AJyqqvLExc+Uo+E
- ZuRoYlsw8WXPlJZcsmSlLzoDERrylwjwFCyiyrAkYF6ga5fkOYwmAR54LY5+9vqUnrhG
- KFGPnNKpivnSIQsoWx7L0/9DMtba67Ys4Cp6Mhp0qIvemKU7L+DA5YXmUp3CiD+ax+up
- OJX05r2Ap4e9QOPcYr/ZBhCzuaCJS2j4q8Kk8cJFG0W7R3PJ2w2L2ncBe7MqNDjyX24V
- zwuIpUZApZlzszR6j8jJ++8r6+ai/wLxAKPpKNVYUBVarIwY13PpoJCwJx/Y3jqksY+z
- MWyw==
-X-Gm-Message-State: AOAM5319hXB3/gHdcjYHVIM4pcQJC8Yb5SNyShnOVxSBHNXZEFKQ2KoX
- 8zZMHYBLPjz5qTXMu164yFZxWQ==
-X-Google-Smtp-Source: ABdhPJwvM5Okdp4t/lqPdqt9FJOxz3H8PoeKTiCxL62lJBkvY0bVXGWNEvmo0e7yAT0Y8leJzLPW1g==
-X-Received: by 2002:a63:d544:: with SMTP id v4mr4979382pgi.60.1591282782325;
- Thu, 04 Jun 2020 07:59:42 -0700 (PDT)
-Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
- by smtp.gmail.com with ESMTPSA id w65sm4752697pfb.160.2020.06.04.07.59.40
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 04 Jun 2020 07:59:41 -0700 (PDT)
-Date: Thu, 4 Jun 2020 07:59:40 -0700
-From: Kees Cook <keescook@chromium.org>
-To: Jason Gunthorpe <jgg@ziepe.ca>
-Subject: Re: [PATCH 09/10] treewide: Remove uninitialized_var() usage
-Message-ID: <202006040757.0DFC3F28E@keescook>
-References: <20200603233203.1695403-1-keescook@chromium.org>
- <20200603233203.1695403-10-keescook@chromium.org>
- <20200604132306.GO6578@ziepe.ca>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=Hll+dJXiojyLXcK519mMreswBK6PHaxvzDLgh0p26WU=;
+ b=GMcDhPVIBcE6RpIpNTzb5Q/H6b3HVHJVqSkjFBFhFJ3IIwcvQNSKOlw7hEI89xSnLi
+ 2If5IIFP6Cobios0CdwM2xP81SzpFxwyoR7oxcGtMdljpN179PtqHLTyg5XFi5oc3Y9m
+ DoW44ee83FaOVz9S4+JrVPXKAyDq/Z58Rp+wM0BnKjxKzWnsqyaf/5hQJwEBYrsNRglt
+ nD/MQ+N+PPcsWZH0mrFh7vvWbu7o5DqY8xYIacR17mKr5q5Smubwmuy7DEX+AHTWedsD
+ 4JbXlQ4u5aBzIm1VAkr/ZSdLEmitn7T7Il8vjIM0yE/mXS4zcvtloAJseSpELChZZyaj
+ gyVQ==
+X-Gm-Message-State: AOAM5321gvI/x498jOqPintj1YGD4m3L6fe2Pz+CuY/7KJugsyJzrCRk
+ H9qFPrK9mgpH44EJeqjad4hA2MElP8tHU+B1EYA=
+X-Google-Smtp-Source: ABdhPJxQH/KP1voSsxjAeba8kcNASoNK9+7gLFDlFHUbaiNIt96Mc8wIex8PnUIxUMkLvQS6umX4ZEAcM7RZRhjcGv4=
+X-Received: by 2002:a2e:a544:: with SMTP id e4mr2625204ljn.264.1591284147467; 
+ Thu, 04 Jun 2020 08:22:27 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20200604132306.GO6578@ziepe.ca>
+References: <20200603233203.1695403-2-keescook@chromium.org>
+ <874krr8dps.fsf@nanos.tec.linutronix.de>
+ <CANiq72kLqvriYmMkdD3yU+xJwbn-68Eiu-fTNtC+Lb+1ZRM75g@mail.gmail.com>
+ <202006040745.525ECD1@keescook>
+In-Reply-To: <202006040745.525ECD1@keescook>
+From: Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>
+Date: Thu, 4 Jun 2020 17:22:15 +0200
+Message-ID: <CANiq72mHhzfPMGbBn=NZfqLeejPG+t=GN++NJ-L0hg-2x4UPag@mail.gmail.com>
+Subject: Re: [PATCH 01/10] x86/mm/numa: Remove uninitialized_var() usage
+To: Kees Cook <keescook@chromium.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200604_075943_026402_69F82A43 
-X-CRM114-Status: GOOD (  13.48  )
+X-CRM114-CacheID: sfid-20200604_082233_083403_E5FA7FDF 
+X-CRM114-Status: GOOD (  10.84  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:241 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider [miguel.ojeda.sandonis[at]gmail.com]
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -83,7 +83,6 @@ X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: b43-dev@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,62 +94,54 @@ List-Post: <mailto:b43-dev@lists.infradead.org>
 List-Help: <mailto:b43-dev-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/b43-dev>,
  <mailto:b43-dev-request@lists.infradead.org?subject=subscribe>
-Cc: Andy Whitcroft <apw@canonical.com>, clang-built-linux@googlegroups.com,
- linux-ide@vger.kernel.org, netdev@vger.kernel.org, x86@kernel.org,
- linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-spi@vger.kernel.org, linux-block@vger.kernel.org,
- Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>, linux-mm@kvack.org,
- Alexander Potapenko <glider@google.com>, b43-dev@lists.infradead.org,
- Joe Perches <joe@perches.com>, Linus Torvalds <torvalds@linux-foundation.org>,
- linux-clk@vger.kernel.org, drbd-dev@lists.linbit.com
+Cc: clang-built-linux <clang-built-linux@googlegroups.com>,
+ linux-ide@vger.kernel.org, Network Development <netdev@vger.kernel.org>,
+ Masahiro Yamada <masahiroy@kernel.org>,
+ "maintainer:X86 ARCHITECTURE \(32-BIT AND 64-BIT\)" <x86@kernel.org>,
+ linux-wireless <linux-wireless@vger.kernel.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>, linux-spi@vger.kernel.org,
+ linux-block@vger.kernel.org, Andy Whitcroft <apw@canonical.com>,
+ Linux-MM <linux-mm@kvack.org>, Alexander Potapenko <glider@google.com>,
+ b43-dev@lists.infradead.org, Joe Perches <joe@perches.com>,
+ Thomas Gleixner <tglx@linutronix.de>,
+ Linus Torvalds <torvalds@linux-foundation.org>, linux-clk@vger.kernel.org,
+ drbd-dev@lists.linbit.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "b43-dev" <b43-dev-bounces@lists.infradead.org>
 Errors-To: b43-dev-bounces+lists+b43-dev=lfdr.de@lists.infradead.org
 
-On Thu, Jun 04, 2020 at 10:23:06AM -0300, Jason Gunthorpe wrote:
-> On Wed, Jun 03, 2020 at 04:32:02PM -0700, Kees Cook wrote:
-> > Using uninitialized_var() is dangerous as it papers over real bugs[1]
-> > (or can in the future), and suppresses unrelated compiler warnings
-> > (e.g. "unused variable"). If the compiler thinks it is uninitialized,
-> > either simply initialize the variable or make compiler changes.
-> > 
-> > I preparation for removing[2] the[3] macro[4], remove all remaining
-> > needless uses with the following script:
-> > 
-> > git grep '\buninitialized_var\b' | cut -d: -f1 | sort -u | \
-> > 	xargs perl -pi -e \
-> > 		's/\buninitialized_var\(([^\)]+)\)/\1/g;
-> > 		 s:\s*/\* (GCC be quiet|to make compiler happy) \*/$::g;'
-> > 
-> > drivers/video/fbdev/riva/riva_hw.c was manually tweaked to avoid
-> > pathological white-space.
-> > 
-> > No outstanding warnings were found building allmodconfig with GCC 9.3.0
-> > for x86_64, i386, arm64, arm, powerpc, powerpc64le, s390x, mips, sparc64,
-> > alpha, and m68k.
-> 
-> At least in the infiniband part I'm confident that old gcc versions
-> will print warnings after this patch.
-> 
-> As the warnings are wrong, do we care? Should old gcc maybe just -Wno-
-> the warning?
+On Thu, Jun 4, 2020 at 4:56 PM Kees Cook <keescook@chromium.org> wrote:
+>
+> Er? That's not what it looked like to me:
+>
+> #define IS_BUILTIN(option) __is_defined(option)
+> #define IS_ENABLED(option) __or(IS_BUILTIN(option), IS_MODULE(option))
+>
+> But just to be sure, I just tested in with a real build:
+>
+> [    3.242160] IS_ENABLED(TEST_UNDEF) false
+> [    3.242691] __is_defined(TEST_UNDEF) false
+> [    3.243240] IS_ENABLED(TEST_VALUE_EMPTY) false
+> [    3.243794] __is_defined(TEST_VALUE_EMPTY) false
+> [    3.244353] IS_ENABLED(TEST_VALUE_1) true
+> [    3.244848] __is_defined(TEST_VALUE_1) true
+>
+> and nope, it only works with a defined value present.
 
-I *think* a lot of those are from -Wmaybe-uninitialized, but Linus just
-turned that off unconditionally in v5.7:
-78a5255ffb6a ("Stop the ad-hoc games with -Wno-maybe-initialized")
+You are right, it follows the Kconfig logic, returning false for
+defined-but-to-0 too.
 
-I'll try to double-check with some older gcc versions. My compiler
-collection is mostly single-axis: lots of arches, not lots of versions. ;)
+We should probably add an `IS_DEFINED()` macro kernel-wide for this
+(and add it to the `coding-guidelines.rst` since `IS_ENABLED()` is
+mentioned there, with a warning not to mix it with `__is_defined()`
+which looks it was only intended as an implementation detail for
+`include/linux/kconfig.h`).
 
-> Otherwise the IB bits look ok to me
-> 
-> Acked-by: Jason Gunthorpe <jgg@mellanox.com>
+CC'ing Masahiro by the way.
 
-Thanks!
-
--- 
-Kees Cook
+Cheers,
+Miguel
 
 _______________________________________________
 b43-dev mailing list
