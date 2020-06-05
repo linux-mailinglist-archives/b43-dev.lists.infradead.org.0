@@ -2,45 +2,45 @@ Return-Path: <b43-dev-bounces+lists+b43-dev=lfdr.de@lists.infradead.org>
 X-Original-To: lists+b43-dev@lfdr.de
 Delivered-To: lists+b43-dev@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 771871EF3EA
-	for <lists+b43-dev@lfdr.de>; Fri,  5 Jun 2020 11:20:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EDD731EF3F5
+	for <lists+b43-dev@lfdr.de>; Fri,  5 Jun 2020 11:21:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
 	Date:References:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FAhopAL7WK0ZxF/5WmprGOblmd8szmXiPeLUfIz3qBM=; b=OhKQYOtdRwz/L5
-	x5F9BAsaJAkJDJSrRGAub1Bl8PAtAtG2vZkv6ScPKi+/5hFLewiU/EdvBliaGsZ2X5FQcdv5YEt/8
-	zBCURmHg65h4HwjGS/kJrP6Qx9YoGw7FcdDHUApN/YaQqA40iGHIfFcvjpfXtdCtznPpOyTUELGyO
-	+jz6+puYnZDzEDQ9xqYOXbaw0ZYwr8mucEPqf7yUBsRa3QUtSjrlnoV1V9b8D5277PPEYFsjDZnTL
-	Z0XAEpiyyDvaV1/tLOs6bdoEBkQsC0p8KrJoSA9EFqWPcOw0eE6YsGViHTFeisyKs1aE/gUlat+qb
-	eyu5T/7fA9kCKEqzBNFg==;
+	List-Owner; bh=729TUjegKjBYXKKDhw4MoqyucGKqBaYfWew2vkngld0=; b=r2oanjAwNirn68
+	xm4bca1aN4Llxs7P6faf4LbKwAg+oj9lUFIYYMjS21ScOjBY4chzlfvI7ITFrn0tDELWohgneo6pr
+	2ir87YzBoWwb/g9Vl6RBCzTwGLxv2IPfD1rp5LLbYsyQIMUP2gL5ci6MxyP/Zg3YP/2gitD8UQlL9
+	5CHpSOitw9032WcoVPsSQlpynuFq18o7+uV8R+Exn3MPli5tBU7I1ftL8GsIGTdeqpVymGcNvnDog
+	UyTjvzzOSKw9nktcxUG9klB259nnrBB0ilRUh5XlR1eyGSSj7UxnwRsRHzrSlNxRsFYBah5n7VQI+
+	VBnmBdj7s5i3ihYlbiXg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jh8VO-0008Au-1g; Fri, 05 Jun 2020 09:19:14 +0000
-Received: from m43-7.mailgun.net ([69.72.43.7])
+	id 1jh8XT-0002P1-OG; Fri, 05 Jun 2020 09:21:23 +0000
+Received: from mail27.static.mailgun.info ([104.130.122.27])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jh8VF-00089c-Pa
- for b43-dev@lists.infradead.org; Fri, 05 Jun 2020 09:19:08 +0000
+ id 1jh8XH-0002O3-Qi
+ for b43-dev@lists.infradead.org; Fri, 05 Jun 2020 09:21:20 +0000
 DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.codeaurora.org;
  q=dns/txt; 
- s=smtp; t=1591348746; h=Content-Type: MIME-Version: Message-ID:
+ s=smtp; t=1591348879; h=Content-Type: MIME-Version: Message-ID:
  In-Reply-To: Date: References: Subject: Cc: To: From: Sender;
- bh=rOuMTfuZSakOmsFGGhwcSiyz0vHtYC8PrlCFy1ZsKyw=;
- b=QoQLxD/cO7vDut1vHSq9uflwiWveNBkc4inTBL1za8m7eiKjOlXnRetcFSH2X+3KgS2bYCoa
- Nccezn17XtamigZnZ3fiJnmW185fVxPu6Sw7ktcmQrVblJqrIq7tLepEFMIF9wWvc+zv1iv4
- /z1qe2du+wmdHrP9NdNlNoaaYWo=
-X-Mailgun-Sending-Ip: 69.72.43.7
+ bh=kOyRDD2wM/7haweFJ6NAJPQaW5V0bTz8j0qf/YEB3F8=;
+ b=F2A5TWdy6IaA7cJR+A5wfefYbrzAb8O7u7ArKoMGQ/m+OXzNgkhmFzHI5cBGoc42SCjUzhfN
+ moU5dJHejMcrWapolJerhQS6BlL0m+BRTcvXQy92XhYeBxtAKUjUuwjoiFAVchBqtue5gvQ9
+ Vb1uqKmG21KEfBPuGuyaip8EBDU=
+X-Mailgun-Sending-Ip: 104.130.122.27
 X-Mailgun-Sid: WyIxODVhOSIsICJiNDMtZGV2QGxpc3RzLmluZnJhZGVhZC5vcmciLCAiYmU5ZTRhIl0=
 Received: from smtp.codeaurora.org
  (ec2-35-166-182-171.us-west-2.compute.amazonaws.com [35.166.182.171]) by
- smtp-out-n01.prod.us-east-1.postgun.com with SMTP id
- 5eda0df5b65440fdbaa43334 (version=TLS1.2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256); Fri, 05 Jun 2020 09:18:45
+ smtp-out-n10.prod.us-east-1.postgun.com with SMTP id
+ 5eda0e7e3131442d95f7aea1 (version=TLS1.2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256); Fri, 05 Jun 2020 09:21:02
  GMT
 Received: by smtp.codeaurora.org (Postfix, from userid 1001)
- id 028F1C433A0; Fri,  5 Jun 2020 09:18:44 +0000 (UTC)
+ id 4D54CC433AF; Fri,  5 Jun 2020 09:21:01 +0000 (UTC)
 X-Spam-Checker-Version: SpamAssassin 3.4.0 (2014-02-07) on
  aws-us-west-2-caf-mail-1.web.codeaurora.org
 X-Spam-Level: 
@@ -49,43 +49,41 @@ X-Spam-Status: No, score=-1.0 required=2.0 tests=ALL_TRUSTED,SPF_NONE
 Received: from tynnyri.adurom.net (tynnyri.adurom.net [51.15.11.48])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested) (Authenticated sender: kvalo)
- by smtp.codeaurora.org (Postfix) with ESMTPSA id B846EC43387;
- Fri,  5 Jun 2020 09:18:40 +0000 (UTC)
-DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org B846EC43387
+ by smtp.codeaurora.org (Postfix) with ESMTPSA id 0979DC433C6;
+ Fri,  5 Jun 2020 09:20:56 +0000 (UTC)
+DMARC-Filter: OpenDMARC Filter v1.3.2 smtp.codeaurora.org 0979DC433C6
 Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
  dmarc=none (p=none dis=none) header.from=codeaurora.org
 Authentication-Results: aws-us-west-2-caf-mail-1.web.codeaurora.org;
  spf=none smtp.mailfrom=kvalo@codeaurora.org
 From: Kalle Valo <kvalo@codeaurora.org>
 To: Kees Cook <keescook@chromium.org>
-Subject: Re: [PATCH 04/10] rtlwifi: rtl8192cu: Remove uninitialized_var() usage
+Subject: Re: [PATCH 03/10] b43: Remove uninitialized_var() usage
 References: <20200603233203.1695403-1-keescook@chromium.org>
- <20200603233203.1695403-5-keescook@chromium.org>
-Date: Fri, 05 Jun 2020 12:18:22 +0300
-In-Reply-To: <20200603233203.1695403-5-keescook@chromium.org> (Kees Cook's
- message of "Wed, 3 Jun 2020 16:31:57 -0700")
-Message-ID: <87h7vpg9b5.fsf@tynnyri.adurom.net>
+ <20200603233203.1695403-4-keescook@chromium.org>
+Date: Fri, 05 Jun 2020 12:20:55 +0300
+In-Reply-To: <20200603233203.1695403-4-keescook@chromium.org> (Kees Cook's
+ message of "Wed, 3 Jun 2020 16:31:56 -0700")
+Message-ID: <87d06dg96w.fsf@tynnyri.adurom.net>
 User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.1 (gnu/linux)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200605_021907_013137_B3378C42 
-X-CRM114-Status: UNSURE (   9.64  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200605_022119_620648_7FD0ADA9 
+X-CRM114-Status: GOOD (  12.85  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [104.130.122.27 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 RCVD_IN_MSPIKE_H4      RBL: Very Good reputation (+4)
+ [104.130.122.27 listed in wl.mailspike.net]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [69.72.43.7 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [69.72.43.7 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ valid 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: b43-dev@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -117,7 +115,7 @@ Kees Cook <keescook@chromium.org> writes:
 > "unused variable"). If the compiler thinks it is uninitialized, either
 > simply initialize the variable or make compiler changes. As a precursor
 > to removing[2] this[3] macro[4], just initialize this variable to NULL,
-> and avoid sending garbage by returning.
+> and make the (unreachable!) code do a conditional test.
 >
 > [1] https://lore.kernel.org/lkml/20200603174714.192027-1-glider@google.com/
 > [2] https://lore.kernel.org/lkml/CA+55aFw+Vbj0i=1TGqCR5vQkCzWJ0QxK6CernOU6eedsudAixw@mail.gmail.com/
@@ -126,12 +124,23 @@ Kees Cook <keescook@chromium.org> writes:
 >
 > Signed-off-by: Kees Cook <keescook@chromium.org>
 
-To which tree should this go? If something else than wireless-drivers
-tree:
+[...]
 
-Acked-by: Kalle Valo <kvalo@codeaurora.org>
+> @@ -4256,9 +4256,13 @@ static void b43_nphy_tx_gain_table_upload(struct b43_wldev *dev)
+>  			pga_gain = (table[i] >> 24) & 0xf;
+>  			pad_gain = (table[i] >> 19) & 0x1f;
+>  			if (b43_current_band(dev->wl) == NL80211_BAND_2GHZ)
+> -				rfpwr_offset = rf_pwr_offset_table[pad_gain];
+> +				rfpwr_offset = rf_pwr_offset_table
+> +						? rf_pwr_offset_table[pad_gain]
+> +						: 0;
+>  			else
+> -				rfpwr_offset = rf_pwr_offset_table[pga_gain];
+> +				rfpwr_offset = rf_pwr_offset_table
+> +						? rf_pwr_offset_table[pga_gain]
+> +						: 0;
 
-But let me know if you want me to take this.
+To me this is ugly, isn't there a better way to fix this?
 
 -- 
 https://wireless.wiki.kernel.org/en/developers/documentation/submittingpatches
