@@ -2,30 +2,30 @@ Return-Path: <b43-dev-bounces+lists+b43-dev=lfdr.de@lists.infradead.org>
 X-Original-To: lists+b43-dev@lfdr.de
 Delivered-To: lists+b43-dev@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 309E51EFCCC
-	for <lists+b43-dev@lfdr.de>; Fri,  5 Jun 2020 17:42:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 72D8F1EFCCD
+	for <lists+b43-dev@lfdr.de>; Fri,  5 Jun 2020 17:42:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=o1G5lnCUs3j0RNB6yi3h4yyj4VDXDjoxy4gdg0RNrqY=; b=rjhydrIMNSruJZ
-	os07if9I/SY1dnkc0CaWlLxCOLpsjO3knqJiFHxvIq1R7tpA97MRNlta2oKWgtnN8bM4OMALnsCst
-	xTzBS0L1MTqzmp9g7kLpG1NcpcRe9+9iSG5TXALM4RWYTkWGNtaMYlyjNriAr6WO+Kg2RmjhkQljI
-	MuHBElahazyeK9dT9PL3noxziYHy5Itqm8G1qnYCLsarflXTJoLmMpIUqDaBxniC/BDrvNFV8c3XO
-	JwGzoUNmOOAYGZs8+mjKdQRfYzAlgrv9ZGdiExwQCIzDFMQ2dyeep08JmnOA742JZK7rqwHsAsNjB
-	TNMC091YeD+fXMEbU8fg==;
+	List-Owner; bh=Gjd+4F8p4GqjDPMvekvWnPOyOtIvWM6veX+IcTvfS2U=; b=kslrT16f4Ktkml
+	FANx0of80V3e10Q+LkMdRdnQqIM2SR4jXHMYtXHs+lNvF1aITC3dFfVH12QxWx0/cniUKyTVyg4Zn
+	ErYBVgm47/V9PYDgv76kgKEfd1Y1tbQh3GkzaUW/XR0rpcbyF9Xdu10z3qFMKKSwU/0A3asT1x6fB
+	wxhtQwwukbXYoxPDXFOGpHWOUzV5mk5X3HdlS2ZnONhi2u2Ov0Nkr72M3Yr+E2FlGsB7EsyrmjAhO
+	1WXPAckxXm2HPlnHKwXHw33i8/zrpqTm3SAGm7rERCuTCPWs0vZY7JZgRYNn/9NALilk4s25dYzLf
+	a6uDxR6bjvX8L44CnFtg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jhEU6-0002KO-3y; Fri, 05 Jun 2020 15:42:18 +0000
+	id 1jhEUB-0002Pz-10; Fri, 05 Jun 2020 15:42:23 +0000
 Received: from smtp.asem.it ([151.1.184.197])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jhETk-0001no-R8
- for b43-dev@lists.infradead.org; Fri, 05 Jun 2020 15:41:58 +0000
+ id 1jhETn-0001no-E3
+ for b43-dev@lists.infradead.org; Fri, 05 Jun 2020 15:42:01 +0000
 Received: from webmail.asem.it by asem.it (smtp.asem.it)
- (SecurityGateway 6.5.2) with ESMTP id SG000300871.MSG 
- for <b43-dev@lists.infradead.org>; Fri, 05 Jun 2020 17:41:31 +0200S
+ (SecurityGateway 6.5.2) with ESMTP id SG000300872.MSG 
+ for <b43-dev@lists.infradead.org>; Fri, 05 Jun 2020 17:41:32 +0200S
 Received: from ASAS044.asem.intra (172.16.16.44) by ASAS044.asem.intra
  (172.16.16.44) with Microsoft SMTP Server (version=TLS1_2,
  cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1979.3; Fri, 5 Jun
@@ -41,20 +41,20 @@ To: Johannes Berg <johannes@sipsolutions.net>, "David S . Miller"
  <saurav.girepunje@gmail.com>, Larry Finger <Larry.Finger@lwfinger.net>,
  Emmanuel Grumbach <emmanuel.grumbach@intel.com>, Luca Coelho
  <luciano.coelho@intel.com>
-Subject: [PATCH 5/9] net: wireless: broadcom: fix wiki website url
-Date: Fri, 5 Jun 2020 17:41:08 +0200
-Message-ID: <20200605154112.16277-6-f.suligoi@asem.it>
+Subject: [PATCH 6/9] net: wireless: intel: fix wiki website url
+Date: Fri, 5 Jun 2020 17:41:09 +0200
+Message-ID: <20200605154112.16277-7-f.suligoi@asem.it>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20200605154112.16277-1-f.suligoi@asem.it>
 References: <20200605154112.16277-1-f.suligoi@asem.it>
 MIME-Version: 1.0
 X-SGHeloLookup-Result: pass smtp.helo=webmail.asem.it (ip=172.16.16.44)
 X-SGSPF-Result: none (smtp.asem.it)
-X-SGOP-RefID: str=0001.0A090215.5EDA67AA.0011, ss=1, re=0.000, recu=0.000,
+X-SGOP-RefID: str=0001.0A090215.5EDA67AA.002B, ss=1, re=0.000, recu=0.000,
  reip=0.000, cl=1, cld=1, fgs=0 (_st=1 _vt=0 _iwf=0)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200605_084157_138423_376B8B31 
-X-CRM114-Status: UNSURE (   9.71  )
+X-CRM114-CacheID: sfid-20200605_084159_670644_574C88D3 
+X-CRM114-Status: UNSURE (   9.22  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
@@ -85,44 +85,42 @@ Content-Transfer-Encoding: 7bit
 Sender: "b43-dev" <b43-dev-bounces@lists.infradead.org>
 Errors-To: b43-dev-bounces+lists+b43-dev=lfdr.de@lists.infradead.org
 
-In some b43 files, the wiki url is still the old
+In some Intel files, the wiki url is still the old
 "wireless.kernel.org" instead of the new
 "wireless.wiki.kernel.org"
 
 Signed-off-by: Flavio Suligoi <f.suligoi@asem.it>
 ---
- drivers/net/wireless/broadcom/b43/main.c       | 2 +-
- drivers/net/wireless/broadcom/b43legacy/main.c | 4 ++--
- 2 files changed, 3 insertions(+), 3 deletions(-)
+ drivers/net/wireless/intel/iwlegacy/4965-mac.c | 2 +-
+ drivers/net/wireless/intel/iwlwifi/Kconfig     | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/net/wireless/broadcom/b43/main.c b/drivers/net/wireless/broadcom/b43/main.c
-index 3ad94dad2d89..0c2ea12fca19 100644
---- a/drivers/net/wireless/broadcom/b43/main.c
-+++ b/drivers/net/wireless/broadcom/b43/main.c
-@@ -2164,7 +2164,7 @@ static void b43_print_fw_helptext(struct b43_wl *wl, bool error)
- {
- 	const char text[] =
- 		"You must go to " \
--		"http://wireless.kernel.org/en/users/Drivers/b43#devicefirmware " \
-+		"https://wireless.wiki.kernel.org/en/users/Drivers/b43#devicefirmware " \
- 		"and download the correct firmware for this driver version. " \
- 		"Please carefully read all instructions on this website.\n";
+diff --git a/drivers/net/wireless/intel/iwlegacy/4965-mac.c b/drivers/net/wireless/intel/iwlegacy/4965-mac.c
+index da6d4202611c..ad9d7e702a29 100644
+--- a/drivers/net/wireless/intel/iwlegacy/4965-mac.c
++++ b/drivers/net/wireless/intel/iwlegacy/4965-mac.c
+@@ -1415,7 +1415,7 @@ il4965_hdl_c_stats(struct il_priv *il, struct il_rx_buf *rxb)
+ /*
+  * mac80211 queues, ACs, hardware queues, FIFOs.
+  *
+- * Cf. http://wireless.kernel.org/en/developers/Documentation/mac80211/queues
++ * Cf. https://wireless.wiki.kernel.org/en/developers/Documentation/mac80211/queues
+  *
+  * Mac80211 uses the following numbers, which we get as from it
+  * by way of skb_get_queue_mapping(skb):
+diff --git a/drivers/net/wireless/intel/iwlwifi/Kconfig b/drivers/net/wireless/intel/iwlwifi/Kconfig
+index 091d621ad25f..dc69cdb84d53 100644
+--- a/drivers/net/wireless/intel/iwlwifi/Kconfig
++++ b/drivers/net/wireless/intel/iwlwifi/Kconfig
+@@ -31,7 +31,7 @@ config IWLWIFI
+ 	  In order to use this driver, you will need a firmware
+ 	  image for it. You can obtain the microcode from:
  
-diff --git a/drivers/net/wireless/broadcom/b43legacy/main.c b/drivers/net/wireless/broadcom/b43legacy/main.c
-index 5208a39fd6f7..7bb6681fa882 100644
---- a/drivers/net/wireless/broadcom/b43legacy/main.c
-+++ b/drivers/net/wireless/broadcom/b43legacy/main.c
-@@ -1477,8 +1477,8 @@ static void b43legacy_release_firmware(struct b43legacy_wldev *dev)
+-	          <http://wireless.kernel.org/en/users/Drivers/iwlwifi>.
++	          <https://wireless.wiki.kernel.org/en/users/Drivers/iwlwifi>.
  
- static void b43legacy_print_fw_helptext(struct b43legacy_wl *wl)
- {
--	b43legacyerr(wl, "You must go to http://wireless.kernel.org/en/users/"
--		     "Drivers/b43#devicefirmware "
-+	b43legacyerr(wl, "You must go to https://wireless.wiki.kernel.org/en/"
-+		     "users/Drivers/b43#devicefirmware "
- 		     "and download the correct firmware (version 3).\n");
- }
- 
+ 	  The firmware is typically installed in /lib/firmware. You can
+ 	  look in the hotplug script /etc/hotplug/firmware.agent to
 -- 
 2.17.1
 
