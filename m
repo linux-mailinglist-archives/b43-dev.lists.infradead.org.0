@@ -2,76 +2,75 @@ Return-Path: <b43-dev-bounces+lists+b43-dev=lfdr.de@lists.infradead.org>
 X-Original-To: lists+b43-dev@lfdr.de
 Delivered-To: lists+b43-dev@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 30D7D20206C
-	for <lists+b43-dev@lfdr.de>; Sat, 20 Jun 2020 05:31:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 14A9720208B
+	for <lists+b43-dev@lfdr.de>; Sat, 20 Jun 2020 05:31:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=C87sWa6/bScyo+gIcn6555BGXI5KGiibpK06p5NJyTE=; b=FvMGstvETDwfs+
-	oWAO/Ohti/PFv2jHnmgdW3X9Dr66bYLsCN9CBiUAup+AtxcY9YrW0Zj9TeViEjmNrv7QPfVMBsPIc
-	DKgpJvJPP1CXd+kbNEgMASQN8F3wfjJP4jaMg8h+50wyASe1OTNRIgZfcvx3To1oECyh5mlUVOCrr
-	2bDg/R8DHH88U37U7o1QrFcK/AEEsoBhxud1iU+cP0Y4kn6oNi4m8vVZLi36EYhswXMKxH9LY3iMV
-	8cP9bAjjT5uTAYQroBjdgGIhwmzBdWUhrLOTBBMuZarHOsxBb+hwkLRVIKKXlGsuwJssZY6kBIzgL
-	+UEaGKnIMDsiN8Pgdp3A==;
+	List-Owner; bh=FTsE6sbIaR8bZvL1G5klhcYGJYOKjKGAMNZ1d8gmlrE=; b=G9mPpJHCvHfS5y
+	bovOE+5nXfuEZ0+JFkp6zi1hsr9RiSfGxv+wOIWuY5tsqm+3gmb/Utcjrqem/ysuyMaSJbvI6ACyn
+	klBBF+68ScEoAqWyNX6+27vW9sGmz2Kw+Qd+Lr4j4l02JBUWQEY1DvXCyVUCPH1d3MrnsiOPv9hn1
+	c2hDt7ez9lWDp8w3dNgR1ki4awXR0SxP+xbQiZlRQ7k2OxBMkzmmQBIDU7uHBaV6UmKhpSDgzn8r2
+	X3gFdtbrtlzHGzDfSsGYtHxXrsuG9ZaZJyGkXjoAJv0ze5m4VTzTpr9AGmJ0E871OtIXBwomZ3IzF
+	yGGIj7DnZFsWZ8xvDxxw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.3 #3 (Red Hat Linux))
-	id 1jmUDk-0003xp-FE; Sat, 20 Jun 2020 03:31:08 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1jmUDx-0004IS-Nt; Sat, 20 Jun 2020 03:31:21 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92.3 #3 (Red Hat Linux))
- id 1jmUD0-0003M4-VT
- for b43-dev@lists.infradead.org; Sat, 20 Jun 2020 03:30:24 +0000
-Received: by mail-pf1-x443.google.com with SMTP id b5so5369767pfp.9
- for <b43-dev@lists.infradead.org>; Fri, 19 Jun 2020 20:30:22 -0700 (PDT)
+ id 1jmUD2-0003NV-Vk
+ for b43-dev@lists.infradead.org; Sat, 20 Jun 2020 03:30:26 +0000
+Received: by mail-pg1-x542.google.com with SMTP id h10so5381968pgq.10
+ for <b43-dev@lists.infradead.org>; Fri, 19 Jun 2020 20:30:24 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=IA+yT7PCs96a2QLkRTxqRX0+cmxfGmmmnF6nm+mE/f4=;
- b=MqimT0fbxuqxM+QmcrwARR+/amwNiuCI+hP1wCfX1g7kgv7NJcSBiwI/l7uGyvqsK2
- Oxc/+t3p4QpbDzYvQgitVypdVq8W23fO1zrrGQ69Qr0YZljTlWhw1Ev4MY87zvbvDu1N
- bh/IFvhDf4w/OsdEMgGvGYEdX6xS6wWHv8oxc=
+ bh=53EFvIpvLtL19VTcgKVkwQhb1JNYVFCG8WLiohIrzpg=;
+ b=hXEDT+oQwZV/0j93NEptSD6lkCmisgOBhpbn5Vp8lS7WhqstyLUjYh8/pubGfJlegl
+ cIZZuP2lTlcYx/X9xdQps0HcFapdlSQ3sZeyQSQTzkk3YYv8X66EUy9+bLD5pYpGJ7K8
+ f/p23iF9Lj5ZdC2ePxyPtJFko+YDM3iaXqXxg=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=IA+yT7PCs96a2QLkRTxqRX0+cmxfGmmmnF6nm+mE/f4=;
- b=PEDRV923hGTnIi5HAkwsPmqLxEO8nmMfGWSElKX87CZqy/rZFrGJ2oHOH59Ack1/Vy
- kqy3tGEmWqINqrdGLWtd+35MyHB77TT3qrghQX/HLYgtNCi9MRr3p2XmvDiukEBcXdcD
- oab11vqpg1EQEQN8CFzNtLZ5TkdZxKIqpepGCWvE+B7b0xkmNFcxR0+zeskds287bAlA
- knfJYk/Io6Hs1+PxL3ZsEj5f8zBLFxqZhiQbdXxaQp4MpjEDQUYshJe3U/YO4u9nTsle
- Qnpx5A+w+LFmAN0pLnO0+k2lG7l0KPtOegJ+LFuBYDE5GK/JF45F+Fp0QwnabjER8pMt
- +7Rw==
-X-Gm-Message-State: AOAM530dTFM38YLBwlYYyR/MveC4jB5tppTDH1lnGN1pATUgDI9x9z48
- /ya5OZhFc8ZneLanhVM4+xEO7w==
-X-Google-Smtp-Source: ABdhPJzWXmNsQYGlo/XoAt7rJ3XMQnqVn/2emw/g557qtVZoXAJYxangSZ/rdwKB6suIvTYXAUcnDQ==
-X-Received: by 2002:a65:5645:: with SMTP id m5mr5147418pgs.434.1592623822112; 
- Fri, 19 Jun 2020 20:30:22 -0700 (PDT)
+ bh=53EFvIpvLtL19VTcgKVkwQhb1JNYVFCG8WLiohIrzpg=;
+ b=mYD6bLpEnLBALKT7C+rgpeaf0/pa3ouuX6tu4ifjDLO+fE1dbgwmY+eYyw2eT4RfVt
+ OEL0M4PDAna4XK2mx4PPzRznJun9YArEkaJ8FrqXgwmAgVWY8YgNq0Hbqn4NGlKJM48s
+ i12XAW4d5ee5hSoARFb8Dz3B/8lrcqwN+FQQeep9fbLMyMcuaMJrN37tbMQqnNY3BNDQ
+ BPaEZ9wAztK1WBEyVn9rbil806uw9g52fbs9yM1h7mJWoK8HmF8wLJnohg6wZT0ZSgg1
+ d8fXuzkFjH97Gup1xaBtlSvIGquuSCw4dJaMy5BmHRpKau7ixLzBbu9ClwCOBycqtox9
+ 6/qg==
+X-Gm-Message-State: AOAM532UKk7fXU+SKC0MDGSyZqoq2+nwXBcSs/IdzZN29lR/OcsXYwl0
+ PiDcdQkHoERRE2jO+55gia26Lg==
+X-Google-Smtp-Source: ABdhPJzWWDTo3fA3qlpxXPt9t+m0l3tQUgBSNT3cCPjCzr+IkMUIJTgiw4SJHjx8tKw0+dOG4rlAaQ==
+X-Received: by 2002:aa7:9f10:: with SMTP id g16mr10814981pfr.47.1592623824106; 
+ Fri, 19 Jun 2020 20:30:24 -0700 (PDT)
 Received: from www.outflux.net (smtp.outflux.net. [198.145.64.163])
- by smtp.gmail.com with ESMTPSA id a12sm7138426pfr.44.2020.06.19.20.30.18
+ by smtp.gmail.com with ESMTPSA id w77sm7615693pff.126.2020.06.19.20.30.19
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
  Fri, 19 Jun 2020 20:30:20 -0700 (PDT)
 From: Kees Cook <keescook@chromium.org>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH v2 06/16] ide: Remove uninitialized_var() usage
-Date: Fri, 19 Jun 2020 20:29:57 -0700
-Message-Id: <20200620033007.1444705-7-keescook@chromium.org>
+Subject: [PATCH v2 07/16] clk: st: Remove uninitialized_var() usage
+Date: Fri, 19 Jun 2020 20:29:58 -0700
+Message-Id: <20200620033007.1444705-8-keescook@chromium.org>
 X-Mailer: git-send-email 2.25.1
 In-Reply-To: <20200620033007.1444705-1-keescook@chromium.org>
 References: <20200620033007.1444705-1-keescook@chromium.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20200619_203023_013923_CEB90E6C 
-X-CRM114-Status: UNSURE (   9.30  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20200619_203025_015115_7BDC69BB 
+X-CRM114-Status: GOOD (  10.09  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.4 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -94,61 +93,48 @@ List-Post: <mailto:b43-dev@lists.infradead.org>
 List-Help: <mailto:b43-dev-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/b43-dev>,
  <mailto:b43-dev-request@lists.infradead.org?subject=subscribe>
-Cc: Andy Whitcroft <apw@canonical.com>, linux-wireless@vger.kernel.org,
- Kees Cook <keescook@chromium.org>, linux-doc@vger.kernel.org,
- netdev@vger.kernel.org, x86@kernel.org,
- Nick Desaulniers <ndesaulniers@google.com>, linux-spi@vger.kernel.org,
+Cc: Andy Whitcroft <apw@canonical.com>, Kees Cook <keescook@chromium.org>,
+ linux-doc@vger.kernel.org, netdev@vger.kernel.org, x86@kernel.org,
+ linux-wireless@vger.kernel.org, linux-spi@vger.kernel.org,
  linux-block@vger.kernel.org, Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>,
  clang-built-linux@googlegroups.com, linux-mm@kvack.org,
  Alexander Potapenko <glider@google.com>, b43-dev@lists.infradead.org,
  linux-ide@vger.kernel.org, Joe Perches <joe@perches.com>,
  Linus Torvalds <torvalds@linux-foundation.org>, linux-clk@vger.kernel.org,
  drbd-dev@lists.linbit.com
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "b43-dev" <b43-dev-bounces@lists.infradead.org>
 Errors-To: b43-dev-bounces+lists+b43-dev=lfdr.de@lists.infradead.org
 
-Using uninitialized_var() is dangerous as it papers over real bugs[1]
-(or can in the future), and suppresses unrelated compiler warnings (e.g.
-"unused variable"). If the compiler thinks it is uninitialized, either
-simply initialize the variable or make compiler changes. As a precursor
-to removing[2] this[3] macro[4], just remove this variable since it was
-actually unused:
-
-drivers/ide/ide-taskfile.c:232:34: warning: unused variable 'flags' [-Wunused-variable]
-        unsigned long uninitialized_var(flags);
-                                        ^
-
-[1] https://lore.kernel.org/lkml/20200603174714.192027-1-glider@google.com/
-[2] https://lore.kernel.org/lkml/CA+55aFw+Vbj0i=1TGqCR5vQkCzWJ0QxK6CernOU6eedsudAixw@mail.gmail.com/
-[3] https://lore.kernel.org/lkml/CA+55aFwgbgqhbp1fkxvRKEpzyR5J8n1vKT1VZdz9knmPuXhOeg@mail.gmail.com/
-[4] https://lore.kernel.org/lkml/CA+55aFz2500WfbKXAx8s67wrm9=yVJu65TpLgN_ybYNv0VEOKA@mail.gmail.com/
-
-Fixes: ce1e518190ea ("ide: don't disable interrupts during kmap_atomic()")
-Reviewed-by: Nick Desaulniers <ndesaulniers@google.com>
-Signed-off-by: Kees Cook <keescook@chromium.org>
----
- drivers/ide/ide-taskfile.c | 1 -
- 1 file changed, 1 deletion(-)
-
-diff --git a/drivers/ide/ide-taskfile.c b/drivers/ide/ide-taskfile.c
-index aab6a10435b6..a26f85ab58a9 100644
---- a/drivers/ide/ide-taskfile.c
-+++ b/drivers/ide/ide-taskfile.c
-@@ -229,7 +229,6 @@ void ide_pio_bytes(ide_drive_t *drive, struct ide_cmd *cmd,
- 	ide_hwif_t *hwif = drive->hwif;
- 	struct scatterlist *sg = hwif->sg_table;
- 	struct scatterlist *cursg = cmd->cursg;
--	unsigned long uninitialized_var(flags);
- 	struct page *page;
- 	unsigned int offset;
- 	u8 *buf;
--- 
-2.25.1
-
-
-_______________________________________________
-b43-dev mailing list
-b43-dev@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/b43-dev
+VXNpbmcgdW5pbml0aWFsaXplZF92YXIoKSBpcyBkYW5nZXJvdXMgYXMgaXQgcGFwZXJzIG92ZXIg
+cmVhbCBidWdzWzFdCihvciBjYW4gaW4gdGhlIGZ1dHVyZSksIGFuZCBzdXBwcmVzc2VzIHVucmVs
+YXRlZCBjb21waWxlciB3YXJuaW5ncyAoZS5nLgoidW51c2VkIHZhcmlhYmxlIikuIElmIHRoZSBj
+b21waWxlciB0aGlua3MgaXQgaXMgdW5pbml0aWFsaXplZCwgZWl0aGVyCnNpbXBseSBpbml0aWFs
+aXplIHRoZSB2YXJpYWJsZSBvciBtYWtlIGNvbXBpbGVyIGNoYW5nZXMuIEFzIGEgcHJlY3Vyc29y
+CnRvIHJlbW92aW5nWzJdIHRoaXNbM10gbWFjcm9bNF0sIGp1c3QgcmVtb3ZlIHRoaXMgdmFyaWFi
+bGUgc2luY2UgaXQgd2FzCmFjdHVhbGx5IHVudXNlZDoKCmRyaXZlcnMvY2xrL3N0L2Nsa2dlbi1m
+c3luLmM6IEluIGZ1bmN0aW9uIOKAmHF1YWRmc19zZXRfcmF0ZeKAmToKZHJpdmVycy9jbGsvc3Qv
+Y2xrZ2VuLWZzeW4uYzo3OTM6Njogd2FybmluZzogdW51c2VkIHZhcmlhYmxlIOKAmGnigJkgWy1X
+dW51c2VkLXZhcmlhYmxlXQogIDc5MyB8ICBpbnQgaTsKICAgICAgfCAgICAgIF4KClsxXSBodHRw
+czovL2xvcmUua2VybmVsLm9yZy9sa21sLzIwMjAwNjAzMTc0NzE0LjE5MjAyNy0xLWdsaWRlckBn
+b29nbGUuY29tLwpbMl0gaHR0cHM6Ly9sb3JlLmtlcm5lbC5vcmcvbGttbC9DQSs1NWFGdytWYmow
+aT0xVEdxQ1I1dlFrQ3pXSjBReEs2Q2Vybk9VNmVlZHN1ZEFpeHdAbWFpbC5nbWFpbC5jb20vClsz
+XSBodHRwczovL2xvcmUua2VybmVsLm9yZy9sa21sL0NBKzU1YUZ3Z2JncWhicDFma3h2UktFcHp5
+UjVKOG4xdktUMVZaZHo5a25tUHVYaE9lZ0BtYWlsLmdtYWlsLmNvbS8KWzRdIGh0dHBzOi8vbG9y
+ZS5rZXJuZWwub3JnL2xrbWwvQ0ErNTVhRnoyNTAwV2ZiS1hBeDhzNjd3cm05PXlWSnU2NVRwTGdO
+X3liWU52MFZFT0tBQG1haWwuZ21haWwuY29tLwoKRml4ZXM6IDVmN2FhOTA3MWU5MyAoImNsazog
+c3Q6IFN1cHBvcnQgZm9yIFFVQURGUyBpbnNpZGUgQ2xvY2tHZW5CL0MvRC9FL0YiKQpTaWduZWQt
+b2ZmLWJ5OiBLZWVzIENvb2sgPGtlZXNjb29rQGNocm9taXVtLm9yZz4KLS0tCiBkcml2ZXJzL2Ns
+ay9zdC9jbGtnZW4tZnN5bi5jIHwgMSAtCiAxIGZpbGUgY2hhbmdlZCwgMSBkZWxldGlvbigtKQoK
+ZGlmZiAtLWdpdCBhL2RyaXZlcnMvY2xrL3N0L2Nsa2dlbi1mc3luLmMgYi9kcml2ZXJzL2Nsay9z
+dC9jbGtnZW4tZnN5bi5jCmluZGV4IGExNTZiZDBjNmFmNy4uZjFhZGM4NThiNTkwIDEwMDY0NAot
+LS0gYS9kcml2ZXJzL2Nsay9zdC9jbGtnZW4tZnN5bi5jCisrKyBiL2RyaXZlcnMvY2xrL3N0L2Ns
+a2dlbi1mc3luLmMKQEAgLTc5MCw3ICs3OTAsNiBAQCBzdGF0aWMgaW50IHF1YWRmc19zZXRfcmF0
+ZShzdHJ1Y3QgY2xrX2h3ICpodywgdW5zaWduZWQgbG9uZyByYXRlLAogCXN0cnVjdCBzdF9jbGtf
+cXVhZGZzX2ZzeW50aCAqZnMgPSB0b19xdWFkZnNfZnN5bnRoKGh3KTsKIAlzdHJ1Y3Qgc3RtX2Zz
+IHBhcmFtczsKIAlsb25nIGh3cmF0ZTsKLQlpbnQgdW5pbml0aWFsaXplZF92YXIoaSk7CiAKIAlp
+ZiAoIXJhdGUgfHwgIXBhcmVudF9yYXRlKQogCQlyZXR1cm4gLUVJTlZBTDsKLS0gCjIuMjUuMQoK
+Cl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmI0My1kZXYg
+bWFpbGluZyBsaXN0CmI0My1kZXZAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5m
+cmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2I0My1kZXYK
